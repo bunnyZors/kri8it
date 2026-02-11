@@ -20,7 +20,7 @@ export default function IndustriesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-[#049AD9] text-sm font-bold uppercase tracking-[0.2em] mb-4">
+          <p className="text-[#049AD9] text-sm font-medium uppercase tracking-[0.2em] mb-4">
             Industries
           </p>
           <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight text-[hsl(230,40%,15%)]">
