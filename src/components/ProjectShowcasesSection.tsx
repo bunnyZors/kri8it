@@ -5,34 +5,29 @@ const categories = ["Latest", "Automotive", "Travel & Tourism", "Property", "Pro
 
 const projects = [
   {
-    name: "HeyTavcor",
-    description: "Website design and development",
+    name: "Automotive group",
+    description: "Digital platform, performance marketing, and systems integration",
     category: "Automotive",
   },
   {
-    name: "Wildlife Safari",
-    description: "Website design and development",
+    name: "Travel brand",
+    description: "Website rebuild, SEO, and ongoing optimisation",
     category: "Travel & Tourism",
   },
   {
-    name: "Villa Concepts",
-    description: "Website design and development",
+    name: "Property business",
+    description: "Brand refresh and digital experience",
     category: "Property",
   },
   {
-    name: "SANI Car Rental",
-    description: "Website design and development",
-    category: "Automotive",
-  },
-  {
-    name: "Springbok Atlas",
-    description: "Digital marketing & website",
-    category: "Travel & Tourism",
-  },
-  {
-    name: "TaxTim",
-    description: "Website design and development",
+    name: "Professional services firm",
+    description: "CRM setup and automation",
     category: "Professional Services",
+  },
+  {
+    name: "Retail brand",
+    description: "E-commerce optimisation",
+    category: "Ecommerce",
   },
 ];
 
@@ -51,9 +46,11 @@ export default function ProjectShowcasesSection() {
           className="text-center mb-12"
         >
           <p className="text-muted-foreground text-xs uppercase tracking-[0.2em] mb-4">
-            Explore Our Work
+            Latest Projects
           </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold">Project Showcases</h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold">
+            A snapshot of recent work across strategy, digital, marketing, and systems.
+          </h2>
         </motion.div>
 
         {/* Filter pills */}
@@ -74,10 +71,7 @@ export default function ProjectShowcasesSection() {
         </div>
 
         {/* Project grid */}
-        <motion.div
-          layout
-          className="grid md:grid-cols-2 gap-8"
-        >
+        <motion.div layout className="grid md:grid-cols-2 gap-8">
           {filtered.map((project, i) => (
             <motion.div
               key={project.name}
@@ -105,14 +99,9 @@ export default function ProjectShowcasesSection() {
           ))}
         </motion.div>
 
-        <div className="text-center mt-12">
-          <a
-            href="#contact"
-            className="text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors border-b-2 border-accent pb-1"
-          >
-            See All Projects
-          </a>
-        </div>
+        <p className="text-center mt-12 text-muted-foreground text-sm">
+          Full case studies available on request.
+        </p>
       </div>
     </section>
   );

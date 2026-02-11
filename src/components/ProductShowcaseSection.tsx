@@ -1,18 +1,10 @@
 import { motion } from "framer-motion";
-import { ChevronRight, BarChart3, Monitor, Workflow, Brain } from "lucide-react";
-
-const features = [
-  { icon: BarChart3, label: "Accurate sales & marketing forecasting" },
-  { icon: Monitor, label: "Real-time campaign monitoring" },
-  { icon: Workflow, label: "Automated workflow orchestration" },
-  { icon: Brain, label: "AI-powered lead scoring & analysis" },
-];
+import { ChevronRight } from "lucide-react";
 
 export default function ProductShowcaseSection() {
   return (
     <section className="section-padding bg-card">
       <div className="max-w-7xl mx-auto">
-        {/* AutomAi8 header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +31,6 @@ export default function ProductShowcaseSection() {
               <span className="text-xs text-muted-foreground ml-2">AutomAi8 Dashboard</span>
             </div>
             <div className="p-6 md:p-8 space-y-6">
-              {/* Mock stats */}
               <div className="grid grid-cols-3 gap-4">
                 {[
                   { label: "Leads", value: "2,847", change: "+18%" },
@@ -53,7 +44,6 @@ export default function ProductShowcaseSection() {
                   </div>
                 ))}
               </div>
-              {/* Mock chart bars */}
               <div className="flex items-end gap-2 h-32 pt-4">
                 {[40, 55, 35, 65, 80, 60, 90, 75, 95, 70, 85, 100].map((h, i) => (
                   <div
@@ -72,22 +62,12 @@ export default function ProductShowcaseSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl md:text-4xl font-extrabold uppercase leading-tight mb-6">
-              Predictable growth your leadership will love
+            <h3 className="text-2xl md:text-4xl font-extrabold leading-tight mb-6">
+              Sales and marketing automation
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              AutomAi8 is our proprietary automation platform that turns complex data into
-              high-impact action. We bring all of your data into one place, strip away the noise,
-              and surface the insights that matter, including:
+              Sales and marketing automation that brings together customer conversations, reputation signals, and attribution, from first contact through to follow-up.
             </p>
-            <ul className="space-y-4 mb-8">
-              {features.map((feat) => (
-                <li key={feat.label} className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-accent flex-shrink-0" />
-                  <span className="text-foreground">{feat.label}</span>
-                </li>
-              ))}
-            </ul>
             <a
               href="#ecosystem"
               className="inline-flex items-center gap-3 shimmer-btn bg-accent text-accent-foreground px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-wider"

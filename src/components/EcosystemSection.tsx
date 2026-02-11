@@ -16,7 +16,7 @@ const cards = [
     highlight: "Ai8",
     suffix: "",
     description:
-      "Sales and marketing automation that brings together customer conversations, reputation signals, and attribution.",
+      "Sales and marketing automation that brings together customer conversations, reputation signals, and attribution, from first contact through to follow-up.",
   },
   {
     icon: Link2,
@@ -24,7 +24,7 @@ const cards = [
     highlight: "Ai8",
     suffix: "",
     description:
-      "Connects platforms and workflows so data moves reliably across the business.",
+      "Connects platforms and workflows so data moves reliably across the business, underpinning both Kri8it and AutomAi8.",
   },
 ];
 
@@ -39,12 +39,11 @@ export default function EcosystemSection() {
           className="text-center mb-16"
         >
           <p className="text-accent text-sm font-bold uppercase tracking-[0.2em] mb-4">
-            Systems & Automation
+            Systems &amp; Automation
           </p>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold">
-            Where intelligence meets
-            <br />
-            <span className="text-accent">seamless execution.</span>
+            Digital systems built to empower<br />
+            <span className="text-accent">how your business operates.</span>
           </h2>
         </motion.div>
 

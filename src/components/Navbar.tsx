@@ -1,27 +1,35 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   {
     label: "Services",
+    href: "/services",
     children: [
-      { label: "Strategy", href: "#services" },
-      { label: "Web & Digital", href: "#services" },
-      { label: "Branding & Creative", href: "#services" },
-      { label: "Performance Marketing", href: "#services" },
-      { label: "Systems & Integration", href: "#services" },
+      { label: "Strategy", href: "/services" },
+      { label: "Design", href: "/services" },
+      { label: "Development", href: "/services" },
+      { label: "Performance Marketing", href: "/services" },
+      { label: "Systems & Automation", href: "/services" },
     ],
   },
   {
     label: "Products",
     children: [
-      { label: "AutomAi8", href: "#ecosystem" },
-      { label: "IntegrAi8", href: "#ecosystem" },
+      { label: "AutomAi8", href: "/#ecosystem" },
+      { label: "IntegrAi8", href: "/#ecosystem" },
     ],
   },
-  { label: "About", href: "#experience" },
-  { label: "Industries", href: "#industries" },
+  { label: "About", href: "/about" },
+  {
+    label: "Industries",
+    children: [
+      { label: "Automotive", href: "/automotive" },
+      { label: "Travel & Tourism", href: "/travel-tourism" },
+    ],
+  },
 ];
 
 export default function Navbar() {
@@ -32,13 +40,13 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-6 lg:px-8">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-1 text-foreground font-extrabold text-xl tracking-tight">
+        <Link to="/" className="flex items-center gap-1 text-foreground font-extrabold text-xl tracking-tight">
           <span className="text-accent">⊛</span>
           <span>KRI</span>
           <span className="text-accent">8</span>
           <span>IT</span>
           <span className="text-muted-foreground font-normal text-sm">.digital</span>
-        </a>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-8">
@@ -64,34 +72,34 @@ export default function Navbar() {
                       className="absolute top-full left-0 mt-2 w-56 rounded-xl bg-card border border-border p-2 shadow-2xl"
                     >
                       {link.children.map((child) => (
-                        <a
+                        <Link
                           key={child.label}
-                          href={child.href}
+                          to={child.href}
                           className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
                         >
                           {child.label}
-                        </a>
+                        </Link>
                       ))}
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
             ) : (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href!}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wider uppercase"
               >
                 {link.label}
-              </a>
+              </Link>
             )
           )}
-          <a
-            href="#contact"
+          <Link
+            to="/about"
             className="shimmer-btn bg-accent text-accent-foreground px-5 py-2 rounded-full text-sm font-bold tracking-wider uppercase"
           >
             Contact
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -121,34 +129,34 @@ export default function Navbar() {
                         {link.label}
                       </p>
                       {link.children.map((child) => (
-                        <a
+                        <Link
                           key={child.label}
-                          href={child.href}
+                          to={child.href}
                           onClick={() => setMobileOpen(false)}
                           className="block pl-4 py-1 text-sm text-muted-foreground hover:text-accent transition-colors"
                         >
                           {child.label}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   ) : (
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href!}
                       onClick={() => setMobileOpen(false)}
                       className="block text-sm font-bold text-foreground uppercase tracking-wider"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   )}
                 </div>
               ))}
-              <a
-                href="#contact"
+              <Link
+                to="/about"
                 onClick={() => setMobileOpen(false)}
                 className="block text-center shimmer-btn bg-accent text-accent-foreground px-5 py-2.5 rounded-full text-sm font-bold tracking-wider uppercase"
               >
                 Contact
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

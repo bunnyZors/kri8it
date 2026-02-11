@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function ExperienceSection() {
   return (
@@ -17,11 +18,11 @@ export default function ExperienceSection() {
               Why Kri8it
             </p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-8">
-              <span className="text-accent">Long-term digital partners</span>{" "}
-              for growing businesses.
+              Built for businesses ready to move forward with{" "}
+              <span className="text-accent">confidence.</span>
             </h2>
-            <a
-              href="#contact"
+            <Link
+              to="/about"
               className="inline-flex items-center gap-4 group"
             >
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent text-accent-foreground group-hover:scale-110 transition-transform">
@@ -30,7 +31,7 @@ export default function ExperienceSection() {
               <span className="text-sm font-bold uppercase tracking-[0.15em] text-foreground">
                 Find Out More
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Right column */}
