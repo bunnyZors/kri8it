@@ -10,7 +10,7 @@ export default function IntroSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-[clamp(2rem,4.5vw,4.2rem)] font-[900] leading-[1.08] tracking-tight mb-16 max-w-5xl text-[hsl(230,40%,15%)]"
+          className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.12] tracking-tight mb-16 max-w-5xl text-[hsl(230,40%,15%)]"
         >
           Kri8it is a digital and brand partner with over{" "}
           <span className="text-[#049AD9]">25 years of experience</span>.
