@@ -70,7 +70,7 @@ export default function TestimonialsSection() {
   const [selectedTestimonial, setSelectedTestimonial] = useState<number | null>(null);
 
   return (
-    <section className="section-padding bg-card/30">
+    <section className="section-padding" style={{ background: "#ffffff" }}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -78,11 +78,11 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-[#049AD9] text-sm font-medium uppercase tracking-[0.2em] mb-4">
+          <p className="text-[hsl(230,10%,60%)] text-sm font-medium uppercase tracking-[0.25em] mb-4">
             Testimonials
           </p>
-          <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight">
-            Words from our clients
+          <h2 className="font-display text-[clamp(2.4rem,4.5vw,3.8rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[hsl(230,40%,15%)]">
+            Words from our <span className="text-[#049AD9]">clients</span>
           </h2>
         </motion.div>
 
@@ -94,21 +94,21 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="rounded-2xl border border-border bg-card p-8 flex flex-col"
+              className="rounded-2xl border border-[hsl(230,10%,85%)] bg-white p-8 flex flex-col"
             >
-              <Quote className="text-accent/40 mb-6" size={32} />
-              <p className="text-[#F2F2F2]/70 text-sm leading-relaxed flex-1">
+              <Quote className="text-[#049AD9]/40 mb-6" size={32} />
+              <p className="text-[hsl(230,10%,45%)] text-sm leading-relaxed flex-1">
                 {t.short}
                 <button
                   onClick={() => setSelectedTestimonial(i)}
-                  className="text-accent hover:underline ml-1"
+                  className="text-[#049AD9] hover:underline ml-1"
                 >
                   continue reading
                 </button>
               </p>
-              <div className="mt-6 pt-4 border-t border-border">
-                <p className="font-bold text-foreground">{t.name}</p>
-                <p className="text-[#F2F2F2]/70 text-xs">{t.role}</p>
+              <div className="mt-6 pt-4 border-t border-[hsl(230,10%,85%)]">
+                <p className="font-bold text-[hsl(230,40%,15%)]">{t.name}</p>
+                <p className="text-[hsl(230,10%,45%)] text-xs">{t.role}</p>
               </div>
             </motion.div>
           ))}
