@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import awarenessIcon from "@/assets/icons/awareness-icon.png";
-import engagementIcon from "@/assets/icons/engagement-icon.png";
-import conversionIcon from "@/assets/icons/conversion-icon.png";
-import retentionIcon from "@/assets/icons/retention-icon.png";
+import awarenessIcon from "@/assets/icons/awareness-icon-fixed.png";
+import engagementIcon from "@/assets/icons/engagement-icon-fixed.png";
+import conversionIcon from "@/assets/icons/conversion-icon-fixed.png";
+import retentionIcon from "@/assets/icons/retention-icon-fixed.png";
 
 const IconImg = ({ src, alt }: { src: string; alt: string }) => (
   <img src={src} alt={alt} className="w-20 h-20 object-contain" />
