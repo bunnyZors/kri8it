@@ -128,9 +128,8 @@ export default function HeroSection() {
         <div className="relative mb-6">
           <div className="max-w-7xl mx-auto flex items-center gap-6">
             <p className="text-xs text-muted-foreground uppercase tracking-[0.3em] whitespace-nowrap">Trusted By</p>
-            <div className="flex-1 h-px bg-border" />
+            <div className="h-px bg-border" style={{ width: 'calc(100% + 50vw)' }} />
           </div>
-          <div className="absolute top-1/2 right-0 w-[calc(50vw-50%)] h-px bg-border" />
         </div>
         <div className="max-w-7xl mx-auto overflow-visible">
           <div className="overflow-hidden -mr-[calc(50vw-50%)]">
