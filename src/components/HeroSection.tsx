@@ -47,7 +47,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-32 pb-0 overflow-hidden">
       {/* SVG Draw Animation - Kri8it brand lines */}
-      <div className="absolute left-0 right-0 top-0 bottom-[195px] pointer-events-none overflow-hidden">
+      <div className="absolute left-0 right-0 top-0 bottom-[220px] pointer-events-none overflow-hidden">
         <svg
           viewBox="0 0 1474 1119"
           fill="none"
@@ -132,21 +132,18 @@ export default function HeroSection() {
           </div>
           <div className="absolute top-1/2 right-0 w-[calc(50vw-50%)] h-px bg-border" />
         </div>
-        <div className="max-w-7xl mx-auto">
-          {/* Marquee */}
-          <div className="overflow-hidden">
-            <div className="flex gap-16 items-center animate-marquee w-fit">
-              {[...clientLogos, ...clientLogos].map((logo, i) => (
-                <img
-                  key={`${logo.alt}-${i}`}
-                  src={logo.src}
-                  alt={logo.alt}
-                  className={`w-auto opacity-50 hover:opacity-90 transition-opacity grayscale brightness-200 flex-shrink-0 ${
-                    logo.alt === "Mahindra" ? "h-14 md:h-18" : "h-22 md:h-28"
-                  }`}
-                />
-              ))}
-            </div>
+        <div className="overflow-hidden -mr-6 md:-mr-12 lg:-mr-20">
+          <div className="flex gap-16 items-center animate-marquee w-fit ml-auto">
+            {[...clientLogos, ...clientLogos].map((logo, i) => (
+              <img
+                key={`${logo.alt}-${i}`}
+                src={logo.src}
+                alt={logo.alt}
+                className={`w-auto opacity-50 hover:opacity-90 transition-opacity grayscale brightness-200 flex-shrink-0 ${
+                  logo.alt === "Mahindra" ? "h-14 md:h-18" : "h-22 md:h-28"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </motion.div>
