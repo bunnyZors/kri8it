@@ -133,7 +133,7 @@ export default function ProjectShowcasesSection() {
   const filtered = active === "Latest" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section id="projects" className="section-padding" style={{ background: "#F5F5F5" }}>
+    <section id="projects" className="section-padding" style={{ background: "#ffffff" }}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -144,7 +144,7 @@ export default function ProjectShowcasesSection() {
           <p className="text-[hsl(230,10%,60%)] text-sm font-medium uppercase tracking-[0.25em] mb-4">
             Latest Projects
           </p>
-          <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight text-[hsl(230,40%,15%)]">
+          <h2 className="font-display text-[clamp(2.4rem,4.5vw,3.8rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[hsl(230,40%,15%)]">
             Project <span className="text-[hsl(var(--primary))]">Showcases</span>
           </h2>
         </motion.div>
