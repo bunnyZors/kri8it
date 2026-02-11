@@ -35,7 +35,7 @@ export default function ExperienceSection() {
           </div>
 
           {/* Right column */}
-          <div className="space-y-6 text-muted-foreground leading-relaxed">
+          <div className="space-y-6 text-[#F2F2F2] leading-relaxed">
             <p>
               Clients choose Kri8it for experience, continuity, and partnership built over more
               than 25 years. We bring together brand thinking, digital execution, marketing

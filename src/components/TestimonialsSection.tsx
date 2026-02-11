@@ -78,7 +78,7 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-4">
+          <p className="text-[#049AD9] text-xs font-bold uppercase tracking-[0.2em] mb-4">
             Testimonials
           </p>
           <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight">
@@ -97,7 +97,7 @@ export default function TestimonialsSection() {
               className="rounded-2xl border border-border bg-card p-8 flex flex-col"
             >
               <Quote className="text-accent/40 mb-6" size={32} />
-              <p className="text-muted-foreground text-sm leading-relaxed flex-1">
+              <p className="text-[#F2F2F2]/70 text-sm leading-relaxed flex-1">
                 {t.short}
                 <button
                   onClick={() => setSelectedTestimonial(i)}
@@ -108,7 +108,7 @@ export default function TestimonialsSection() {
               </p>
               <div className="mt-6 pt-4 border-t border-border">
                 <p className="font-bold text-foreground">{t.name}</p>
-                <p className="text-muted-foreground text-xs">{t.role}</p>
+                <p className="text-[#F2F2F2]/70 text-xs">{t.role}</p>
               </div>
             </motion.div>
           ))}
@@ -150,7 +150,7 @@ export default function TestimonialsSection() {
               </div>
               <div className="border-t border-border mt-4 pt-8 space-y-5">
                 {testimonials[selectedTestimonial].full.map((p, i) => (
-                  <p key={i} className="text-muted-foreground leading-relaxed">
+                  <p key={i} className="text-[#F2F2F2]/70 leading-relaxed">
                     {p}
                   </p>
                 ))}

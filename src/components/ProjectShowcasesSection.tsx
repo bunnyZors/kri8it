@@ -45,7 +45,7 @@ export default function ProjectShowcasesSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <p className="text-muted-foreground text-xs uppercase tracking-[0.2em] mb-4">
+          <p className="text-[#F2F2F2]/70 text-xs uppercase tracking-[0.2em] mb-4">
             Latest Projects
           </p>
           <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight">
@@ -62,7 +62,7 @@ export default function ProjectShowcasesSection() {
               className={`px-5 py-2 rounded-full text-sm font-medium border transition-all ${
                 active === cat
                   ? "bg-accent text-accent-foreground border-accent"
-                  : "bg-transparent text-muted-foreground border-border hover:border-accent/50 hover:text-foreground"
+                  : "bg-transparent text-[#F2F2F2]/70 border-border hover:border-accent/50 hover:text-foreground"
               }`}
             >
               {cat}
@@ -89,7 +89,7 @@ export default function ProjectShowcasesSection() {
               <div className="flex items-center justify-between mt-4">
                 <div>
                   <h3 className="font-bold text-foreground">{project.name}</h3>
-                  <p className="text-muted-foreground text-sm">{project.description}</p>
+                  <p className="text-[#F2F2F2]/70 text-sm">{project.description}</p>
                 </div>
                 <span className="text-accent text-xs font-bold uppercase tracking-wider">
                   {project.category}
@@ -99,7 +99,7 @@ export default function ProjectShowcasesSection() {
           ))}
         </motion.div>
 
-        <p className="text-center mt-12 text-muted-foreground text-sm">
+        <p className="text-center mt-12 text-[#F2F2F2]/70 text-sm">
           Full case studies available on request.
         </p>
       </div>

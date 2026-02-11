@@ -23,7 +23,7 @@ export default function CtaSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <p className="text-muted-foreground text-sm uppercase tracking-[0.2em] mb-6">
+          <p className="text-[#F2F2F2]/70 text-sm uppercase tracking-[0.2em] mb-6">
             Let's Talk
           </p>
           <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight mb-10">
