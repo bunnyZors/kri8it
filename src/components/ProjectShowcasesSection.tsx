@@ -99,7 +99,7 @@ function BentoCard({ project, index }: { project: Project; index: number }) {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-500" />
               {/* Info at bottom */}
               <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                <span className="text-[hsl(var(--primary))] text-[10px] font-bold uppercase tracking-[0.2em] mb-1.5 block">
+                <span className="text-[#049AD9] text-[10px] font-bold uppercase tracking-[0.2em] mb-1.5 block">
                   {project.category}
                 </span>
                 <h3 className="font-display font-bold text-white text-lg md:text-xl leading-tight">
@@ -112,7 +112,7 @@ function BentoCard({ project, index }: { project: Project; index: number }) {
             </>
           ) : (
             <div className="flex flex-col justify-end h-full p-5 md:p-6 bg-[hsl(230,10%,93%)]">
-              <span className="text-[hsl(var(--primary))] text-[10px] font-bold uppercase tracking-[0.2em] mb-1.5">
+              <span className="text-[#049AD9] text-[10px] font-bold uppercase tracking-[0.2em] mb-1.5">
                 {project.category}
               </span>
               <h3 className="font-display font-bold text-[hsl(230,40%,15%)] text-lg leading-tight">
@@ -145,7 +145,7 @@ export default function ProjectShowcasesSection() {
             Latest Projects
           </p>
           <h2 className="font-display text-[clamp(2.4rem,4.5vw,3.8rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[hsl(230,40%,15%)]">
-            Project <span className="text-[hsl(var(--primary))]">Showcases</span>
+            Project <span className="text-[#049AD9]">Showcases</span>
           </h2>
         </motion.div>
 
@@ -157,8 +157,8 @@ export default function ProjectShowcasesSection() {
               onClick={() => setActive(cat)}
               className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${
                 active === cat
-                  ? "bg-[hsl(var(--primary))] text-white shadow-md"
-                  : "bg-white text-[hsl(230,10%,45%)] border border-[hsl(230,10%,85%)] hover:border-[hsl(var(--primary))]/50 hover:text-[hsl(230,40%,15%)]"
+                  ? "bg-[#049AD9] text-white shadow-md"
+                  : "bg-white text-[hsl(230,10%,45%)] border border-[hsl(230,10%,85%)] hover:border-[#049AD9]/50 hover:text-[hsl(230,40%,15%)]"
               }`}
             >
               {cat}
