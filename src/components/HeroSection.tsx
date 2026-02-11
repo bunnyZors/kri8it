@@ -95,7 +95,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="font-display text-[clamp(2.8rem,5.5vw,6.5rem)] font-bold leading-[1.0] tracking-tight mb-16 max-w-4xl"
+          className="font-display text-[clamp(3rem,6.5vw,7.5rem)] font-bold leading-[0.98] tracking-tight mb-16 max-w-5xl"
         >
           Brand. Digital.<br />
           Systems.
