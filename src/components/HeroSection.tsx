@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import { ArrowRight, ChevronRight, ChevronLeft } from "lucide-react";
 
 import logoNaturalSelection from "@/assets/logos/natural-selection.png";
 import logoSpringbok from "@/assets/logos/springbok-atlas.png";
@@ -45,14 +45,14 @@ const clientLogos = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center section-padding pt-32 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-center section-padding pt-32 pb-8 overflow-hidden">
       {/* SVG Draw Animation - Kri8it brand lines */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <svg
           viewBox="0 0 1474 1119"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute right-[0%] top-[10%] w-[45%] max-h-[70vh] h-auto opacity-20"
+          className="absolute right-[-5%] top-[5%] w-[65%] h-auto opacity-25"
         >
           <path
             d="M.5,1118.81c7.16-197.99,130.53-379,317.92-456.35.22.84.54,2.06.93,3.55,6.13,22.92,28.6,86.14,62.22,143.23,41.07,69.74,93.26,113.16,91.02,113.72-4.21,1.06-.14.04-19.31,5.18-93.19,24.99-150,103.46-157.02,190.66"
@@ -81,56 +81,50 @@ export default function HeroSection() {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto w-full relative z-10">
+      <div className="max-w-7xl mx-auto w-full relative z-10 flex-1 flex flex-col justify-center">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="text-accent text-sm font-bold uppercase tracking-[0.2em] mb-6"
         >
-          Brand, Digital &amp; Systems
+          We Build The Story
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-10 max-w-5xl uppercase"
+          className="text-6xl md:text-8xl lg:text-9xl font-extrabold leading-[1.0] mb-12 max-w-4xl"
         >
-          Built in partnership for{" "}
-          <span className="text-accent">growing businesses</span>
-          <span className="text-accent">.</span>
+          Brand. Digital.<br />
+          Systems.
         </motion.h1>
 
-        <motion.div
+        <motion.a
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9 }}
-          className="flex flex-wrap items-center gap-4"
+          href="#contact"
+          className="inline-flex items-center gap-4 group w-fit"
         >
-          <a
-            href="#services"
-            className="inline-flex items-center gap-3 shimmer-btn bg-accent text-accent-foreground px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-wider"
-          >
-            Explore Our Services
-            <ChevronRight size={16} />
-          </a>
-          <a
-            href="#ecosystem"
-            className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-foreground hover:text-accent transition-colors border-b-2 border-accent pb-1"
-          >
-            Check out our tech
-            <ChevronRight size={14} />
-          </a>
-        </motion.div>
+          <span className="flex items-center justify-center w-12 h-12 rounded-full bg-accent text-accent-foreground group-hover:scale-110 transition-transform">
+            <ArrowRight size={20} />
+          </span>
+          <span className="text-sm font-bold uppercase tracking-[0.15em] text-foreground">
+            Start Your Journey
+          </span>
+        </motion.a>
+      </div>
 
-        {/* Trusted By */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="mt-24 border-t border-border pt-8"
-        >
+      {/* Trusted By */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2 }}
+        className="relative z-10 mt-auto pt-16"
+      >
+        <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-6">
             <p className="text-xs text-muted-foreground uppercase tracking-[0.2em]">Trusted By</p>
             <div className="flex gap-2">
@@ -154,18 +148,20 @@ export default function HeroSection() {
               </button>
             </div>
           </div>
-          <div id="logo-scroll" className="flex gap-10 items-center overflow-x-auto scrollbar-hide scroll-smooth">
-            {clientLogos.map((logo) => (
-              <img
-                key={logo.alt}
-                src={logo.src}
-                alt={logo.alt}
-                className="h-14 md:h-20 w-auto opacity-50 hover:opacity-100 transition-opacity grayscale brightness-200 flex-shrink-0"
-              />
-            ))}
+          <div className="border-t border-border pt-6">
+            <div id="logo-scroll" className="flex gap-10 items-center overflow-x-auto scrollbar-hide scroll-smooth">
+              {clientLogos.map((logo) => (
+                <img
+                  key={logo.alt}
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-14 md:h-20 w-auto opacity-50 hover:opacity-100 transition-opacity grayscale brightness-200 flex-shrink-0"
+                />
+              ))}
+            </div>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   );
 }
