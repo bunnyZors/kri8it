@@ -109,4 +109,14 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  .hero-svg-path {
+    animation: svgDraw 4s ease-out forwards;
+  }
+
+  @keyframes svgDraw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
 }
