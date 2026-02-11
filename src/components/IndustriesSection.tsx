@@ -12,7 +12,7 @@ const industries = [
 
 export default function IndustriesSection() {
   return (
-    <section id="industries" className="section-padding" style={{ background: '#F5F5F5' }}>
+    <section id="industries" className="section-padding pb-36 md:pb-44" style={{ background: '#F5F5F5' }}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -29,7 +29,7 @@ export default function IndustriesSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-2">
           {industries.map((item, i) => {
             const content = (
               <motion.div
