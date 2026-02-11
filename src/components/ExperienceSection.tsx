@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="section-padding py-32 md:py-40 lg:py-48">
+    <section id="experience" className="section-padding">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
