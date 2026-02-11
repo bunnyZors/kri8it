@@ -37,7 +37,7 @@ export default function EcosystemSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-muted-foreground text-sm font-bold uppercase tracking-[0.3em] mb-6">
+          <p className="text-[#F2F2F2]/70 text-sm font-bold uppercase tracking-[0.3em] mb-6">
             Systems &amp; Automation
           </p>
           <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight">
@@ -63,7 +63,7 @@ export default function EcosystemSection() {
                   className={`${card.logoClass} w-auto object-contain`}
                 />
               </div>
-              <p className="text-muted-foreground leading-relaxed text-sm md:text-base mt-auto">
+              <p className="text-[#F2F2F2]/70 leading-relaxed text-sm md:text-base mt-auto">
                 {card.description}
               </p>
             </motion.div>
