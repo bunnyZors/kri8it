@@ -38,7 +38,7 @@ export default function ServicesSection() {
             <p className="text-[hsl(230,10%,60%)] text-sm font-medium uppercase tracking-[0.25em] mb-6">
               Our Services
             </p>
-            <h2 className="font-display text-[clamp(2.4rem,4.5vw,3.8rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[hsl(230,40%,15%)]">
+            <h2 className="font-display text-[clamp(2.4rem,4.5vw,3.8rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[hsl(230,40%,15%)] pr-8 lg:pr-16">
               We offer a focused set of services that work best when{" "}
               <span className="text-[#049AD9]">connected</span>.
             </h2>
