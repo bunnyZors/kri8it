@@ -81,7 +81,7 @@ export default function TestimonialsSection() {
           <p className="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-4">
             Testimonials
           </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold">
+          <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight">
             Words from our clients
           </h2>
         </motion.div>

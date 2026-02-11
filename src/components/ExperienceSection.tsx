@@ -17,9 +17,9 @@ export default function ExperienceSection() {
             <p className="text-muted-foreground text-xs font-bold uppercase tracking-[0.2em] mb-4">
               Why Kri8it
             </p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-8">
+            <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight mb-8">
               Built for businesses ready to move forward with{" "}
-              <span className="text-accent">confidence.</span>
+              <span className="text-[#049AD9]">confidence.</span>
             </h2>
             <Link
               to="/about"

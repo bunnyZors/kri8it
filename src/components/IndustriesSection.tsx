@@ -24,8 +24,8 @@ export default function IndustriesSection() {
           <p className="text-accent text-sm font-bold uppercase tracking-[0.2em] mb-4">
             Industries
           </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold">
-            We work across a range of <span className="text-accent">sectors.</span>
+          <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight">
+            We work across a range of <span className="text-[#049AD9]">sectors.</span>
           </h2>
         </motion.div>
 

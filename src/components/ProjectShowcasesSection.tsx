@@ -48,7 +48,7 @@ export default function ProjectShowcasesSection() {
           <p className="text-muted-foreground text-xs uppercase tracking-[0.2em] mb-4">
             Latest Projects
           </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold">
+          <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight">
             A snapshot of recent work across strategy, digital, marketing, and systems.
           </h2>
         </motion.div>

@@ -26,11 +26,11 @@ export default function CtaSection() {
           <p className="text-muted-foreground text-sm uppercase tracking-[0.2em] mb-6">
             Let's Talk
           </p>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15] mb-10">
+          <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight mb-10">
             We work best with businesses that value{" "}
-            <span className="text-accent">long-term partnership</span> and want
+            <span className="text-[#049AD9]">long-term partnership</span> and want
             digital systems that support growth over time. If that sounds like you,{" "}
-            <span className="text-accent">let's talk.</span>
+            <span className="text-[#049AD9]">let's talk.</span>
           </h2>
           <a
             href="mailto:clint@kri8it.com"
