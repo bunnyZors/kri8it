@@ -122,7 +122,7 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="relative z-10 mt-20"
+        className="relative z-10 mt-32"
       >
         {/* Label + line - label aligned to content, line extends to viewport right edge */}
         <div className="flex items-center gap-6 mb-6 pl-6 md:pl-12 lg:pl-20 -mr-6 md:-mr-12 lg:-mr-20">
@@ -139,7 +139,7 @@ export default function HeroSection() {
                   src={logo.src}
                   alt={logo.alt}
                   className={`w-auto opacity-50 hover:opacity-90 transition-opacity grayscale brightness-200 flex-shrink-0 ${
-                    logo.alt === "Mahindra" ? "h-10 md:h-14" : "h-16 md:h-20"
+                    logo.alt === "Mahindra" ? "h-12 md:h-16" : "h-20 md:h-24"
                   }`}
                 />
               ))}
