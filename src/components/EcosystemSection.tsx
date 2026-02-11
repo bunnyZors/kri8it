@@ -4,22 +4,25 @@ import { Layers, Zap, Link2 } from "lucide-react";
 const cards = [
   {
     icon: Layers,
-    title: "Kri8it",
+    prefix: "Kri",
     highlight: "8",
+    suffix: "it",
     description:
       "Strategy, brand, and digital foundations that shape how customers experience your business.",
   },
   {
     icon: Zap,
-    title: "AutomAi8",
+    prefix: "Autom",
     highlight: "Ai8",
+    suffix: "",
     description:
       "Sales and marketing automation that brings together customer conversations, reputation signals, and attribution.",
   },
   {
     icon: Link2,
-    title: "IntegrAi8",
+    prefix: "Integr",
     highlight: "Ai8",
+    suffix: "",
     description:
       "Connects platforms and workflows so data moves reliably across the business.",
   },
@@ -48,7 +51,7 @@ export default function EcosystemSection() {
         <div className="grid md:grid-cols-3 gap-6">
           {cards.map((card, i) => (
             <motion.div
-              key={card.title}
+              key={card.prefix + card.highlight}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -59,8 +62,9 @@ export default function EcosystemSection() {
                 <card.icon className="text-accent" size={24} />
               </div>
               <h3 className="text-2xl md:text-3xl font-extrabold mb-4">
-                {card.title.replace(card.highlight, "")}
+                {card.prefix}
                 <span className="text-accent">{card.highlight}</span>
+                {card.suffix}
                 <span className="text-accent">.</span>
               </h3>
               <p className="text-muted-foreground leading-relaxed">{card.description}</p>
