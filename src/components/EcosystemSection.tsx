@@ -14,7 +14,7 @@ const cards = [
   {
     logo: automai8Logo,
     alt: "AutomAi8",
-    logoClass: "max-h-[48px] md:max-h-[56px]",
+    logoClass: "max-h-[60px] md:max-h-[72px]",
     description:
       "Sales and marketing automation that brings together customer conversations, reputation signals, and attribution.",
   },
