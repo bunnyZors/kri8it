@@ -23,7 +23,7 @@ const stages = [
 
 export default function HowWeWorkSection() {
   return (
-    <section className="section-padding" style={{ background: '#F7F7F8' }}>
+    <section className="section-padding" style={{ background: '#FFFFFF' }}>
       <div className="max-w-5xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
