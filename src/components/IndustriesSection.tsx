@@ -29,7 +29,7 @@ export default function IndustriesSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-6">
           {industries.map((item, i) => {
             const content = (
               <motion.div
@@ -38,9 +38,9 @@ export default function IndustriesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className="group cursor-pointer py-6"
+                className="group cursor-pointer py-10"
               >
-                <div className="flex items-baseline gap-4 mb-5">
+                <div className="flex items-baseline gap-4 mb-8">
                   <span className="font-display font-bold text-lg md:text-xl text-[hsl(230,40%,15%)] transition-colors duration-300 group-hover:text-[#049AD9]">
                     {String(i + 1).padStart(2, '0')}.
                   </span>
