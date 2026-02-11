@@ -13,7 +13,7 @@ export default function IntroSection() {
           className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-[800] leading-[1.12] tracking-tight mb-16 max-w-5xl text-[hsl(230,40%,15%)]"
         >
           Kri8it is a digital and brand partner with over{" "}
-          <span className="text-[#049AD9]">25 years of experience</span>.
+          <span className="text-[#049AD9] whitespace-nowrap">25 years of experience</span>.
         </motion.h2>
 
         {/* Bottom row: CTA left, text right */}
