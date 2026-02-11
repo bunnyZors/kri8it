@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const services = [
   {
@@ -24,6 +25,8 @@ const services = [
 ];
 
 export default function ServicesSection() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   return (
     <section id="services" className="section-padding" style={{ background: "#ffffff" }}>
       <div className="max-w-7xl mx-auto">
@@ -46,30 +49,53 @@ export default function ServicesSection() {
 
           {/* Right column - service list */}
           <div className="flex flex-col">
-            {services.map((service, i) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-                className="group"
-              >
-                <div className="py-10 grid sm:grid-cols-[1fr_1.2fr] gap-4 sm:gap-8 items-start">
-                  <h3 className="font-display text-xl md:text-2xl font-bold text-[hsl(230,40%,15%)]">
-                    {service.title}
-                  </h3>
-                  <p className="text-[hsl(230,10%,55%)] text-sm md:text-base leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-                {i < services.length - 1 && (
-                  <div className="h-px w-full bg-[hsl(230,10%,85%)] relative overflow-hidden">
-                    <div className="absolute left-0 top-0 h-[6px] w-40 bg-[#049AD9] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+            {services.map((service, i) => {
+              const isActive = activeIndex === i;
+              return (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.06 }}
+                  className="group cursor-pointer"
+                  onMouseEnter={() => setActiveIndex(i)}
+                  onMouseLeave={() => setActiveIndex(null)}
+                >
+                  <div className="py-10 grid sm:grid-cols-[1fr_1.2fr] gap-4 sm:gap-8 items-start">
+                    <motion.h3
+                      className="font-display text-xl md:text-2xl font-medium text-[hsl(230,40%,15%)] transition-colors duration-300"
+                      animate={{
+                        color: isActive ? "hsl(211, 100%, 48%)" : "hsl(230, 40%, 15%)",
+                        x: isActive ? 8 : 0,
+                      }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                    >
+                      {service.title}
+                    </motion.h3>
+                    <motion.p
+                      className="text-sm md:text-base leading-relaxed"
+                      animate={{
+                        opacity: isActive ? 1 : 0.55,
+                        x: isActive ? 4 : 0,
+                      }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      style={{ color: "hsl(230, 10%, 55%)" }}
+                    >
+                      {service.description}
+                    </motion.p>
                   </div>
-                )}
-              </motion.div>
-            ))}
+                  <div className="h-px w-full bg-[hsl(230,10%,85%)] relative overflow-hidden">
+                    <motion.div
+                      className="absolute left-0 top-0 h-full bg-[#049AD9]"
+                      initial={{ width: 0 }}
+                      animate={{ width: isActive ? "100%" : "0%" }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                    />
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>
