@@ -53,7 +53,7 @@ export default function EcosystemSection() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
+              transition={{ delay: i * 0.05 }}
               whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}
               className="rounded-3xl border border-muted-foreground/15 bg-transparent p-10 md:p-12 text-center flex flex-col items-center cursor-pointer group hover:border-[#049AD9]/40 hover:shadow-[0_0_40px_-10px_rgba(0,229,227,0.15)] transition-all duration-500"
             >
