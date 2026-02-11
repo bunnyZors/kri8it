@@ -122,7 +122,7 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="relative z-10 mt-8"
+        className="relative z-10 mt-20"
       >
         {/* Label + line - label aligned to content, line extends to viewport right edge */}
         <div className="flex items-center gap-6 mb-6 pl-6 md:pl-12 lg:pl-20 -mr-6 md:-mr-12 lg:-mr-20">
