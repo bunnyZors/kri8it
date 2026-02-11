@@ -3,13 +3,19 @@ import { ArrowRight } from "lucide-react";
 
 const AwarenessIcon = () => (
   <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Dashed circle */}
-    <circle cx="30" cy="28" r="18" stroke="hsl(var(--accent))" strokeWidth="1.5" strokeDasharray="5 4" fill="none" />
-    {/* Head silhouette */}
-    <path d="M22 50V44c0-2 1-4 3-5.5a14 14 0 0 1 3-12.5 12 12 0 0 1 17 0 14 14 0 0 1 3 12.5c2 1.5 3 3.5 3 5.5v4" stroke="hsl(230,40%,15%)" strokeWidth="2" strokeLinecap="round" fill="none" />
-    {/* Exclamation */}
-    <line x1="33" y1="30" x2="33" y2="38" stroke="hsl(var(--accent))" strokeWidth="2" strokeLinecap="round" />
-    <circle cx="33" cy="42" r="1.2" fill="hsl(var(--accent))" />
+    {/* Radiating lines */}
+    <line x1="40" y1="4" x2="40" y2="12" stroke="#049AD9" strokeWidth="2" strokeLinecap="round" />
+    <line x1="54" y1="8" x2="50" y2="15" stroke="#049AD9" strokeWidth="2" strokeLinecap="round" />
+    <line x1="26" y1="8" x2="30" y2="15" stroke="#049AD9" strokeWidth="2" strokeLinecap="round" />
+    <line x1="62" y1="16" x2="56" y2="20" stroke="#049AD9" strokeWidth="2" strokeLinecap="round" />
+    <line x1="18" y1="16" x2="24" y2="20" stroke="#049AD9" strokeWidth="2" strokeLinecap="round" />
+    {/* Head profile */}
+    <path d="M28 72h-4V62c0-3 0-5-2-8l-2-4c-1-2-2-5-2-8a18 18 0 0 1 36 0c0 4-2 7-4 10l-1 2c-1 2-1 4-1 6v4" stroke="hsl(230,40%,15%)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    {/* Chin / jaw line */}
+    <path d="M28 72c4 0 8-2 10-5" stroke="hsl(230,40%,15%)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    {/* Exclamation mark */}
+    <line x1="40" y1="34" x2="40" y2="48" stroke="#049AD9" strokeWidth="2.5" strokeLinecap="round" />
+    <circle cx="40" cy="54" r="1.8" fill="#049AD9" />
   </svg>
 );
 
