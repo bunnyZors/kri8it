@@ -122,7 +122,7 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="relative z-10 mt-auto"
+        className="relative z-10 mt-8"
       >
         <div className="max-w-7xl mx-auto">
           {/* Label + line */}
