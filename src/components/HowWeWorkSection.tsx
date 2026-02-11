@@ -29,9 +29,9 @@ export default function HowWeWorkSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] mb-6 text-[hsl(230,40%,15%)]"
+          className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6 text-[hsl(230,40%,15%)]"
         >
-          How we <span className="text-[#049AD9] italic">work</span>
+          How we <span className="text-[#049AD9]">work</span>
         </motion.h2>
 
         <motion.p
