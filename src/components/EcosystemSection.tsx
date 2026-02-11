@@ -7,7 +7,7 @@ const cards = [
   {
     logo: kri8itLogo,
     alt: "Kri8it",
-    logoClass: "max-h-[40px] md:max-h-[48px]",
+    logoClass: "max-h-[48px] md:max-h-[56px]",
     description:
       "Strategy, brand, and digital foundations that shape how customers experience your business.",
   },
@@ -54,16 +54,17 @@ export default function EcosystemSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="rounded-2xl border border-muted-foreground/15 bg-muted/30 p-10 md:p-12 text-center flex flex-col items-center hover:border-muted-foreground/30 transition-colors"
+              whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}
+              className="rounded-3xl border border-muted-foreground/15 bg-transparent p-10 md:p-12 text-center flex flex-col items-center cursor-pointer group hover:border-[#049AD9]/40 hover:shadow-[0_0_40px_-10px_rgba(0,229,227,0.15)] transition-all duration-500"
             >
-              <div className="h-16 md:h-20 w-full flex items-center justify-center mb-10">
+              <div className="h-16 md:h-20 w-full flex items-center justify-center mb-10 group-hover:scale-110 transition-transform duration-500">
                 <img
                   src={card.logo}
                   alt={card.alt}
                   className={`${card.logoClass} w-auto object-contain`}
                 />
               </div>
-              <p className="text-[#F2F2F2]/70 leading-relaxed text-sm md:text-base mt-auto">
+              <p className="text-[#F2F2F2]/70 leading-relaxed text-sm md:text-base">
                 {card.description}
               </p>
             </motion.div>
