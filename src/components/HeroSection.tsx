@@ -2,6 +2,30 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
+import logoNaturalSelection from "@/assets/logos/natural-selection.png";
+import logoSpringbok from "@/assets/logos/springbok-atlas.png";
+import logoPembroke from "@/assets/logos/pembroke.png";
+import logoSafariOnline from "@/assets/logos/safari-online.png";
+import logoNissan from "@/assets/logos/nissan.png";
+import logoArtOfSafari from "@/assets/logos/art-of-safari.png";
+import logoExclusiveBooks from "@/assets/logos/exclusive-books.png";
+import logoCrystalsCo from "@/assets/logos/crystals-co.png";
+import logoOim from "@/assets/logos/oim.png";
+import logoWildlifeSafari from "@/assets/logos/wildlife-safari.png";
+
+const clientLogos = [
+  { src: logoNaturalSelection, alt: "Natural Selection" },
+  { src: logoSpringbok, alt: "Springbok Atlas" },
+  { src: logoPembroke, alt: "Pembroke Privacy" },
+  { src: logoNissan, alt: "Nissan" },
+  { src: logoSafariOnline, alt: "Safari Online" },
+  { src: logoArtOfSafari, alt: "Art of Safari" },
+  { src: logoExclusiveBooks, alt: "Exclusive Books" },
+  { src: logoCrystalsCo, alt: "Crystals & Co" },
+  { src: logoOim, alt: "OIM Consulting" },
+  { src: logoWildlifeSafari, alt: "Wildlife Safari" },
+];
+
 const words = ["connected system", "growth engine", "competitive edge", "digital foundation"];
 
 export default function HeroSection() {
@@ -91,14 +115,15 @@ export default function HeroSection() {
           className="mt-24 border-t border-border pt-8"
         >
           <p className="text-xs text-muted-foreground uppercase tracking-[0.2em] mb-6">Trusted By</p>
-          <div className="flex flex-wrap gap-8 md:gap-14 items-center text-muted-foreground">
-            {["Nissan", "Springbok Atlas", "Pembroke Privacy", "Safari Online", "The SAFY Group", "Natural Selection"].map(
-              (name) => (
-                <span key={name} className="text-sm font-medium opacity-50 hover:opacity-100 transition-opacity">
-                  {name}
-                </span>
-              )
-            )}
+          <div className="flex flex-wrap gap-8 md:gap-12 items-center">
+            {clientLogos.map((logo) => (
+              <img
+                key={logo.alt}
+                src={logo.src}
+                alt={logo.alt}
+                className="h-10 md:h-12 w-auto opacity-50 hover:opacity-100 transition-opacity grayscale brightness-200"
+              />
+            ))}
           </div>
         </motion.div>
       </div>
