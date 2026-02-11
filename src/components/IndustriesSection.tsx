@@ -20,11 +20,11 @@ export default function IndustriesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-[#049AD9] text-sm font-medium uppercase tracking-[0.2em] mb-4">
+          <p className="text-[hsl(230,10%,60%)] text-sm font-medium uppercase tracking-[0.25em] mb-4">
             Industries
           </p>
-          <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight text-[hsl(230,40%,15%)]">
-            We work across a{" "}
+          <h2 className="font-display text-[clamp(2.4rem,4.5vw,3.8rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[hsl(230,40%,15%)]">
+            We work across a<br />
             <span className="text-[#049AD9]">range of sectors</span>
           </h2>
         </motion.div>
