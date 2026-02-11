@@ -51,13 +51,15 @@ export default function EcosystemSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="rounded-2xl border border-muted-foreground/15 bg-muted/30 p-10 md:p-12 text-center flex flex-col items-center"
+              className="rounded-2xl border border-muted-foreground/15 bg-muted/30 p-10 md:p-12 text-center flex flex-col items-center hover:border-muted-foreground/30 transition-colors"
             >
-              <img
-                src={card.logo}
-                alt={card.alt}
-                className="h-20 md:h-28 w-auto object-contain mb-10"
-              />
+              <div className="h-16 md:h-20 w-full flex items-center justify-center mb-10">
+                <img
+                  src={card.logo}
+                  alt={card.alt}
+                  className="max-h-full max-w-[200px] w-auto object-contain"
+                />
+              </div>
               <p className="text-muted-foreground leading-relaxed text-sm md:text-base mt-auto">
                 {card.description}
               </p>
