@@ -52,7 +52,7 @@ export default function HeroSection() {
           viewBox="0 0 1474 1119"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute right-[-10%] top-[5%] w-[80%] h-auto opacity-20"
+          className="absolute right-[0%] top-[10%] w-[45%] max-h-[70vh] h-auto opacity-20"
         >
           <path
             d="M.5,1118.81c7.16-197.99,130.53-379,317.92-456.35.22.84.54,2.06.93,3.55,6.13,22.92,28.6,86.14,62.22,143.23,41.07,69.74,93.26,113.16,91.02,113.72-4.21,1.06-.14.04-19.31,5.18-93.19,24.99-150,103.46-157.02,190.66"
