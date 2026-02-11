@@ -125,10 +125,12 @@ export default function HeroSection() {
         className="relative z-10 mt-32"
       >
         {/* Label + line - label aligned to content, line extends to viewport right edge */}
-        <div className="relative mb-6">
-          <div className="max-w-7xl mx-auto flex items-center gap-6">
+        <div className="relative mb-6 overflow-visible">
+          <div className="max-w-7xl mx-auto flex items-center gap-6 overflow-visible">
             <p className="text-xs text-muted-foreground uppercase tracking-[0.3em] whitespace-nowrap">Trusted By</p>
-            <div className="h-px bg-border" style={{ width: 'calc(100% + 50vw)' }} />
+            <div className="flex-1 h-px bg-border relative overflow-visible">
+              <div className="absolute top-0 left-0 right-0 h-px bg-border" style={{ width: '200vw' }} />
+            </div>
           </div>
         </div>
         <div className="max-w-7xl mx-auto overflow-visible">
