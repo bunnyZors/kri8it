@@ -147,6 +147,7 @@ export default function HeroSection() {
           </div>
         </div>
       </motion.div>
+      <div className="pb-16" />
     </section>
   );
 }
