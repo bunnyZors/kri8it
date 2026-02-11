@@ -41,7 +41,7 @@ export default function EcosystemSection() {
             Systems &amp; Automation
           </p>
           <h2 className="font-display text-[clamp(2.4rem,4.5vw,3.8rem)] font-bold leading-[1.1] tracking-[-0.02em]">
-            Where intelligence meets{" "}
+            Where intelligence meets<br />
             <span className="text-[#049AD9]">seamless execution</span>.
           </h2>
         </motion.div>
