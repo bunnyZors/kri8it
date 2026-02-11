@@ -56,7 +56,7 @@ export default function EcosystemSection() {
               <img
                 src={card.logo}
                 alt={card.alt}
-                className="h-16 md:h-20 w-auto object-contain mb-10"
+                className="h-20 md:h-28 w-auto object-contain mb-10"
               />
               <p className="text-muted-foreground leading-relaxed text-sm md:text-base mt-auto">
                 {card.description}
