@@ -1,0 +1,107 @@
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+
+const words = ["connected system", "growth engine", "competitive edge", "digital foundation"];
+
+export default function HeroSection() {
+  const [wordIndex, setWordIndex] = useState(0);
+  const [displayed, setDisplayed] = useState("");
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const word = words[wordIndex];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (!deleting && displayed.length < word.length) {
+      timeout = setTimeout(() => setDisplayed(word.slice(0, displayed.length + 1)), 80);
+    } else if (!deleting && displayed.length === word.length) {
+      timeout = setTimeout(() => setDeleting(true), 2000);
+    } else if (deleting && displayed.length > 0) {
+      timeout = setTimeout(() => setDisplayed(word.slice(0, displayed.length - 1)), 40);
+    } else if (deleting && displayed.length === 0) {
+      setDeleting(false);
+      setWordIndex((prev) => (prev + 1) % words.length);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayed, deleting, wordIndex]);
+
+  return (
+    <section className="relative min-h-screen flex items-center section-padding pt-32 overflow-hidden">
+      {/* Decorative arcs */}
+      <div className="absolute top-20 right-0 w-[600px] h-[600px] opacity-20 pointer-events-none">
+        <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="300" cy="300" r="250" stroke="hsl(var(--accent))" strokeWidth="1" />
+          <circle cx="300" cy="300" r="180" stroke="hsl(var(--accent))" strokeWidth="1" />
+          <circle cx="300" cy="300" r="110" stroke="hsl(var(--accent))" strokeWidth="1" />
+        </svg>
+      </div>
+
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-accent text-sm font-bold uppercase tracking-[0.2em] mb-6"
+        >
+          We Build The Story
+        </motion.p>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-8 max-w-4xl"
+        >
+          Digital work as a{" "}
+          <span className="text-accent border-r-2 border-accent animate-typewriter-cursor pr-1">
+            {displayed}
+          </span>
+          <span className="text-accent">.</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-10 leading-relaxed"
+        >
+          Strategy, Creative, and Systems built to support how your business operates — not just how it looks.
+        </motion.p>
+
+        <motion.a
+          href="#contact"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9 }}
+          className="inline-flex items-center gap-3 shimmer-btn bg-accent text-accent-foreground px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-wider"
+        >
+          <span className="flex items-center justify-center w-8 h-8 rounded-full bg-accent-foreground/10">
+            <ArrowRight size={16} />
+          </span>
+          Start Your Journey
+        </motion.a>
+
+        {/* Trusted By */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="mt-24 border-t border-border pt-8"
+        >
+          <p className="text-xs text-muted-foreground uppercase tracking-[0.2em] mb-6">Trusted By</p>
+          <div className="flex flex-wrap gap-8 md:gap-14 items-center text-muted-foreground">
+            {["Nissan", "Springbok Atlas", "Pembroke Privacy", "Safari Online", "The SAFY Group", "Natural Selection"].map(
+              (name) => (
+                <span key={name} className="text-sm font-medium opacity-50 hover:opacity-100 transition-opacity">
+                  {name}
+                </span>
+              )
+            )}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
