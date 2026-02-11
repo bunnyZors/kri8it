@@ -1,6 +1,5 @@
-import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronRight, ChevronLeft } from "lucide-react";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 
 import logoNaturalSelection from "@/assets/logos/natural-selection.png";
 import logoSpringbok from "@/assets/logos/springbok-atlas.png";
@@ -44,31 +43,7 @@ const clientLogos = [
   { src: logoLeatt, alt: "Leatt" },
 ];
 
-const words = ["connected system", "growth engine", "competitive edge", "digital foundation"];
-
 export default function HeroSection() {
-  const [wordIndex, setWordIndex] = useState(0);
-  const [displayed, setDisplayed] = useState("");
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const word = words[wordIndex];
-    let timeout: ReturnType<typeof setTimeout>;
-
-    if (!deleting && displayed.length < word.length) {
-      timeout = setTimeout(() => setDisplayed(word.slice(0, displayed.length + 1)), 120);
-    } else if (!deleting && displayed.length === word.length) {
-      timeout = setTimeout(() => setDeleting(true), 2500);
-    } else if (deleting && displayed.length > 0) {
-      timeout = setTimeout(() => setDisplayed(word.slice(0, displayed.length - 1)), 60);
-    } else if (deleting && displayed.length === 0) {
-      setDeleting(false);
-      setWordIndex((prev) => (prev + 1) % words.length);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayed, deleting, wordIndex]);
-
   return (
     <section className="relative min-h-screen flex items-center section-padding pt-32 overflow-hidden">
       {/* SVG Draw Animation - Kri8it brand lines */}
@@ -113,39 +88,19 @@ export default function HeroSection() {
           transition={{ delay: 0.2 }}
           className="text-accent text-sm font-bold uppercase tracking-[0.2em] mb-6"
         >
-          Digital Systems Partner
+          Brand, Digital &amp; Systems
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-8 max-w-5xl min-h-[2.2em]"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-10 max-w-5xl uppercase"
         >
-          Digital work as a{" "}
-          <span className="text-accent border-r-2 border-accent animate-typewriter-cursor pr-1">
-            {displayed}
-          </span>
+          Built in partnership for{" "}
+          <span className="text-accent">growing businesses</span>
           <span className="text-accent">.</span>
         </motion.h1>
-
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="text-xl md:text-2xl font-bold text-foreground max-w-2xl mb-4"
-        >
-          Break down the barriers between brand and bottom line
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
-          className="text-muted-foreground text-lg max-w-2xl mb-10 leading-relaxed"
-        >
-          Strategy, Creative, and Systems built to support how your business operates — not just how it looks. We help brands transform bold ideas into decisive action.
-        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -169,7 +124,7 @@ export default function HeroSection() {
           </a>
         </motion.div>
 
-        {/* Trusted By - marquee */}
+        {/* Trusted By */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

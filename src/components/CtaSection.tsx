@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function CtaSection() {
   return (
-    <section id="contact" className="relative section-padding overflow-hidden">
+    <section className="relative section-padding overflow-hidden">
       {/* Decorative arcs */}
       <div className="absolute top-0 right-0 w-[400px] h-[400px] opacity-10 pointer-events-none">
         <svg viewBox="0 0 400 400" fill="none">
@@ -27,10 +27,10 @@ export default function CtaSection() {
             Let's Talk
           </p>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15] mb-10">
-            If you're looking for a{" "}
-            <span className="text-accent">digital partner</span> who will think
-            with you, build properly, and stay involved,{" "}
-            <span className="text-accent">let's chat.</span>
+            We work best with businesses that value{" "}
+            <span className="text-accent">long-term partnership</span> and want
+            digital systems that support growth over time. If that sounds like you,{" "}
+            <span className="text-accent">let's talk.</span>
           </h2>
           <a
             href="mailto:clint@kri8it.com"

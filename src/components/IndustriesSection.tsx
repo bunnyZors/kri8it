@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import { Car, Plane, Building, ShoppingBag, Briefcase, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const industries = [
-  { icon: Car, label: "Automotive" },
-  { icon: Plane, label: "Travel & Tourism" },
-  { icon: Building, label: "Property" },
-  { icon: ShoppingBag, label: "Retail & E-commerce" },
-  { icon: Briefcase, label: "Professional Services" },
-  { icon: Heart, label: "Non-profits" },
+  { icon: Car, label: "Automotive", link: "/automotive" },
+  { icon: Plane, label: "Travel & Tourism", link: "/travel-tourism" },
+  { icon: Building, label: "Property", link: null },
+  { icon: ShoppingBag, label: "Retail & E-commerce", link: null },
+  { icon: Briefcase, label: "Professional Services", link: null },
+  { icon: Heart, label: "Non-profits", link: null },
 ];
 
 export default function IndustriesSection() {
@@ -24,24 +25,31 @@ export default function IndustriesSection() {
             Industries
           </p>
           <h2 className="text-3xl md:text-5xl font-extrabold">
-            We work across <span className="text-accent">sectors.</span>
+            We work across a range of <span className="text-accent">sectors.</span>
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {industries.map((item, i) => (
-            <motion.div
-              key={item.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="glow-card p-6 text-center flex flex-col items-center gap-3"
-            >
-              <item.icon className="text-accent" size={28} />
-              <span className="text-sm font-semibold">{item.label}</span>
-            </motion.div>
-          ))}
+          {industries.map((item, i) => {
+            const content = (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="glow-card p-6 text-center flex flex-col items-center gap-3 hover:border-accent/50 transition-colors"
+              >
+                <item.icon className="text-accent" size={28} />
+                <span className="text-sm font-semibold">{item.label}</span>
+              </motion.div>
+            );
+            return item.link ? (
+              <Link key={item.label} to={item.link}>{content}</Link>
+            ) : (
+              <div key={item.label}>{content}</div>
+            );
+          })}
         </div>
       </div>
     </section>
