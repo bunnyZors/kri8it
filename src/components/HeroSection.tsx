@@ -139,7 +139,7 @@ export default function HeroSection() {
                   src={logo.src}
                   alt={logo.alt}
                   className={`w-auto opacity-50 hover:opacity-90 transition-opacity grayscale brightness-200 flex-shrink-0 ${
-                    logo.alt === "Mahindra" ? "h-8 md:h-10" : "h-12 md:h-16"
+                    logo.alt === "Mahindra" ? "h-10 md:h-14" : "h-16 md:h-20"
                   }`}
                 />
               ))}
