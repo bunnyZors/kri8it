@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import kri8itIcon from "@/assets/logos/kri8it-icon.png";
+import kri8itLogomark from "@/assets/logos/kri8it-logomark-white.png";
 
 const navLinks = [
   {
@@ -40,12 +42,9 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-6 lg:px-8">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-1 text-foreground font-extrabold text-xl tracking-tight">
-          <span className="text-accent">⊛</span>
-          <span>KRI</span>
-          <span className="text-accent">8</span>
-          <span>IT</span>
-          <span className="text-muted-foreground font-normal text-sm">.digital</span>
+        <Link to="/" className="flex items-center gap-2">
+          <img src={kri8itIcon} alt="Kri8it icon" className="h-8 w-8" />
+          <img src={kri8itLogomark} alt="Kri8it Digital" className="h-5 w-auto" />
         </Link>
 
         {/* Desktop Links */}
