@@ -1,38 +1,18 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import awarenessIcon from "@/assets/icons/awareness-icon.png";
 import engagementIcon from "@/assets/icons/engagement-icon.png";
 import conversionIcon from "@/assets/icons/conversion-icon.png";
 import retentionIcon from "@/assets/icons/retention-icon.png";
 
-const AwarenessIcon = () => (
-  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Radiating lines */}
-    <line x1="40" y1="6" x2="40" y2="13" stroke="#049AD9" strokeWidth="2.5" strokeLinecap="round" />
-    <line x1="28" y1="10" x2="31" y2="16" stroke="#049AD9" strokeWidth="2.5" strokeLinecap="round" />
-    <line x1="52" y1="10" x2="49" y2="16" stroke="#049AD9" strokeWidth="2.5" strokeLinecap="round" />
-    <line x1="19" y1="20" x2="24" y2="24" stroke="#049AD9" strokeWidth="2.5" strokeLinecap="round" />
-    <line x1="61" y1="20" x2="56" y2="24" stroke="#049AD9" strokeWidth="2.5" strokeLinecap="round" />
-    {/* Head profile outline */}
-    <path d="M50 68H30v-6c0-3-1-6-3-9l-2-3c-2-3-3-7-3-11a18 18 0 0 1 36 0c0 4-1 8-3 11l-2 3c-2 3-3 6-3 9v6z" stroke="hsl(230,40%,15%)" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    {/* Jaw / chin notch */}
-    <path d="M30 68c5 0 9-3 11-7" stroke="hsl(230,40%,15%)" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    {/* Exclamation mark */}
-    <line x1="40" y1="32" x2="40" y2="48" stroke="#049AD9" strokeWidth="3" strokeLinecap="round" />
-    <circle cx="40" cy="54" r="2" fill="#049AD9" />
-  </svg>
+const IconImg = ({ src, alt }: { src: string; alt: string }) => (
+  <img src={src} alt={alt} className="w-20 h-20 object-contain" />
 );
 
-const EngagementIcon = () => (
-  <img src={engagementIcon} alt="Engagement" className="w-20 h-20 object-contain" />
-);
-
-const ConversionIcon = () => (
-  <img src={conversionIcon} alt="Conversion" className="w-20 h-20 object-contain" />
-);
-
-const RetentionIcon = () => (
-  <img src={retentionIcon} alt="Retention" className="w-20 h-20 object-contain" />
-);
+const AwarenessIcon = () => <IconImg src={awarenessIcon} alt="Awareness" />;
+const EngagementIcon = () => <IconImg src={engagementIcon} alt="Engagement" />;
+const ConversionIcon = () => <IconImg src={conversionIcon} alt="Conversion" />;
+const RetentionIcon = () => <IconImg src={retentionIcon} alt="Retention" />;
 
 const stages = [
   { label: "Awareness", Icon: AwarenessIcon },
