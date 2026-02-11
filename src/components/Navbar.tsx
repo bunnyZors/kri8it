@@ -44,7 +44,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <img src={kri8itIcon} alt="Kri8it icon" className="h-8 w-8" />
-          <img src={kri8itLogomark} alt="Kri8it Digital" className="h-5 w-auto" />
+          <img src={kri8itLogomark} alt="Kri8it Digital" className="h-8 w-auto" />
         </Link>
 
         {/* Desktop Links */}
