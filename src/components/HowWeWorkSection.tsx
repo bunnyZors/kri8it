@@ -6,7 +6,7 @@ import conversionIcon from "@/assets/icons/conversion-icon.png";
 import retentionIcon from "@/assets/icons/retention-icon.png";
 
 const IconImg = ({ src, alt }: { src: string; alt: string }) => (
-  <img src={src} alt={alt} className="w-20 h-20 object-contain" />
+  <img src={src} alt={alt} className="w-20 h-20 object-contain mix-blend-multiply" />
 );
 
 const AwarenessIcon = () => <IconImg src={awarenessIcon} alt="Awareness" />;
