@@ -45,9 +45,9 @@ const clientLogos = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center section-padding pt-32 pb-8 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-center section-padding pt-32 pb-4 overflow-hidden">
       {/* SVG Draw Animation - Kri8it brand lines */}
-      <div className="absolute left-0 right-0 top-0 bottom-[170px] pointer-events-none overflow-hidden">
+      <div className="absolute left-0 right-0 top-0 bottom-[178px] pointer-events-none overflow-hidden">
         <svg
           viewBox="0 0 1474 1119"
           fill="none"
