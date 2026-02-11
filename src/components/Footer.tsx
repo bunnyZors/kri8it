@@ -138,7 +138,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar - full width */}
-      <div className="border-t border-[hsl(230,10%,85%)] mt-20 py-6 px-6 md:px-12 lg:px-20">
+      <div className="border-t border-[hsl(230,10%,85%)] mt-12 py-6 px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[hsl(230,10%,45%)]">
           <div className="flex gap-4">
             <a href="#" className="hover:text-[hsl(230,40%,15%)] transition-colors">Privacy Policy</a>
