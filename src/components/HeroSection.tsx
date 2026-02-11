@@ -47,7 +47,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-32 pb-0 overflow-hidden">
       {/* SVG Draw Animation - Kri8it brand lines */}
-      <div className="absolute left-0 right-0 top-0 bottom-[178px] pointer-events-none overflow-hidden">
+      <div className="absolute left-0 right-0 top-0 bottom-[195px] pointer-events-none overflow-hidden">
         <svg
           viewBox="0 0 1474 1119"
           fill="none"
@@ -125,11 +125,12 @@ export default function HeroSection() {
         className="relative z-10 mt-32"
       >
         {/* Label + line - label aligned to content, line extends to viewport right edge */}
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-6 mb-6 -mr-6 md:-mr-12 lg:-mr-20">
+        <div className="relative mb-6">
+          <div className="max-w-7xl mx-auto flex items-center gap-6">
             <p className="text-xs text-muted-foreground uppercase tracking-[0.3em] whitespace-nowrap">Trusted By</p>
             <div className="flex-1 h-px bg-border" />
           </div>
+          <div className="absolute top-1/2 right-0 w-[calc(50vw-50%)] h-px bg-border" />
         </div>
         <div className="max-w-7xl mx-auto">
           {/* Marquee */}
@@ -141,7 +142,7 @@ export default function HeroSection() {
                   src={logo.src}
                   alt={logo.alt}
                   className={`w-auto opacity-50 hover:opacity-90 transition-opacity grayscale brightness-200 flex-shrink-0 ${
-                    logo.alt === "Mahindra" ? "h-12 md:h-16" : "h-20 md:h-24"
+                    logo.alt === "Mahindra" ? "h-14 md:h-18" : "h-22 md:h-28"
                   }`}
                 />
               ))}
