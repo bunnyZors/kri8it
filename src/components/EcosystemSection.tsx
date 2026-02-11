@@ -40,7 +40,7 @@ export default function EcosystemSection() {
           <p className="text-[#F2F2F2]/70 text-sm font-medium uppercase tracking-[0.3em] mb-6">
             Systems &amp; Automation
           </p>
-          <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight">
+          <h2 className="font-display text-[clamp(2.4rem,4.5vw,3.8rem)] font-bold leading-[1.1] tracking-[-0.02em]">
             Where intelligence meets{" "}
             <span className="text-[#049AD9]">seamless execution</span>.
           </h2>
