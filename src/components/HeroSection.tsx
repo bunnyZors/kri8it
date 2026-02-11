@@ -124,12 +124,12 @@ export default function HeroSection() {
         transition={{ delay: 1.2 }}
         className="relative z-10 mt-8"
       >
+        {/* Label + line - label aligned to content, line extends to viewport right edge */}
+        <div className="flex items-center gap-6 mb-6 pl-6 md:pl-12 lg:pl-20">
+          <p className="text-xs text-muted-foreground uppercase tracking-[0.3em] whitespace-nowrap">Trusted By</p>
+          <div className="flex-1 h-px bg-border" />
+        </div>
         <div className="max-w-7xl mx-auto">
-          {/* Label + line */}
-          <div className="flex items-center gap-6 mb-6">
-            <p className="text-xs text-muted-foreground uppercase tracking-[0.3em] whitespace-nowrap">Trusted By</p>
-            <div className="flex-1 h-px bg-border" />
-          </div>
           {/* Marquee */}
           <div className="overflow-hidden">
             <div className="flex gap-16 items-center animate-marquee w-fit">
