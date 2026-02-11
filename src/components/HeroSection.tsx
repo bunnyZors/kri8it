@@ -56,11 +56,11 @@ export default function HeroSection() {
     let timeout: ReturnType<typeof setTimeout>;
 
     if (!deleting && displayed.length < word.length) {
-      timeout = setTimeout(() => setDisplayed(word.slice(0, displayed.length + 1)), 80);
+      timeout = setTimeout(() => setDisplayed(word.slice(0, displayed.length + 1)), 120);
     } else if (!deleting && displayed.length === word.length) {
-      timeout = setTimeout(() => setDeleting(true), 2000);
+      timeout = setTimeout(() => setDeleting(true), 2500);
     } else if (deleting && displayed.length > 0) {
-      timeout = setTimeout(() => setDisplayed(word.slice(0, displayed.length - 1)), 40);
+      timeout = setTimeout(() => setDisplayed(word.slice(0, displayed.length - 1)), 60);
     } else if (deleting && displayed.length === 0) {
       setDeleting(false);
       setWordIndex((prev) => (prev + 1) % words.length);
@@ -95,7 +95,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] mb-8 max-w-5xl"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-8 max-w-5xl min-h-[2.2em]"
         >
           Digital work as a{" "}
           <span className="text-accent border-r-2 border-accent animate-typewriter-cursor pr-1">
