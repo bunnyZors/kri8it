@@ -86,7 +86,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-accent text-sm font-bold uppercase tracking-[0.2em] mb-6"
+          className="text-accent text-xs font-medium uppercase tracking-[0.3em] mb-8"
         >
           We Build The Story
         </motion.p>
@@ -95,7 +95,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-6xl md:text-8xl lg:text-9xl font-extrabold leading-[1.0] mb-12 max-w-4xl"
+          className="font-display text-[clamp(3.5rem,8vw,9rem)] font-[900] leading-[0.95] tracking-tight mb-16 max-w-5xl"
         >
           Brand. Digital.<br />
           Systems.
@@ -106,12 +106,12 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9 }}
           href="#contact"
-          className="inline-flex items-center gap-4 group w-fit"
+          className="inline-flex items-center gap-5 group w-fit"
         >
-          <span className="flex items-center justify-center w-12 h-12 rounded-full bg-accent text-accent-foreground group-hover:scale-110 transition-transform">
-            <ArrowRight size={20} />
+          <span className="flex items-center justify-center w-14 h-14 rounded-full bg-accent text-accent-foreground group-hover:scale-110 transition-transform">
+            <ArrowRight size={22} />
           </span>
-          <span className="text-sm font-bold uppercase tracking-[0.15em] text-foreground">
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground">
             Start Your Journey
           </span>
         </motion.a>
