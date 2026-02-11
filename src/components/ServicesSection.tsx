@@ -65,7 +65,7 @@ export default function ServicesSection() {
                 </div>
                 {i < services.length - 1 && (
                   <div className="h-px w-full bg-[hsl(230,10%,85%)] relative overflow-hidden">
-                    <div className="absolute left-0 top-0 h-[2px] w-24 bg-[#049AD9] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+                    <div className="absolute left-0 top-0 h-[3px] w-40 bg-[#049AD9] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
                   </div>
                 )}
               </motion.div>
