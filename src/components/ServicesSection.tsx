@@ -38,7 +38,7 @@ export default function ServicesSection() {
             <p className="text-[hsl(230,10%,60%)] text-xs font-bold uppercase tracking-[0.25em] mb-6">
               Our Services
             </p>
-            <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-medium leading-[1.15] tracking-tight text-[hsl(230,40%,15%)]" style={{ fontStyle: 'normal' }}>
+            <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight text-[hsl(230,40%,15%)]">
               We offer a focused set of services that work best when{" "}
               <span className="text-[#049AD9]">connected</span>.
             </h2>
