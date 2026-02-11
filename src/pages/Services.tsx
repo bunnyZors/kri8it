@@ -1,13 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-
-import strategyVisual from "@/assets/services/strategy-visual.png";
-import designVisual from "@/assets/services/design-visual.png";
-import developmentVisual from "@/assets/services/development-visual.png";
-import marketingVisual from "@/assets/services/marketing-visual.png";
-import systemsVisual from "@/assets/services/systems-visual.png";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Plus, Minus } from "lucide-react";
+import { useState } from "react";
 
 const serviceBlocks = [
   {
@@ -24,8 +19,6 @@ const serviceBlocks = [
       "Conversion optimisation",
       "Research and analysis",
     ],
-    visual: strategyVisual,
-    dark: true,
   },
   {
     num: "02",
@@ -40,8 +33,6 @@ const serviceBlocks = [
       "Visual design",
       "Web and content design",
     ],
-    visual: designVisual,
-    dark: false,
   },
   {
     num: "03",
@@ -57,8 +48,6 @@ const serviceBlocks = [
       "UX implementation",
       "Technical foundations",
     ],
-    visual: developmentVisual,
-    dark: true,
   },
   {
     num: "04",
@@ -75,8 +64,6 @@ const serviceBlocks = [
       "Conversion rate optimisation",
       "Reporting & analytics",
     ],
-    visual: marketingVisual,
-    dark: false,
   },
   {
     num: "05",
@@ -92,19 +79,19 @@ const serviceBlocks = [
       "Conversion tracking",
       "System integrations",
     ],
-    visual: systemsVisual,
-    dark: true,
   },
 ];
 
 export default function Services() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
 
-      {/* Hero - matches homepage hero exactly */}
+      {/* Hero - matches homepage hero */}
       <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-32 pb-20 overflow-hidden">
-        {/* SVG Draw Animation - Kri8it brand lines */}
+        {/* SVG Draw Animation */}
         <div className="absolute left-0 right-0 top-0 bottom-0 pointer-events-none overflow-hidden">
           <svg
             viewBox="0 0 1474 1119"
@@ -176,99 +163,144 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Service Blocks */}
-      {serviceBlocks.map((service, idx) => {
-        const isDark = service.dark;
-        const isEvenLayout = idx % 2 === 0;
+      {/* Services Detail - White section with sticky heading + interactive accordion */}
+      <section className="section-padding" style={{ background: "#ffffff" }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Left column - sticky */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="lg:sticky lg:top-32"
+            >
+              <p className="text-[hsl(230,10%,60%)] text-sm font-medium uppercase tracking-[0.25em] mb-6">
+                Services
+              </p>
+              <h2 className="font-display text-[clamp(2.4rem,4.5vw,3.8rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[hsl(230,40%,15%)] pr-8 lg:pr-16 mb-8">
+                A focused set of services that work best when{" "}
+                <span className="text-accent">connected</span>.
+              </h2>
+              <p className="text-[hsl(230,10%,45%)] text-base md:text-lg leading-relaxed">
+                We approach digital work as a connected system. Strategy, creative, 
+                digital, marketing, and systems all play a role — and when they work 
+                together, customers move more easily and teams spend less time fixing gaps.
+              </p>
+            </motion.div>
 
-        return (
-          <section
-            key={service.title}
-            className="relative overflow-hidden"
-            style={{
-              background: isDark ? "hsl(240, 60%, 7%)" : "#F5F5F5",
-            }}
-          >
-            <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-28 md:py-36 lg:py-44">
-              <div
-                className={`grid lg:grid-cols-2 gap-16 lg:gap-24 items-center ${
-                  isEvenLayout ? "" : "lg:[direction:rtl]"
-                }`}
-              >
-                {/* Text Column */}
-                <motion.div
-                  initial={{ opacity: 0, x: isEvenLayout ? -40 : 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="lg:[direction:ltr]"
-                >
-                  <div className="flex items-baseline gap-4 mb-2">
-                    <span className="font-display text-sm font-medium tracking-[0.2em] text-accent">
-                      {service.num}
-                    </span>
-                  </div>
-                  <h2
-                    className={`font-display text-[clamp(2.4rem,4.5vw,3.8rem)] font-bold leading-[1.1] tracking-[-0.02em] mb-3 ${
-                      isDark ? "text-foreground" : "text-[hsl(230,40%,15%)]"
-                    }`}
+            {/* Right column - expandable service items */}
+            <div className="flex flex-col">
+              {serviceBlocks.map((service, i) => {
+                const isOpen = expandedIndex === i;
+                return (
+                  <motion.div
+                    key={service.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.06 }}
                   >
-                    {service.title}
-                  </h2>
-                  <p className="text-lg font-semibold mb-6 text-accent">
-                    {service.subtitle}
-                  </p>
-                  <p
-                    className={`text-base md:text-lg leading-relaxed mb-10 ${
-                      isDark ? "text-[#F2F2F2]/70" : "text-[hsl(230,10%,45%)]"
-                    }`}
-                  >
-                    {service.description}
-                  </p>
-
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-3">
-                    {service.items.map((item) => (
-                      <div key={item} className="flex items-center gap-3">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
-                        <span
-                          className={`text-sm ${
-                            isDark ? "text-[#F2F2F2]/60" : "text-[hsl(230,10%,45%)]"
-                          }`}
-                        >
-                          {item}
+                    {/* Clickable header */}
+                    <button
+                      onClick={() => setExpandedIndex(isOpen ? null : i)}
+                      className="w-full text-left py-8 flex items-start justify-between gap-6 group cursor-pointer"
+                    >
+                      <div className="flex items-baseline gap-5 flex-1">
+                        <span className="text-accent text-xs font-medium tracking-[0.2em] tabular-nums">
+                          {service.num}
                         </span>
+                        <div>
+                          <h3
+                            className={`font-display text-xl md:text-2xl font-bold transition-colors duration-300 ${
+                              isOpen ? "text-accent" : "text-[hsl(230,40%,15%)]"
+                            }`}
+                          >
+                            {service.title}
+                          </h3>
+                          <p className="text-[hsl(230,10%,55%)] text-sm mt-1">
+                            {service.subtitle}
+                          </p>
+                        </div>
                       </div>
-                    ))}
-                  </div>
-                </motion.div>
+                      <span className="mt-1 flex-shrink-0 text-[hsl(230,10%,55%)] group-hover:text-accent transition-colors">
+                        {isOpen ? <Minus size={20} /> : <Plus size={20} />}
+                      </span>
+                    </button>
 
-                {/* Visual Column */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: 0.1 }}
-                  className="relative lg:[direction:ltr]"
-                >
-                  <div
-                    className={`rounded-2xl overflow-hidden border ${
-                      isDark
-                        ? "border-[hsl(var(--border))] shadow-[0_0_60px_-15px_hsl(var(--accent)/0.15)]"
-                        : "border-[hsl(230,10%,85%)] shadow-xl"
-                    }`}
-                  >
-                    <img
-                      src={service.visual}
-                      alt={`${service.title} visual`}
-                      className="w-full h-auto object-cover aspect-[5/4]"
-                    />
-                  </div>
-                </motion.div>
-              </div>
+                    {/* Expandable content */}
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.35, ease: "easeInOut" }}
+                          className="overflow-hidden"
+                        >
+                          <div className="pb-8 pl-[52px]">
+                            <p className="text-[hsl(230,10%,40%)] text-base leading-relaxed mb-6">
+                              {service.description}
+                            </p>
+                            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-2.5">
+                              {service.items.map((item) => (
+                                <div key={item} className="flex items-center gap-3">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                                  <span className="text-sm text-[hsl(230,10%,45%)]">
+                                    {item}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
+                    {/* Divider with animated accent line */}
+                    <div className="h-px w-full bg-[hsl(230,10%,85%)] relative overflow-hidden">
+                      <motion.div
+                        className="absolute left-0 top-0 h-full bg-accent"
+                        initial={{ width: 0 }}
+                        animate={{ width: isOpen ? "100%" : "0%" }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                      />
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
-          </section>
-        );
-      })}
+          </div>
+        </div>
+      </section>
+
+      {/* Connected System Statement - Light grey */}
+      <section className="section-padding" style={{ background: "#F5F5F5" }}>
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl"
+          >
+            <p className="text-[hsl(230,10%,55%)] text-sm font-medium uppercase tracking-[0.25em] mb-6">
+              How It Connects
+            </p>
+            <h2 className="font-display text-[clamp(2.4rem,4.5vw,3.8rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[hsl(230,40%,15%)] mb-8">
+              Digital work as a{" "}
+              <span className="text-accent">connected system</span>.
+            </h2>
+            <p className="text-[hsl(230,10%,40%)] text-base md:text-lg leading-relaxed mb-6">
+              Most businesses don't need more tools or more content. They need their
+              existing efforts to work together — strategy informing creative, creative
+              driving development, development supporting marketing, and marketing
+              feeding back into strategy.
+            </p>
+            <p className="text-[hsl(230,40%,15%)] font-bold text-base md:text-lg">
+              That's what we build. That's how we work.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Let's Talk CTA */}
       <section className="relative section-padding overflow-hidden">
