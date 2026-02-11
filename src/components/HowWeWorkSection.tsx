@@ -50,7 +50,7 @@ export default function HowWeWorkSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="flex flex-wrap items-center justify-center gap-4 md:gap-0 mb-20"
+          className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-20"
         >
           {stages.map((stage, i) => (
             <div key={stage.label} className="flex items-center">
