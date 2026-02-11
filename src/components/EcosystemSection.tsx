@@ -29,8 +29,21 @@ const cards = [
 
 export default function EcosystemSection() {
   return (
-    <section id="ecosystem" className="section-padding bg-background">
-      <div className="max-w-7xl mx-auto">
+    <section id="ecosystem" className="relative section-padding bg-background overflow-hidden">
+      {/* Decorative arcs */}
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] opacity-10 pointer-events-none">
+        <svg viewBox="0 0 400 400" fill="none">
+          <circle cx="400" cy="0" r="300" stroke="hsl(var(--muted-foreground))" strokeWidth="1" />
+          <circle cx="400" cy="0" r="200" stroke="hsl(var(--muted-foreground))" strokeWidth="1" />
+        </svg>
+      </div>
+      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] opacity-10 pointer-events-none">
+        <svg viewBox="0 0 300 300" fill="none">
+          <circle cx="0" cy="300" r="250" stroke="hsl(var(--muted-foreground))" strokeWidth="1" />
+        </svg>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
