@@ -29,7 +29,7 @@ const cards = [
 
 export default function EcosystemSection() {
   return (
-    <section id="ecosystem" className="section-padding bg-[hsl(230,30%,8%)]">
+    <section id="ecosystem" className="section-padding bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -37,7 +37,7 @@ export default function EcosystemSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-[#F2F2F2]/70 text-sm font-medium uppercase tracking-[0.3em] mb-6">
+          <p className="text-[#F2F2F2]/70 text-sm font-medium uppercase tracking-[0.25em] mb-6">
             Systems &amp; Automation
           </p>
           <h2 className="font-display text-[clamp(2.4rem,4.5vw,3.8rem)] font-bold leading-[1.1] tracking-[-0.02em]">
