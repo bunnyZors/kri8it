@@ -10,20 +10,12 @@ const cards = [
       "Strategy, brand, and digital foundations that shape how customers experience your business.",
   },
   {
-    prefix: "Autom",
-    highlight: "Ai8",
-    suffix: "",
-    highlightColor: "text-orange-500",
-    description:
-      "Sales and marketing automation that brings together customer conversations, reputation signals, and attribution, from first contact through to follow-up.",
-  },
-  {
     prefix: "Integr",
     highlight: "Ai8",
     suffix: "",
     highlightColor: "text-purple-500",
     description:
-      "Connects platforms and workflows so data moves reliably across the business, underpinning both Kri8it and AutomAi8.",
+      "Connects platforms and workflows so data moves reliably across the business, underpinning Kri8it.",
   },
 ];
 
@@ -47,7 +39,7 @@ export default function EcosystemSection() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {cards.map((card, i) => (
             <motion.div
               key={card.prefix + card.highlight}
