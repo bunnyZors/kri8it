@@ -276,29 +276,118 @@ export default function Services() {
       {/* Connected System Statement - Light grey */}
       <section className="section-padding" style={{ background: "#F5F5F5" }}>
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-4xl"
-          >
-            <p className="text-[hsl(230,10%,55%)] text-sm font-medium uppercase tracking-[0.25em] mb-6">
-              How It Connects
-            </p>
-            <h2 className="font-display text-[clamp(2.4rem,4.5vw,3.8rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[hsl(230,40%,15%)] mb-8">
-              Digital work as a{" "}
-              <span className="text-accent">connected system</span>.
-            </h2>
-            <p className="text-[hsl(230,10%,40%)] text-base md:text-lg leading-relaxed mb-6">
-              Most businesses don't need more tools or more content. They need their
-              existing efforts to work together — strategy informing creative, creative
-              driving development, development supporting marketing, and marketing
-              feeding back into strategy.
-            </p>
-            <p className="text-[hsl(230,40%,15%)] font-bold text-base md:text-lg">
-              That's what we build. That's how we work.
-            </p>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left column - Text */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-[hsl(230,10%,55%)] text-sm font-medium uppercase tracking-[0.25em] mb-6">
+                How It Connects
+              </p>
+              <h2 className="font-display text-[clamp(2.4rem,4.5vw,3.8rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[hsl(230,40%,15%)] mb-8">
+                Digital work as a{" "}
+                <span className="text-accent">connected system</span>.
+              </h2>
+              <p className="text-[hsl(230,10%,40%)] text-base md:text-lg leading-relaxed mb-6">
+                Most businesses don't need more tools or more content. They need their
+                existing efforts to work together — strategy informing creative, creative
+                driving development, development supporting marketing, and marketing
+                feeding back into strategy.
+              </p>
+              <p className="text-[hsl(230,40%,15%)] font-bold text-base md:text-lg">
+                That's what we build. That's how we work.
+              </p>
+            </motion.div>
+
+            {/* Right column - Animated Connection Diagram */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="hidden lg:flex items-center justify-center relative h-[400px]"
+            >
+              <svg
+                viewBox="0 0 300 300"
+                className="w-full h-full max-w-sm"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {/* Center point */}
+                <circle cx="150" cy="150" r="40" fill="hsl(var(--accent))" opacity="0.15" />
+                
+                {/* Circular connection line - animated */}
+                <motion.circle
+                  cx="150"
+                  cy="150"
+                  r="100"
+                  stroke="hsl(var(--accent))"
+                  strokeWidth="2"
+                  opacity="0.3"
+                  strokeDasharray="628"
+                  strokeDashoffset="628"
+                  animate={{ strokeDashoffset: 0 }}
+                  transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
+                />
+
+                {/* Connection nodes - 5 services */}
+                {[
+                  { angle: 0, label: "Strategy" },
+                  { angle: 72, label: "Design" },
+                  { angle: 144, label: "Development" },
+                  { angle: 216, label: "Marketing" },
+                  { angle: 288, label: "Systems" },
+                ].map((node, idx) => {
+                  const radian = (node.angle * Math.PI) / 180;
+                  const x = 150 + 100 * Math.cos(radian);
+                  const y = 150 + 100 * Math.sin(radian);
+
+                  return (
+                    <motion.g key={node.label}>
+                      {/* Animated pulse circle */}
+                      <motion.circle
+                        cx={x}
+                        cy={y}
+                        r="8"
+                        fill="hsl(var(--accent))"
+                        animate={{
+                          r: [8, 12, 8],
+                          opacity: [1, 0.5, 1],
+                        }}
+                        transition={{
+                          duration: 2,
+                          delay: idx * 0.2,
+                          repeat: Infinity,
+                        }}
+                      />
+                      {/* Outer ring */}
+                      <circle
+                        cx={x}
+                        cy={y}
+                        r="14"
+                        stroke="hsl(var(--accent))"
+                        strokeWidth="1.5"
+                        opacity="0.4"
+                      />
+                    </motion.g>
+                  );
+                })}
+
+                {/* Center label */}
+                <text
+                  x="150"
+                  y="155"
+                  textAnchor="middle"
+                  className="fill-[hsl(230,40%,15%)] text-xs font-bold"
+                  opacity="0.7"
+                >
+                  Connected
+                </text>
+              </svg>
+            </motion.div>
+          </div>
         </div>
       </section>
 
