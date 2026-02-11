@@ -53,6 +53,7 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
+                className="group"
               >
                 <div className="py-10 grid sm:grid-cols-[1fr_1.2fr] gap-4 sm:gap-8 items-start">
                   <h3 className="font-display text-xl md:text-2xl font-bold text-[hsl(230,40%,15%)]">
@@ -63,10 +64,8 @@ export default function ServicesSection() {
                   </p>
                 </div>
                 {i < services.length - 1 && (
-                  <div className="h-px w-full bg-[hsl(230,10%,85%)] relative">
-                    {i === 1 && (
-                      <div className="absolute left-0 top-0 h-[2px] w-24 bg-[#049AD9]" />
-                    )}
+                  <div className="h-px w-full bg-[hsl(230,10%,85%)] relative overflow-hidden">
+                    <div className="absolute left-0 top-0 h-[2px] w-24 bg-[#049AD9] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
                   </div>
                 )}
               </motion.div>
