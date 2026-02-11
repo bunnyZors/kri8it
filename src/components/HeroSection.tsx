@@ -12,6 +12,11 @@ import logoExclusiveBooks from "@/assets/logos/exclusive-books.png";
 import logoCrystalsCo from "@/assets/logos/crystals-co.png";
 import logoOim from "@/assets/logos/oim.png";
 import logoWildlifeSafari from "@/assets/logos/wildlife-safari.png";
+import logoMitsubishi from "@/assets/logos/mitsubishi.png";
+import logoMahindra from "@/assets/logos/mahindra.png";
+import logoJetour from "@/assets/logos/jetour.png";
+import logoHarley from "@/assets/logos/harley.png";
+import logoKia from "@/assets/logos/kia.png";
 
 const clientLogos = [
   { src: logoNaturalSelection, alt: "Natural Selection" },
@@ -24,6 +29,11 @@ const clientLogos = [
   { src: logoCrystalsCo, alt: "Crystals & Co" },
   { src: logoOim, alt: "OIM Consulting" },
   { src: logoWildlifeSafari, alt: "Wildlife Safari" },
+  { src: logoMitsubishi, alt: "Mitsubishi" },
+  { src: logoMahindra, alt: "Mahindra" },
+  { src: logoJetour, alt: "Jetour" },
+  { src: logoHarley, alt: "Harley-Davidson" },
+  { src: logoKia, alt: "Kia" },
 ];
 
 const words = ["connected system", "growth engine", "competitive edge", "digital foundation"];
