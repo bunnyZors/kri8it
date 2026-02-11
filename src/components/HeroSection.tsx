@@ -130,16 +130,18 @@ export default function HeroSection() {
             <p className="text-xs text-muted-foreground uppercase tracking-[0.3em] whitespace-nowrap">Trusted By</p>
             <div className="flex-1 h-px bg-border" />
           </div>
-          {/* Logos */}
-          <div id="logo-scroll" className="flex gap-10 items-center overflow-x-auto scrollbar-hide scroll-smooth pb-2">
-            {clientLogos.map((logo) => (
-              <img
-                key={logo.alt}
-                src={logo.src}
-                alt={logo.alt}
-                className="h-10 md:h-14 w-auto opacity-50 hover:opacity-100 transition-opacity grayscale brightness-200 flex-shrink-0"
-              />
-            ))}
+          {/* Marquee */}
+          <div className="overflow-hidden">
+            <div className="flex gap-16 items-center animate-marquee">
+              {[...clientLogos, ...clientLogos].map((logo, i) => (
+                <img
+                  key={`${logo.alt}-${i}`}
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-10 md:h-14 w-auto opacity-50 hover:opacity-100 transition-opacity grayscale brightness-200 flex-shrink-0"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </motion.div>
