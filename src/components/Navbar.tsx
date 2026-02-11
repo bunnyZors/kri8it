@@ -18,14 +18,14 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/30">
-      <div className="max-w-[1440px] mx-auto flex items-center justify-between h-20 px-6 lg:px-10">
+      <div className="max-w-[1440px] mx-auto flex items-end justify-between h-20 px-6 lg:px-10 pb-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center shrink-0">
+        <Link to="/" className="flex items-center shrink-0 mb-[2px]">
           <img src={kri8itLogo} alt="Kri8it Digital" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex items-center gap-10 translate-y-[10px]">
+        <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.label}
