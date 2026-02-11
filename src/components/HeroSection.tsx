@@ -17,6 +17,10 @@ import logoMahindra from "@/assets/logos/mahindra.png";
 import logoJetour from "@/assets/logos/jetour.png";
 import logoHarley from "@/assets/logos/harley.png";
 import logoKia from "@/assets/logos/kia.png";
+import logoTfg from "@/assets/logos/tfg.png";
+import logoVw from "@/assets/logos/vw.png";
+import logoSimplyAsia from "@/assets/logos/simply-asia.png";
+import logoLeatt from "@/assets/logos/leatt.png";
 
 const clientLogos = [
   { src: logoNaturalSelection, alt: "Natural Selection" },
@@ -34,6 +38,10 @@ const clientLogos = [
   { src: logoJetour, alt: "Jetour" },
   { src: logoHarley, alt: "Harley-Davidson" },
   { src: logoKia, alt: "Kia" },
+  { src: logoTfg, alt: "The Foschini Group" },
+  { src: logoVw, alt: "Volkswagen" },
+  { src: logoSimplyAsia, alt: "Simply Asia" },
+  { src: logoLeatt, alt: "Leatt" },
 ];
 
 const words = ["connected system", "growth engine", "competitive edge", "digital foundation"];
