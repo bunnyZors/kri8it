@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronRight, ChevronLeft } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import logoNaturalSelection from "@/assets/logos/natural-selection.png";
 import logoSpringbok from "@/assets/logos/springbok-atlas.png";
@@ -52,7 +52,7 @@ export default function HeroSection() {
           viewBox="0 0 1474 1119"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute right-[-5%] top-[5%] w-[65%] h-auto opacity-25"
+          className="absolute right-[-5%] bottom-[8%] w-[65%] h-auto opacity-25"
         >
           <path
             d="M.5,1118.81c7.16-197.99,130.53-379,317.92-456.35.22.84.54,2.06.93,3.55,6.13,22.92,28.6,86.14,62.22,143.23,41.07,69.74,93.26,113.16,91.02,113.72-4.21,1.06-.14.04-19.31,5.18-93.19,24.99-150,103.46-157.02,190.66"
@@ -122,43 +122,24 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="relative z-10 mt-auto pt-16"
+        className="relative z-10 mt-auto"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-6">
-            <p className="text-xs text-muted-foreground uppercase tracking-[0.2em]">Trusted By</p>
-            <div className="flex gap-2">
-              <button
-                onClick={() => {
-                  const el = document.getElementById("logo-scroll");
-                  if (el) el.scrollBy({ left: -300, behavior: "smooth" });
-                }}
-                className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors"
-              >
-                <ChevronLeft size={18} />
-              </button>
-              <button
-                onClick={() => {
-                  const el = document.getElementById("logo-scroll");
-                  if (el) el.scrollBy({ left: 300, behavior: "smooth" });
-                }}
-                className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors"
-              >
-                <ChevronRight size={18} />
-              </button>
-            </div>
+          {/* Label + line */}
+          <div className="flex items-center gap-6 mb-6">
+            <p className="text-xs text-muted-foreground uppercase tracking-[0.3em] whitespace-nowrap">Trusted By</p>
+            <div className="flex-1 h-px bg-border" />
           </div>
-          <div className="border-t border-border pt-6">
-            <div id="logo-scroll" className="flex gap-10 items-center overflow-x-auto scrollbar-hide scroll-smooth">
-              {clientLogos.map((logo) => (
-                <img
-                  key={logo.alt}
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="h-14 md:h-20 w-auto opacity-50 hover:opacity-100 transition-opacity grayscale brightness-200 flex-shrink-0"
-                />
-              ))}
-            </div>
+          {/* Logos */}
+          <div id="logo-scroll" className="flex gap-10 items-center overflow-x-auto scrollbar-hide scroll-smooth pb-2">
+            {clientLogos.map((logo) => (
+              <img
+                key={logo.alt}
+                src={logo.src}
+                alt={logo.alt}
+                className="h-10 md:h-14 w-auto opacity-50 hover:opacity-100 transition-opacity grayscale brightness-200 flex-shrink-0"
+              />
+            ))}
           </div>
         </div>
       </motion.div>
