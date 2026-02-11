@@ -62,7 +62,7 @@ export default function ServicesSection() {
                   onMouseEnter={() => setActiveIndex(i)}
                   onMouseLeave={() => setActiveIndex(null)}
                 >
-                  <div className="py-10 grid sm:grid-cols-[1fr_1.2fr] gap-4 sm:gap-8 items-start">
+                  <div className="py-10 grid sm:grid-cols-[0.7fr_1.2fr] gap-4 sm:gap-8 items-start">
                     <motion.h3
                       className="font-display text-xl md:text-2xl font-medium text-[hsl(230,40%,15%)] transition-colors duration-300"
                       animate={{
