@@ -7,18 +7,21 @@ const cards = [
   {
     logo: kri8itLogo,
     alt: "Kri8it",
+    logoClass: "max-h-[40px] md:max-h-[48px]",
     description:
       "Strategy, brand, and digital foundations that shape how customers experience your business.",
   },
   {
     logo: automai8Logo,
     alt: "AutomAi8",
+    logoClass: "max-h-[40px] md:max-h-[48px]",
     description:
       "Sales and marketing automation that brings together customer conversations, reputation signals, and attribution.",
   },
   {
     logo: integrai8Logo,
     alt: "IntegrAi8",
+    logoClass: "max-h-[40px] md:max-h-[48px]",
     description:
       "Connects platforms and workflows so data moves reliably across the business.",
   },
@@ -57,7 +60,7 @@ export default function EcosystemSection() {
                 <img
                   src={card.logo}
                   alt={card.alt}
-                  className="max-h-full max-w-[200px] w-auto object-contain"
+                  className={`${card.logoClass} w-auto object-contain`}
                 />
               </div>
               <p className="text-muted-foreground leading-relaxed text-sm md:text-base mt-auto">
