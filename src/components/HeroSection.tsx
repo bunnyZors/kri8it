@@ -134,7 +134,7 @@ export default function HeroSection() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto overflow-visible">
-          <div className="overflow-hidden -mr-[calc(50vw-50%)]">
+          <div className="overflow-hidden -mr-[calc(50vw-50%)]" style={{ maskImage: 'linear-gradient(to right, transparent, black 15%)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%)' }}>
           <div className="flex gap-16 items-center animate-marquee w-fit">
             {[...clientLogos, ...clientLogos].map((logo, i) => (
               <img
