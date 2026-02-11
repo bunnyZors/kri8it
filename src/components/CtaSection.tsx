@@ -34,12 +34,14 @@ export default function CtaSection() {
           </h2>
           <a
             href="mailto:clint@kri8it.com"
-            className="inline-flex items-center gap-4 shimmer-btn bg-accent text-accent-foreground px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-wider"
+            className="inline-flex items-center gap-4 group"
           >
-            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-accent-foreground/10">
-              <ArrowRight size={16} />
+            <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent text-accent-foreground group-hover:scale-110 transition-transform">
+              <ArrowRight size={18} />
             </span>
-            Start Your Journey
+            <span className="text-sm font-bold uppercase tracking-[0.15em] text-foreground">
+              Start Your Journey
+            </span>
           </a>
         </motion.div>
       </div>
