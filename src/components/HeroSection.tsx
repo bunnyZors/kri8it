@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 
 import logoNaturalSelection from "@/assets/logos/natural-selection.png";
 import logoSpringbok from "@/assets/logos/springbok-atlas.png";
@@ -72,11 +72,12 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center section-padding pt-32 overflow-hidden">
       {/* Decorative arcs */}
-      <div className="absolute top-20 right-0 w-[600px] h-[600px] opacity-20 pointer-events-none">
-        <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="300" cy="300" r="250" stroke="hsl(var(--accent))" strokeWidth="1" />
-          <circle cx="300" cy="300" r="180" stroke="hsl(var(--accent))" strokeWidth="1" />
-          <circle cx="300" cy="300" r="110" stroke="hsl(var(--accent))" strokeWidth="1" />
+      <div className="absolute top-20 right-0 w-[700px] h-[700px] opacity-15 pointer-events-none">
+        <svg viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="350" cy="350" r="300" stroke="hsl(var(--accent))" strokeWidth="1" />
+          <circle cx="350" cy="350" r="220" stroke="hsl(var(--accent))" strokeWidth="1" />
+          <circle cx="350" cy="350" r="140" stroke="hsl(var(--accent))" strokeWidth="1" />
+          <path d="M350 50 A300 300 0 0 1 650 350" stroke="hsl(var(--accent))" strokeWidth="2" fill="none" />
         </svg>
       </div>
 
@@ -87,14 +88,14 @@ export default function HeroSection() {
           transition={{ delay: 0.2 }}
           className="text-accent text-sm font-bold uppercase tracking-[0.2em] mb-6"
         >
-          We Build The Story
+          Digital Systems Partner
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-8 max-w-4xl"
+          className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] mb-8 max-w-5xl"
         >
           Digital work as a{" "}
           <span className="text-accent border-r-2 border-accent animate-typewriter-cursor pr-1">
@@ -103,29 +104,47 @@ export default function HeroSection() {
           <span className="text-accent">.</span>
         </motion.h1>
 
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="text-xl md:text-2xl font-bold text-foreground max-w-2xl mb-4"
+        >
+          Break down the barriers between brand and bottom line
+        </motion.h2>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-10 leading-relaxed"
+          className="text-muted-foreground text-lg max-w-2xl mb-10 leading-relaxed"
         >
-          Strategy, Creative, and Systems built to support how your business operates — not just how it looks.
+          Strategy, Creative, and Systems built to support how your business operates — not just how it looks. We help brands transform bold ideas into decisive action.
         </motion.p>
 
-        <motion.a
-          href="#contact"
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9 }}
-          className="inline-flex items-center gap-3 shimmer-btn bg-accent text-accent-foreground px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-wider"
+          className="flex flex-wrap items-center gap-4"
         >
-          <span className="flex items-center justify-center w-8 h-8 rounded-full bg-accent-foreground/10">
-            <ArrowRight size={16} />
-          </span>
-          Start Your Journey
-        </motion.a>
+          <a
+            href="#services"
+            className="inline-flex items-center gap-3 shimmer-btn bg-accent text-accent-foreground px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-wider"
+          >
+            Explore Our Services
+            <ChevronRight size={16} />
+          </a>
+          <a
+            href="#ecosystem"
+            className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-foreground hover:text-accent transition-colors border-b-2 border-accent pb-1"
+          >
+            Check out our tech
+            <ChevronRight size={14} />
+          </a>
+        </motion.div>
 
-        {/* Trusted By */}
+        {/* Trusted By - marquee */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -133,15 +152,17 @@ export default function HeroSection() {
           className="mt-24 border-t border-border pt-8"
         >
           <p className="text-xs text-muted-foreground uppercase tracking-[0.2em] mb-6">Trusted By</p>
-          <div className="flex flex-wrap gap-8 md:gap-12 items-center">
-            {clientLogos.map((logo) => (
-              <img
-                key={logo.alt}
-                src={logo.src}
-                alt={logo.alt}
-                className="h-10 md:h-12 w-auto opacity-50 hover:opacity-100 transition-opacity grayscale brightness-200"
-              />
-            ))}
+          <div className="overflow-hidden relative">
+            <div className="flex gap-12 items-center animate-marquee w-max">
+              {[...clientLogos, ...clientLogos].map((logo, i) => (
+                <img
+                  key={`${logo.alt}-${i}`}
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-10 md:h-12 w-auto opacity-40 hover:opacity-100 transition-opacity grayscale brightness-200 flex-shrink-0"
+                />
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>

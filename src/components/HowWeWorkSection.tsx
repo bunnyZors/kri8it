@@ -1,63 +1,81 @@
 import { motion } from "framer-motion";
-import { Lightbulb, MousePointerClick, Users, Handshake, ArrowRight } from "lucide-react";
+import { Layers, Brain, TrendingUp, ChevronRight } from "lucide-react";
 
-const steps = [
-  { icon: Lightbulb, label: "Awareness" },
-  { icon: MousePointerClick, label: "Engagement" },
-  { icon: Users, label: "Conversion" },
-  { icon: Handshake, label: "Retention" },
+const values = [
+  {
+    icon: Layers,
+    title: "Built for brands that refuse to stand still",
+    description:
+      "Make bold moves with purpose by connecting brand strategy, digital execution, and system design to drive sustainable growth.",
+  },
+  {
+    icon: Brain,
+    title: "Intelligence that goes way beyond tech",
+    description:
+      "We augment our approach with smart automation and integration, so your platforms and workflows work harder together.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Performance you can count on at every stage",
+    description:
+      "From awareness to retention, every part of the customer journey is measured, optimised, and connected to real outcomes.",
+  },
 ];
 
 export default function HowWeWorkSection() {
   return (
     <section className="section-padding bg-secondary">
-      <div className="max-w-7xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4">
-            How we <span className="text-accent italic">work</span>
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-16 text-lg">
-            We approach digital work as a connected system. Every engagement is
-            designed around the full customer journey:
-          </p>
-        </motion.div>
+      <div className="max-w-7xl mx-auto">
+        {/* Top split */}
+        <div className="grid md:grid-cols-2 gap-12 md:gap-20 mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-5xl font-extrabold leading-[1.1] uppercase">
+              Never settle for the status quo
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              Work with a full-service digital partner that empowers you to punch above your weight
+              by supercharging expert strategy across brand, digital, and systems with 25 years of
+              experience, turning bold ambition into meaningful business outcomes.
+            </p>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-foreground hover:text-accent transition-colors border-b-2 border-accent pb-1"
+            >
+              Talk to our experts
+              <ChevronRight size={14} />
+            </a>
+          </motion.div>
+        </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-2 mb-12">
-          {steps.map((step, i) => (
+        {/* 3 value props */}
+        <div className="grid md:grid-cols-3 gap-10">
+          {values.map((val, i) => (
             <motion.div
-              key={step.label}
-              initial={{ opacity: 0, y: 20 }}
+              key={val.title}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="flex items-center gap-4"
+              transition={{ delay: i * 0.1 }}
             >
-              <div className="flex flex-col items-center gap-3">
-                <div className="w-16 h-16 rounded-2xl bg-card border border-border flex items-center justify-center">
-                  <step.icon className="text-accent" size={28} />
-                </div>
-                <span className="text-sm font-semibold">{step.label}</span>
+              <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mb-6">
+                <val.icon className="text-accent" size={22} />
               </div>
-              {i < steps.length - 1 && (
-                <ArrowRight className="text-muted-foreground hidden md:block mx-4" size={20} />
-              )}
+              <h3 className="text-xl font-extrabold mb-3 leading-tight">{val.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{val.description}</p>
             </motion.div>
           ))}
         </div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-muted-foreground max-w-2xl mx-auto text-sm leading-relaxed"
-        >
-          Strategy, creative, digital, marketing, and systems all play a role. When they work
-          together, customers move more easily and teams spend less time fixing gaps.
-        </motion.p>
       </div>
     </section>
   );
