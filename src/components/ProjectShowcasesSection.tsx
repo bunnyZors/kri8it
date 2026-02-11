@@ -141,7 +141,7 @@ export default function ProjectShowcasesSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <p className="text-[hsl(230,10%,60%)] text-xs font-bold uppercase tracking-[0.25em] mb-4">
+          <p className="text-[hsl(230,10%,60%)] text-sm font-medium uppercase tracking-[0.25em] mb-4">
             Latest Projects
           </p>
           <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight text-[hsl(230,40%,15%)]">

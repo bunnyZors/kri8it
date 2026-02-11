@@ -14,7 +14,7 @@ export default function ExperienceSection() {
         >
           {/* Left column */}
           <div>
-            <p className="text-muted-foreground text-xs font-bold uppercase tracking-[0.2em] mb-4">
+            <p className="text-muted-foreground text-sm font-medium uppercase tracking-[0.2em] mb-4">
               Why Kri8it
             </p>
             <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight mb-8">
