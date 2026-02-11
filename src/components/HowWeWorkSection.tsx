@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import engagementIcon from "@/assets/icons/engagement-icon.png";
+import conversionIcon from "@/assets/icons/conversion-icon.png";
+import retentionIcon from "@/assets/icons/retention-icon.png";
 
 const AwarenessIcon = () => (
   <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,46 +23,15 @@ const AwarenessIcon = () => (
 );
 
 const EngagementIcon = () => (
-  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Checkmark circle */}
-    <circle cx="44" cy="18" r="12" stroke="#049AD9" strokeWidth="2.5" fill="none" />
-    <path d="M38 18l4 4 8-8" stroke="#049AD9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-    {/* Hand pointer */}
-    <path d="M26 38v-8a3 3 0 0 1 6 0v8" stroke="hsl(230,40%,15%)" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <path d="M32 36v-4a3 3 0 0 1 6 0v4" stroke="hsl(230,40%,15%)" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <path d="M38 36v-3a3 3 0 0 1 6 0v3" stroke="hsl(230,40%,15%)" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <path d="M44 38v-2a3 3 0 0 1 6 0v8c0 8-4 14-12 16H30c-4-2-6-6-6-12v-6a3 3 0 0 1 6 0" stroke="hsl(230,40%,15%)" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <line x1="29" y1="30" x2="29" y2="50" stroke="hsl(230,40%,15%)" strokeWidth="2.8" strokeLinecap="round" />
-  </svg>
+  <img src={engagementIcon} alt="Engagement" className="w-20 h-20 object-contain" />
 );
 
 const ConversionIcon = () => (
-  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Three people */}
-    <circle cx="26" cy="14" r="5" stroke="#049AD9" strokeWidth="2.5" fill="none" />
-    <path d="M20 26a6 6 0 0 1 12 0" stroke="#049AD9" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-    <circle cx="40" cy="10" r="5" stroke="#049AD9" strokeWidth="2.5" fill="none" />
-    <path d="M34 22a6 6 0 0 1 12 0" stroke="#049AD9" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-    <circle cx="54" cy="14" r="5" stroke="#049AD9" strokeWidth="2.5" fill="none" />
-    <path d="M48 26a6 6 0 0 1 12 0" stroke="#049AD9" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-    {/* Funnel */}
-    <path d="M18 34h44l-14 18v14h-8V52L18 34z" stroke="hsl(230,40%,15%)" strokeWidth="2.8" strokeLinejoin="round" fill="none" />
-    <rect x="38" y="66" width="4" height="4" fill="hsl(230,40%,15%)" />
-  </svg>
+  <img src={conversionIcon} alt="Conversion" className="w-20 h-20 object-contain" />
 );
 
 const RetentionIcon = () => (
-  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Person */}
-    <circle cx="48" cy="12" r="6" stroke="#049AD9" strokeWidth="2.5" fill="none" />
-    <path d="M40 24a8 8 0 0 1 16 0" stroke="#049AD9" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-    {/* Open hand / palm */}
-    <path d="M18 50c2-4 6-8 12-10h14c4 0 7 2 7 6s-3 6-7 6H34" stroke="hsl(230,40%,15%)" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <path d="M18 50c0 8 4 14 10 18h20c6-2 12-6 16-12" stroke="hsl(230,40%,15%)" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    {/* Wrist */}
-    <path d="M14 56l8-2" stroke="hsl(230,40%,15%)" strokeWidth="2.8" strokeLinecap="round" />
-    <path d="M12 48l8 2" stroke="hsl(230,40%,15%)" strokeWidth="2.8" strokeLinecap="round" />
-  </svg>
+  <img src={retentionIcon} alt="Retention" className="w-20 h-20 object-contain" />
 );
 
 const stages = [
