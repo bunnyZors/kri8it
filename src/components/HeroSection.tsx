@@ -138,7 +138,7 @@ export default function HeroSection() {
                   key={`${logo.alt}-${i}`}
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-10 md:h-14 w-auto opacity-50 hover:opacity-100 transition-opacity grayscale brightness-200 flex-shrink-0"
+                  className="h-12 md:h-16 w-auto opacity-50 hover:opacity-100 transition-opacity grayscale brightness-200 flex-shrink-0"
                 />
               ))}
             </div>
