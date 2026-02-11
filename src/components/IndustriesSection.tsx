@@ -29,7 +29,7 @@ export default function IndustriesSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-0">
           {industries.map((item, i) => {
             const content = (
               <motion.div
@@ -37,17 +37,26 @@ export default function IndustriesSection() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="pb-4 border-b-2 border-[#049AD9]/30"
+                transition={{ delay: i * 0.06 }}
+                className="group cursor-pointer py-6"
               >
-                <span className="font-display font-bold text-lg md:text-xl text-[hsl(230,40%,15%)]">
-                  <span className="font-bold">{String(i + 1).padStart(2, '0')}.</span>{" "}
-                  <span className="font-normal">{item.label}</span>
-                </span>
+                <div className="flex items-baseline gap-4 mb-5">
+                  <span className="font-display font-bold text-lg md:text-xl text-[hsl(230,40%,15%)] transition-colors duration-300 group-hover:text-[#049AD9]">
+                    {String(i + 1).padStart(2, '0')}.
+                  </span>
+                  <motion.span
+                    className="font-display font-medium text-lg md:text-xl text-[hsl(230,40%,15%)] transition-colors duration-300 group-hover:text-[#049AD9]"
+                  >
+                    {item.label}
+                  </motion.span>
+                </div>
+                <div className="h-px w-full bg-[hsl(230,10%,85%)] relative overflow-hidden">
+                  <div className="absolute left-0 top-0 h-full w-0 bg-[#049AD9] group-hover:w-full transition-all duration-500 ease-out" />
+                </div>
               </motion.div>
             );
             return item.link ? (
-              <Link key={item.label} to={item.link} className="hover:opacity-80 transition-opacity">{content}</Link>
+              <Link key={item.label} to={item.link}>{content}</Link>
             ) : (
               <div key={item.label}>{content}</div>
             );
