@@ -92,9 +92,10 @@ export default function TestimonialsSection() {
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -6, boxShadow: "0 12px 32px -8px rgba(4,154,217,0.12)" }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="rounded-2xl border border-[hsl(230,10%,85%)] bg-white p-8 flex flex-col"
+              className="rounded-2xl border border-[hsl(230,10%,85%)] bg-white p-8 flex flex-col cursor-pointer transition-colors duration-300 hover:border-[#049AD9]/30"
             >
               <Quote className="text-[#049AD9]/40 mb-6" size={32} />
               <p className="text-[hsl(230,10%,45%)] text-sm leading-relaxed flex-1">
