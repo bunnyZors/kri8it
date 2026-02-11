@@ -12,18 +12,18 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className="section-padding pb-0" style={{ background: "#ffffff" }}>
-      <div className="max-w-7xl mx-auto">
+    <footer id="contact" style={{ background: "#ffffff" }}>
+      <div className="section-padding pb-0 max-w-7xl mx-auto">
         {/* Say hello heading */}
         <h2 className="font-display text-[clamp(2.4rem,4.5vw,3.8rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[hsl(230,40%,15%)] mb-12">
           Say <span className="text-[#049AD9]">hello.</span>
         </h2>
 
-        <div className="grid lg:grid-cols-[1fr_1fr_1fr] gap-12 lg:gap-20">
+        <div className="grid lg:grid-cols-[1fr_auto_auto] gap-12 lg:gap-24">
           {/* Contact Form */}
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="space-y-8 max-w-xl"
+            className="space-y-8 w-full"
           >
             <div className="grid sm:grid-cols-2 gap-8">
               <div>
@@ -87,7 +87,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-medium uppercase tracking-[0.25em] text-[hsl(230,10%,60%)] mb-8">
+            <h4 className="text-sm uppercase tracking-[0.25em] text-[hsl(230,10%,60%)] mb-8">
               Quick Links
             </h4>
             <ul className="space-y-4">
@@ -106,7 +106,7 @@ export default function Footer() {
 
           {/* Get in Touch */}
           <div>
-            <h4 className="text-sm font-medium uppercase tracking-[0.25em] text-[hsl(230,10%,60%)] mb-8">
+            <h4 className="text-sm uppercase tracking-[0.25em] text-[hsl(230,10%,60%)] mb-8">
               Get in Touch
             </h4>
             <div className="space-y-6 text-base">
@@ -135,9 +135,11 @@ export default function Footer() {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-[hsl(230,10%,85%)] mt-16 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[hsl(230,10%,45%)]">
+      {/* Bottom bar - full width */}
+      <div className="border-t border-[hsl(230,10%,85%)] mt-20 py-6 px-6 md:px-12 lg:px-20">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[hsl(230,10%,45%)]">
           <div className="flex gap-4">
             <a href="#" className="hover:text-[hsl(230,40%,15%)] transition-colors">Privacy Policy</a>
             <span>|</span>
