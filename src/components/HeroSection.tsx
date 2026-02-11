@@ -47,7 +47,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-32 pb-0 overflow-hidden">
       {/* SVG Draw Animation - Kri8it brand lines */}
-      <div className="absolute left-0 right-0 top-0 bottom-[220px] pointer-events-none overflow-hidden">
+      <div className="absolute left-0 right-0 top-0 bottom-[221px] pointer-events-none overflow-hidden">
         <svg
           viewBox="0 0 1474 1119"
           fill="none"
@@ -132,8 +132,9 @@ export default function HeroSection() {
           </div>
           <div className="absolute top-1/2 right-0 w-[calc(50vw-50%)] h-px bg-border" />
         </div>
-        <div className="overflow-hidden -mr-6 md:-mr-12 lg:-mr-20">
-          <div className="flex gap-16 items-center animate-marquee w-fit ml-auto">
+        <div className="max-w-7xl mx-auto overflow-visible">
+          <div className="overflow-hidden -mr-[calc(50vw-50%)]">
+          <div className="flex gap-16 items-center animate-marquee w-fit">
             {[...clientLogos, ...clientLogos].map((logo, i) => (
               <img
                 key={`${logo.alt}-${i}`}
@@ -144,6 +145,7 @@ export default function HeroSection() {
                 }`}
               />
             ))}
+          </div>
           </div>
         </div>
       </motion.div>
