@@ -56,7 +56,7 @@ export default function HowWeWorkSection() {
             <div key={stage.label} className="flex items-center">
               <div className="flex flex-col items-center gap-2 px-6 md:px-10">
                 <stage.Icon />
-                <span className="font-display font-bold text-lg md:text-xl text-[hsl(230,40%,15%)]">
+                <span className="font-display font-bold text-xl md:text-2xl text-[hsl(230,40%,15%)]">
                   {stage.label}
                 </span>
               </div>
