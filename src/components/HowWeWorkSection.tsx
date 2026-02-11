@@ -67,7 +67,7 @@ export default function HowWeWorkSection() {
           viewport={{ once: true }}
           className="font-display text-4xl md:text-6xl lg:text-7xl font-[900] leading-[1.05] mb-6 text-[hsl(230,40%,15%)]"
         >
-          How we <span className="text-accent italic">work</span>
+          How we <span className="text-[#049AD9] italic">work</span>
         </motion.h2>
 
         <motion.p
