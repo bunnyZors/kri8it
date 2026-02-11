@@ -23,10 +23,10 @@ export default function CtaSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <p className="text-[#F2F2F2]/70 text-sm uppercase tracking-[0.2em] mb-6">
+          <p className="text-[#F2F2F2]/70 text-sm uppercase tracking-[0.25em] mb-6">
             Let's Talk
           </p>
-          <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-tight mb-10">
+          <h2 className="font-display text-[clamp(2.4rem,4.5vw,3.8rem)] font-bold leading-[1.1] tracking-[-0.02em] mb-10">
             We work best with businesses that value{" "}
             <span className="text-[#049AD9]">long-term partnership</span> and want
             digital systems that support growth over time. If that sounds like you,{" "}
