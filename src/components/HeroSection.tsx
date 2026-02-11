@@ -125,9 +125,9 @@ export default function HeroSection() {
         className="relative z-10 mt-8"
       >
         {/* Label + line - label aligned to content, line extends to viewport right edge */}
-        <div className="flex items-center gap-6 mb-6 pl-6 md:pl-12 lg:pl-20">
+        <div className="flex items-center gap-6 mb-6 pl-6 md:pl-12 lg:pl-20 -mr-6 md:-mr-12 lg:-mr-20">
           <p className="text-xs text-muted-foreground uppercase tracking-[0.3em] whitespace-nowrap">Trusted By</p>
-          <div className="flex-1 h-px bg-border" />
+          <div className="flex-1 h-px bg-border pr-6 md:pr-12 lg:pr-20" />
         </div>
         <div className="max-w-7xl mx-auto">
           {/* Marquee */}
