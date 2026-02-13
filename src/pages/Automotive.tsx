@@ -282,7 +282,7 @@ export default function Automotive() {
                           className="overflow-hidden"
                         >
                           <div className="pb-8 pl-10 md:pl-12">
-                            <p className="text-[#F2F2F2]/70 text-base leading-relaxed mb-6">
+                            <p className="text-[#F2F2F2]/70 text-base md:text-lg leading-relaxed mb-6">
                               {service.description}
                             </p>
                             {service.items.length > 0 && (
@@ -415,7 +415,7 @@ export default function Automotive() {
               </a>
             </div>
 
-            <div className="space-y-6 text-[#F2F2F2] leading-relaxed">
+            <div className="space-y-6 text-[#F2F2F2] text-base md:text-lg leading-relaxed">
               <p>
                 Automotive sales and servicing rely on timely response and
                 consistent communication.
