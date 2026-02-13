@@ -354,7 +354,7 @@ export default function About() {
                 <h3 className="font-display text-xl font-bold text-[hsl(230,40%,15%)] mb-4">
                   {card.title}
                 </h3>
-                <p className="text-[hsl(230,10%,45%)] text-base leading-relaxed">
+                <p className="text-[hsl(230,10%,45%)] text-base md:text-lg leading-relaxed">
                   {card.text}
                 </p>
               </motion.div>
@@ -393,7 +393,7 @@ export default function About() {
               </a>
             </div>
 
-            <div className="space-y-6 text-[#F2F2F2] leading-relaxed">
+            <div className="space-y-6 text-[#F2F2F2] text-base md:text-lg leading-relaxed">
               <p>
                 Customer discovery, engagement, and buying now happen across many
                 channels and touchpoints. To support this, Kri8it works with automation

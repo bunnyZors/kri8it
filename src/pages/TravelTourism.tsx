@@ -299,7 +299,7 @@ export default function TravelTourism() {
                           className="overflow-hidden"
                         >
                           <div className="pb-8 pl-10 md:pl-12">
-                            <p className="text-[#F2F2F2]/70 text-base leading-relaxed mb-6">
+                            <p className="text-[#F2F2F2]/70 text-base md:text-lg leading-relaxed mb-6">
                               {service.description}
                             </p>
                             {service.items.length > 0 && (
@@ -365,7 +365,7 @@ export default function TravelTourism() {
                 <h3 className="font-display text-xl font-bold text-[hsl(230,40%,15%)] mb-4">
                   {r.title}
                 </h3>
-                <p className="text-[hsl(230,10%,45%)] text-base leading-relaxed">
+                <p className="text-[hsl(230,10%,45%)] text-base md:text-lg leading-relaxed">
                   {r.detail}
                 </p>
               </motion.div>

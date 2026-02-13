@@ -238,7 +238,7 @@ export default function Services() {
                           className="overflow-hidden"
                         >
                           <div className="pb-8 pl-[52px]">
-                            <p className="text-[hsl(230,10%,40%)] text-base leading-relaxed mb-6">
+                            <p className="text-[hsl(230,10%,40%)] text-base md:text-lg leading-relaxed mb-6">
                               {service.description}
                             </p>
                             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-2.5">

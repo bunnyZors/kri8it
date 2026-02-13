@@ -151,7 +151,7 @@ export default function TestimonialsSection() {
               </div>
               <div className="border-t border-border mt-4 pt-8 space-y-5">
                 {testimonials[selectedTestimonial].full.map((p, i) => (
-                  <p key={i} className="text-[#F2F2F2]/70 leading-relaxed">
+                  <p key={i} className="text-[#F2F2F2]/70 text-base md:text-lg leading-relaxed">
                     {p}
                   </p>
                 ))}
