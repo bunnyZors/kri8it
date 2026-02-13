@@ -105,7 +105,7 @@ export default function Automotive() {
           <img
             src={automotiveHero}
             alt=""
-            className="absolute inset-0 w-full h-full object-cover object-right"
+            className="absolute inset-0 w-full h-full object-cover object-left"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 via-40% to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background/80" />
