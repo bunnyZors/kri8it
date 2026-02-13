@@ -55,42 +55,26 @@ export default function HeroSection() {
   useEffect(() => {
     if (!headingRef.current) return;
 
-    let split: SplitText;
-    let cancelled = false;
-
-    const init = () => {
-      if (cancelled || !headingRef.current) return;
-
-      split = new SplitText(headingRef.current, {
-        type: "chars, words",
-        autoSplit: true,
-      });
-
-      gsap.fromTo(
-        split.chars,
-        { yPercent: 80, opacity: 0 },
-        {
-          yPercent: 0,
-          opacity: 1,
-          duration: 0.9,
-          ease: "power4.out",
-          stagger: 0.03,
-          delay: 0.5,
-        }
-      );
-    };
-
-    // Try fonts.ready but fallback after 1s
-    const timeout = setTimeout(init, 1000);
-    document.fonts.ready.then(() => {
-      clearTimeout(timeout);
-      init();
+    const el = headingRef.current;
+    const split = new SplitText(el, {
+      type: "chars, words",
     });
 
+    gsap.fromTo(
+      split.chars,
+      { yPercent: 80, opacity: 0 },
+      {
+        yPercent: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: "power4.out",
+        stagger: 0.03,
+        delay: 0.5,
+      }
+    );
+
     return () => {
-      cancelled = true;
-      clearTimeout(timeout);
-      if (split) split.revert();
+      split.revert();
     };
   }, []);
 
