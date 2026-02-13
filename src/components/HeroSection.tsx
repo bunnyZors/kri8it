@@ -2,10 +2,9 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import gsap from "gsap";
-import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(SplitText, ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 import logoNaturalSelection from "@/assets/logos/natural-selection.png";
 import logoSpringbok from "@/assets/logos/springbok-atlas.png";
@@ -50,33 +49,34 @@ const clientLogos = [
 ];
 
 export default function HeroSection() {
-  const headingRef = useRef<HTMLHeadingElement>(null);
+  const headingRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!headingRef.current) return;
 
-    const el = headingRef.current;
-    const split = new SplitText(el, {
-      type: "chars, words",
+    const chars = headingRef.current.querySelectorAll<HTMLElement>(".hero-char");
+
+    gsap.set(chars, { opacity: 0, yPercent: 80 });
+    gsap.to(chars, {
+      yPercent: 0,
+      opacity: 1,
+      duration: 0.8,
+      ease: "power4.out",
+      stagger: 0.03,
+      delay: 0.5,
     });
-
-    gsap.fromTo(
-      split.chars,
-      { yPercent: 80, opacity: 0 },
-      {
-        yPercent: 0,
-        opacity: 1,
-        duration: 0.9,
-        ease: "power4.out",
-        stagger: 0.03,
-        delay: 0.5,
-      }
-    );
-
-    return () => {
-      split.revert();
-    };
   }, []);
+
+  const renderLine = (text: string) =>
+    text.split("").map((char, i) =>
+      char === " " ? (
+        <span key={i} className="inline-block">&nbsp;</span>
+      ) : (
+        <span key={i} className="hero-char inline-block" style={{ willChange: "transform, opacity" }}>
+          {char}
+        </span>
+      )
+    );
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-32 pb-0 overflow-hidden">
@@ -128,10 +128,9 @@ export default function HeroSection() {
         <div
           ref={headingRef}
           className="font-display text-[clamp(3rem,6.5vw,7.5rem)] font-bold leading-[0.98] tracking-tight mb-16 max-w-5xl"
-          style={{ perspective: "1000px" }}
         >
-          <div>Brand. Digital.</div>
-          <div>Systems.</div>
+          <div>{renderLine("Brand. Digital.")}</div>
+          <div>{renderLine("Systems.")}</div>
         </div>
 
         <motion.a
