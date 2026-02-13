@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 import logoNaturalSelection from "@/assets/logos/natural-selection.png";
 import logoSpringbok from "@/assets/logos/springbok-atlas.png";
@@ -50,39 +53,35 @@ export default function HeroSection() {
   const headingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    gsap.registerPlugin(SplitText);
-
     if (!headingRef.current) return;
 
-    // Wait for fonts to load before splitting
+    let split: SplitText;
+
     document.fonts.ready.then(() => {
-      const split = new SplitText(headingRef.current!, {
-        type: "chars, words",
+      if (!headingRef.current) return;
+
+      split = new SplitText(headingRef.current, {
+        type: "chars, words, lines",
         autoSplit: true,
+        mask: "lines",
       });
 
-      gsap.fromTo(
-        split.chars,
-        {
-          yPercent: 120,
-          opacity: 0,
-          rotateX: -40,
-        },
-        {
-          yPercent: 0,
-          opacity: 1,
-          rotateX: 0,
-          duration: 0.8,
-          ease: "power4.out",
-          stagger: 0.025,
-          delay: 0.4,
-        }
-      );
+      gsap.set(headingRef.current, { visibility: "visible" });
 
-      return () => {
-        split.revert();
-      };
+      gsap.from(split.chars, {
+        yPercent: 100,
+        opacity: 0,
+        rotationX: -40,
+        duration: 0.9,
+        ease: "power4.out",
+        stagger: 0.03,
+        delay: 0.5,
+      });
     });
+
+    return () => {
+      if (split) split.revert();
+    };
   }, []);
 
   return (
@@ -135,9 +134,9 @@ export default function HeroSection() {
         <h1
           ref={headingRef}
           className="font-display text-[clamp(3rem,6.5vw,7.5rem)] font-bold leading-[0.98] tracking-tight mb-16 max-w-5xl"
-          style={{ perspective: "600px" }}
+          style={{ perspective: "600px", visibility: "hidden" }}
         >
-          Brand. Digital.{"\n"}Systems.
+          Brand. Digital.<br />Systems.
         </h1>
 
         <motion.a
