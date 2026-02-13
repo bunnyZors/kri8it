@@ -107,13 +107,13 @@ export default function HeroSection() {
       // CTA fades and moves up
       if (ctaRef.current) {
         gsap.to(ctaRef.current, {
-          yPercent: -60,
+          yPercent: -20,
           opacity: 0,
           ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top top",
-            end: "60% top",
+            start: "30% top",
+            end: "bottom top",
             scrub: true,
           },
         });
