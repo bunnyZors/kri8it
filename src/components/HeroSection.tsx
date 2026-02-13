@@ -1,5 +1,8 @@
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
 
 import logoNaturalSelection from "@/assets/logos/natural-selection.png";
 import logoSpringbok from "@/assets/logos/springbok-atlas.png";
@@ -44,6 +47,44 @@ const clientLogos = [
 ];
 
 export default function HeroSection() {
+  const headingRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(SplitText);
+
+    if (!headingRef.current) return;
+
+    // Wait for fonts to load before splitting
+    document.fonts.ready.then(() => {
+      const split = new SplitText(headingRef.current!, {
+        type: "chars, words",
+        autoSplit: true,
+      });
+
+      gsap.fromTo(
+        split.chars,
+        {
+          yPercent: 120,
+          opacity: 0,
+          rotateX: -40,
+        },
+        {
+          yPercent: 0,
+          opacity: 1,
+          rotateX: 0,
+          duration: 0.8,
+          ease: "power4.out",
+          stagger: 0.025,
+          delay: 0.4,
+        }
+      );
+
+      return () => {
+        split.revert();
+      };
+    });
+  }, []);
+
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-32 pb-0 overflow-hidden">
       {/* SVG Draw Animation - Kri8it brand lines */}
@@ -91,15 +132,13 @@ export default function HeroSection() {
           We Build The Story
         </motion.p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
+        <h1
+          ref={headingRef}
           className="font-display text-[clamp(3rem,6.5vw,7.5rem)] font-bold leading-[0.98] tracking-tight mb-16 max-w-5xl"
+          style={{ perspective: "600px" }}
         >
-          Brand. Digital.<br />
-          Systems.
-        </motion.h1>
+          Brand. Digital.{"\n"}Systems.
+        </h1>
 
         <motion.a
           initial={{ opacity: 0, y: 20 }}
