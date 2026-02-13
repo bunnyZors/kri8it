@@ -1,9 +1,14 @@
+import { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Plus, Minus } from "lucide-react";
 import { useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import travelHero from "@/assets/heroes/travel-tourism-hero.png";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const serviceBlocks = [
   {
@@ -110,15 +115,41 @@ const sectors = [
 
 export default function TravelTourism() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const heroBgRef = useRef<HTMLDivElement>(null);
+  const heroContentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!heroRef.current) return;
+    const ctx = gsap.context(() => {
+      if (heroBgRef.current) {
+        gsap.to(heroBgRef.current, {
+          yPercent: 20,
+          scale: 1.1,
+          ease: "none",
+          scrollTrigger: { trigger: heroRef.current, start: "top top", end: "bottom top", scrub: true },
+        });
+      }
+      if (heroContentRef.current) {
+        gsap.to(heroContentRef.current, {
+          yPercent: -25,
+          opacity: 0,
+          ease: "none",
+          scrollTrigger: { trigger: heroRef.current, start: "top top", end: "70% top", scrub: true },
+        });
+      }
+    }, heroRef);
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
 
       {/* Hero - matches homepage/about hero */}
-      <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-32 pb-20 overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-32 pb-20 overflow-hidden">
         {/* Hero background image with left fade */}
-        <div className="absolute inset-0 pointer-events-none">
+        <div ref={heroBgRef} className="absolute inset-0 pointer-events-none">
           <img
             src={travelHero}
             alt=""
@@ -130,7 +161,7 @@ export default function TravelTourism() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background/80" />
         </div>
 
-        <div className="max-w-7xl mx-auto w-full relative z-10 flex-1 flex flex-col justify-center">
+        <div ref={heroContentRef} className="max-w-7xl mx-auto w-full relative z-10 flex-1 flex flex-col justify-center">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -404,15 +435,23 @@ export default function TravelTourism() {
 
       {/* Video Showcase */}
       <section className="relative h-[70vh] md:h-[80vh] overflow-hidden flex items-center justify-center">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+        <motion.div
+          className="absolute inset-0"
+          initial={{ scale: 1.1 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          viewport={{ once: true }}
         >
-          <source src="/videos/travel-bg.mp4" type="video/mp4" />
-        </video>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/videos/travel-bg.mp4" type="video/mp4" />
+          </video>
+        </motion.div>
         <div className="absolute inset-0 bg-background/40" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}

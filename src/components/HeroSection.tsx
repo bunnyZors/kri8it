@@ -50,6 +50,10 @@ const clientLogos = [
 
 export default function HeroSection() {
   const headingRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const svgRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     if (!headingRef.current) return;
@@ -67,6 +71,58 @@ export default function HeroSection() {
     });
   }, []);
 
+  // Parallax on scroll
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      // SVG moves slower (parallax down)
+      if (svgRef.current) {
+        gsap.to(svgRef.current, {
+          yPercent: -15,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
+
+      // Heading moves slightly faster
+      if (headingRef.current) {
+        gsap.to(headingRef.current, {
+          yPercent: -30,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
+
+      // CTA fades and moves up
+      if (ctaRef.current) {
+        gsap.to(ctaRef.current, {
+          yPercent: -60,
+          opacity: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "60% top",
+            scrub: true,
+          },
+        });
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   const renderLine = (text: string) =>
     text.split("").map((char, i) =>
       char === " " ? (
@@ -79,9 +135,9 @@ export default function HeroSection() {
     );
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-32 pb-0 overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-32 pb-0 overflow-hidden">
       {/* SVG Draw Animation - Kri8it brand lines */}
-      <div className="absolute left-0 right-0 top-0 bottom-[223px] pointer-events-none overflow-hidden">
+      <div ref={svgRef} className="absolute left-0 right-0 top-0 bottom-[223px] pointer-events-none overflow-hidden">
         <svg
           viewBox="0 0 1474 1119"
           fill="none"
@@ -134,6 +190,7 @@ export default function HeroSection() {
         </div>
 
         <motion.a
+          ref={ctaRef}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9 }}

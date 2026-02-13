@@ -1,8 +1,13 @@
+import { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Plus, Minus } from "lucide-react";
 import { useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const serviceBlocks = [
   {
@@ -84,15 +89,40 @@ const serviceBlocks = [
 
 export default function Services() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+  const heroRef = useRef<HTMLElement>(null);
+  const svgRef = useRef<HTMLDivElement>(null);
+  const heroContentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!heroRef.current) return;
+    const ctx = gsap.context(() => {
+      if (svgRef.current) {
+        gsap.to(svgRef.current, {
+          yPercent: -15,
+          ease: "none",
+          scrollTrigger: { trigger: heroRef.current, start: "top top", end: "bottom top", scrub: true },
+        });
+      }
+      if (heroContentRef.current) {
+        gsap.to(heroContentRef.current, {
+          yPercent: -25,
+          opacity: 0,
+          ease: "none",
+          scrollTrigger: { trigger: heroRef.current, start: "top top", end: "70% top", scrub: true },
+        });
+      }
+    }, heroRef);
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
 
       {/* Hero - matches homepage hero */}
-      <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-32 pb-20 overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-32 pb-20 overflow-hidden">
         {/* SVG Draw Animation */}
-        <div className="absolute left-0 right-0 top-0 bottom-0 pointer-events-none overflow-hidden">
+        <div ref={svgRef} className="absolute left-0 right-0 top-0 bottom-0 pointer-events-none overflow-hidden">
           <svg
             viewBox="0 0 1474 1119"
             fill="none"
@@ -126,7 +156,7 @@ export default function Services() {
           </svg>
         </div>
 
-        <div className="max-w-7xl mx-auto w-full relative z-10 flex-1 flex flex-col justify-center">
+        <div ref={heroContentRef} className="max-w-7xl mx-auto w-full relative z-10 flex-1 flex flex-col justify-center">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
