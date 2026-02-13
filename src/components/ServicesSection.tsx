@@ -66,7 +66,7 @@ export default function ServicesSection() {
                     <motion.h3
                       className="font-display text-xl md:text-2xl font-medium text-[hsl(230,40%,15%)] transition-colors duration-300"
                       animate={{
-                        color: isActive ? "hsl(211, 100%, 48%)" : "hsl(230, 40%, 15%)",
+                        color: isActive ? "#049AD9" : "hsl(230, 40%, 15%)",
                         x: isActive ? 8 : 0,
                       }}
                       transition={{ duration: 0.3, ease: "easeOut" }}
