@@ -131,13 +131,14 @@ export default function HeroSection() {
           We Build The Story
         </motion.p>
 
-        <h1
+        <div
           ref={headingRef}
           className="font-display text-[clamp(3rem,6.5vw,7.5rem)] font-bold leading-[0.98] tracking-tight mb-16 max-w-5xl"
           style={{ perspective: "600px", visibility: "hidden" }}
         >
-          Brand. Digital.<br />Systems.
-        </h1>
+          <div>Brand. Digital.</div>
+          <div>Systems.</div>
+        </div>
 
         <motion.a
           initial={{ opacity: 0, y: 20 }}
