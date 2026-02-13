@@ -58,7 +58,7 @@ export default function HeroSection() {
     let split: SplitText;
     let cancelled = false;
 
-    document.fonts.ready.then(() => {
+    const init = () => {
       if (cancelled || !headingRef.current) return;
 
       split = new SplitText(headingRef.current, {
@@ -66,20 +66,30 @@ export default function HeroSection() {
         autoSplit: true,
       });
 
-      headingRef.current.style.visibility = "visible";
+      gsap.fromTo(
+        split.chars,
+        { yPercent: 80, opacity: 0 },
+        {
+          yPercent: 0,
+          opacity: 1,
+          duration: 0.9,
+          ease: "power4.out",
+          stagger: 0.03,
+          delay: 0.5,
+        }
+      );
+    };
 
-      gsap.from(split.chars, {
-        yPercent: 80,
-        opacity: 0,
-        duration: 0.9,
-        ease: "power4.out",
-        stagger: 0.03,
-        delay: 0.5,
-      });
+    // Try fonts.ready but fallback after 1s
+    const timeout = setTimeout(init, 1000);
+    document.fonts.ready.then(() => {
+      clearTimeout(timeout);
+      init();
     });
 
     return () => {
       cancelled = true;
+      clearTimeout(timeout);
       if (split) split.revert();
     };
   }, []);
@@ -134,7 +144,7 @@ export default function HeroSection() {
         <div
           ref={headingRef}
           className="font-display text-[clamp(3rem,6.5vw,7.5rem)] font-bold leading-[0.98] tracking-tight mb-16 max-w-5xl"
-          style={{ perspective: "600px", visibility: "hidden" }}
+          style={{ perspective: "1000px" }}
         >
           <div>Brand. Digital.</div>
           <div>Systems.</div>
