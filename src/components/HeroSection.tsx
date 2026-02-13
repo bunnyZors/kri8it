@@ -56,22 +56,21 @@ export default function HeroSection() {
     if (!headingRef.current) return;
 
     let split: SplitText;
+    let cancelled = false;
 
     document.fonts.ready.then(() => {
-      if (!headingRef.current) return;
+      if (cancelled || !headingRef.current) return;
 
       split = new SplitText(headingRef.current, {
-        type: "chars, words, lines",
+        type: "chars, words",
         autoSplit: true,
-        mask: "lines",
       });
 
-      gsap.set(headingRef.current, { visibility: "visible" });
+      headingRef.current.style.visibility = "visible";
 
       gsap.from(split.chars, {
-        yPercent: 100,
+        yPercent: 80,
         opacity: 0,
-        rotationX: -40,
         duration: 0.9,
         ease: "power4.out",
         stagger: 0.03,
@@ -80,6 +79,7 @@ export default function HeroSection() {
     });
 
     return () => {
+      cancelled = true;
       if (split) split.revert();
     };
   }, []);
