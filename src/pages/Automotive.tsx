@@ -424,6 +424,30 @@ export default function Automotive() {
         </div>
       </section>
 
+      {/* Video Showcase */}
+      <section className="relative h-[70vh] md:h-[80vh] overflow-hidden flex items-center justify-center">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/automotive-bg.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-background/40" />
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative z-10 text-center max-w-4xl px-6"
+        >
+          <h2 className="font-display text-[clamp(2.4rem,5vw,4.5rem)] font-bold leading-[1.05] tracking-tight">
+            Built for the <span className="text-accent">road ahead</span>.
+          </h2>
+        </motion.div>
+      </section>
+
       {/* CTA - matches homepage */}
       <section className="relative section-padding overflow-hidden">
         <div className="absolute top-0 right-0 w-[400px] h-[400px] opacity-10 pointer-events-none">
