@@ -104,20 +104,7 @@ export default function HeroSection() {
         });
       }
 
-      // CTA fades and moves up
-      if (ctaRef.current) {
-        gsap.to(ctaRef.current, {
-          yPercent: -20,
-          opacity: 0,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "30% top",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
-      }
+      // No GSAP parallax on CTA — stays visible naturally
     }, sectionRef);
 
     return () => ctx.revert();
