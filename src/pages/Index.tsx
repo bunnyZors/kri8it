@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ArrowLink, EditorialHero, InvitationSection, darkBody, darkSectionHeading, lightBody, lightSectionHeading } from "@/components/EditorialPage";
 import AutomAi8FitsSection from "@/components/AutomAi8FitsSection";
 import { usePageMetadata } from "@/hooks/use-page-metadata";
 
