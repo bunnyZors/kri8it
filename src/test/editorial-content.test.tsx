@@ -15,8 +15,16 @@ describe("V2 editorial pages", () => {
     renderPage(<Index />);
     expect(screen.getByRole("heading", { name: "Clearer direction. Digital work your business can use." })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Where AutomAi8 fits." })).toBeInTheDocument();
-    expect(screen.queryByText("Trusted By")).not.toBeInTheDocument();
+    expect(screen.getByText("Trusted By")).toBeInTheDocument();
+    expect(screen.getAllByRole("img").length).toBeGreaterThanOrEqual(19);
     expect(screen.queryByText("Industries")).not.toBeInTheDocument();
+  });
+
+  it("keeps the trusted-by logo band on the homepage hero only", () => {
+    renderPage(<Services />);
+    expect(screen.queryByText("Trusted By")).not.toBeInTheDocument();
+    renderPage(<About />);
+    expect(screen.queryByText("Trusted By")).not.toBeInTheDocument();
   });
 
   it("renders the new services architecture and every capability group", () => {
