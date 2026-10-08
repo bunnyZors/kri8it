@@ -84,7 +84,7 @@ export function EditorialHero({
 
   return (
     <section ref={sectionRef} className={`relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-32 overflow-hidden ${showClients ? "pb-0" : "pb-20"}`}>
-      <div ref={artworkRef} className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+      <div ref={artworkRef} className={`absolute top-0 left-0 right-0 ${showClients ? "bottom-[210px] md:bottom-[260px]" : "bottom-0"} pointer-events-none overflow-hidden`} aria-hidden="true">
         <svg viewBox="0 0 1474 1119" fill="none" className="absolute right-0 bottom-0 w-[72%] md:w-[55%] h-auto opacity-40">
           <path d="M.5,1118.81c7.16-197.99,130.53-379,317.92-456.35.22.84.54,2.06.93,3.55,6.13,22.92,28.6,86.14,62.22,143.23,41.07,69.74,93.26,113.16,91.02,113.72-4.21,1.06-.14.04-19.31,5.18-93.19,24.99-150,103.46-157.02,190.66" stroke="hsl(var(--accent))" strokeWidth="1.5" className="hero-svg-path" style={{ strokeDasharray: 1178, strokeDashoffset: 1178 }} />
           <path d="M1473.76,654.49c-10.93,1.19-21.9,3.23-32.85,6.17-35.47,9.51-67.67,30.81-67.67,30.81-49.61,34.17-88.1,82.15-110.68,138-6.51,19.28-13.02,38.55-19.52,57.83l-244.7-138.59-16.4-9.28,47.09-81.08.92.53c61.42-133.4,181.62-242.19,334.55-283.19,36.45-9.77,73.04-15.36,109.25-17.04" stroke="hsl(var(--accent))" strokeWidth="1.5" className="hero-svg-path" style={{ strokeDasharray: 1307, strokeDashoffset: 1307, animationDelay: "0.5s" }} />
