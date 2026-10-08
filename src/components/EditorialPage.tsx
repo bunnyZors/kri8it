@@ -14,6 +14,7 @@ type EditorialHeroProps = {
   secondaryLabel: string;
   secondaryTo: string;
   supportingLine?: string;
+  showClients?: boolean;
 };
 
 export function ArrowLink({
