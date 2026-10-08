@@ -166,4 +166,34 @@
       stroke-dashoffset: 0;
     }
   }
+
+  .flow-dash {
+    stroke-dasharray: 5 11;
+    animation: flowDash 1.7s linear infinite;
+  }
+
+  @keyframes flowDash {
+    to {
+      stroke-dashoffset: -32;
+    }
+  }
+
+  .orbit-ring {
+    transform-box: view-box;
+    transform-origin: 388px 260px;
+    animation: orbitSpin 30s linear infinite;
+  }
+
+  @keyframes orbitSpin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .flow-dash,
+    .orbit-ring {
+      animation: none;
+    }
+  }
 }
