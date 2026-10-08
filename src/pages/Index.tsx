@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ArrowLink, EditorialHero, InvitationSection, darkBody, darkSectionHeading, lightBody, lightSectionHeading } from "@/components/EditorialPage";
+import AutomAi8FitsSection from "@/components/AutomAi8FitsSection";
 import { usePageMetadata } from "@/hooks/use-page-metadata";
 
 const capabilities = [
@@ -90,12 +90,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-          <h2 className={darkSectionHeading}>Where <span className="text-accent">AutomAi8</span> fits.</h2>
-          <div className={`${darkBody} space-y-6`}><p>Kri8it is the agency and consulting partner. AutomAi8 is Kri8it's automation and AI brand.</p><p>AutomAi8 can support a wider engagement or a specific need around lead management, retention, attribution or workflows. Where AI is involved, we define its role, the decisions that need human judgement and what should happen when it cannot complete the task as intended.</p><p>Specific connections, migrations, access requirements and third-party costs are assessed during scoping and testing.</p></div>
-        </div>
-      </section>
+      <AutomAi8FitsSection />
 
       <section className="section-padding bg-[hsl(230,15%,96%)]">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-24"><h2 className={lightSectionHeading}>Start with a question your business needs to answer.</h2><div className={`${lightBody} space-y-6`}><p>We work with leaders and teams who want considered advice and are willing to contribute their knowledge to the work.</p><p>Automotive is a particular focus, building on our experience in the sector. Across other businesses, fit depends on the question, the people involved and the help required.</p></div></div>
