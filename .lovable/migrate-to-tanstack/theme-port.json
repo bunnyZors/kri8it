@@ -1,0 +1,23 @@
+{
+  "customizations": [
+    { "token": "@font-face Inter + Gilroy", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "colour tokens (background, foreground, card, popover, primary, secondary, muted, accent, destructive, border, input, ring)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "sidebar tokens", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--radius", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "font-sans / font-display", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "container (center, 2rem, 1400px)", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "animate-fade-up", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "animate-marquee", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "animate-typewriter-cursor", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "headings use font-display", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "text-gradient", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "glow-card", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "glass", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "shimmer-btn", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "section-padding", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "scrollbar-hide", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "hero-svg-path", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "flow-dash", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "orbit-ring", "source": "src/index.css", "reappliedIn": "src/styles.css" }
+  ]
+}
