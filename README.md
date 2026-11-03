@@ -1,73 +1,68 @@
-# Welcome to your Lovable project
+# Kri8it: Digital Systems
 
-## Project info
+# Project: Kri8it Modern Agency Website
+# Style: Premium, Architectural, High-Tech, Trusted
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Build a state-of-the-art agency website for "Kri8it," a digital partner with 25 years of experience. The design must be a blend of a high-end creative agency (like WPromote) and a sophisticated SaaS platform (like NinjaPromo).
 
-## How can I edit this code?
+## Tech Stack Requirements:
+- React, Tailwind CSS, Lucide React Icons, Framer Motion for animations.
+- Use a "Dark Mode" sophisticated palette: Deep Charcoals (#121212), Accent Electric Blue (#0070f3), and clean White typography.
 
-There are several ways of editing your application.
+## Layout Instructions:
+1. **Navigation:** Glassmorphism sticky header with a Mega Menu for Services and a distinct "Product" section for AutomAi8 and IntegrAi8.
+2. **Hero Section:** 
+   - Use a split-screen or centered layout with a "Typewriter" effect for the headline.
+   - Headline: "Digital work as a [connected system]."
+   - Sub-headline: "Strategy, Creative, and Systems built to support how your business operates, not just how it looks."
+3. **The 'Ai8' Ecosystem Component:**
+   - Create a 3-column interactive card section.
+   - Card 1: **Kri8it** (Focus: Strategy, Brand, Web).
+   - Card 2: **AutomAi8** (Focus: Sales & Marketing Automation).
+   - Card 3: **IntegrAi8** (Focus: Workflow & Data Integration).
+   - *Interaction:* On hover, the cards should glow with the accent color.
+4. **Services Grid:**
+   - Use a "Bento Box" style layout. 
+   - 5 Blocks: Strategy, Web/Digital, Branding, Performance Marketing, Systems.
+   - Each block should have a subtle Lucide icon and a "Learn More" arrow.
+5. **Experience Section:**
+   - A timeline or large-text section highlighting "25 Years of Continuity." 
+   - Include a quote component for Bertus Floor (The SAFY Group) with a premium border-gradient.
+6. **Industry Section:**
+   - A clean marquee or grid of the industries: Automotive, Travel, Property, Retail, Professional Services, Non-profits.
+7. **Footer:**
+   - Large "Let's Talk" CTA section.
+   - Sitemap with 4 columns.
+   - "Founded in South Africa. Operating Globally." text.
 
-**Use Lovable**
+## UI/UX Directives:
+- Use **Framer Motion** for "Reveal on Scroll" animations.
+- Buttons should have a "shimmer" effect on hover.
+- Typography: Use a bold Sans-Serif (like Inter or Plus Jakarta Sans) for headings and a highly legible font for body copy.
+- Tone: Professional, authoritative, yet innovative.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Copy Content:
+[Reference the provided copy deck for all text content, ensuring the distinction between "Traditional Agency" and "Systems Partner" is clear.]
 
-Changes made via Lovable will be committed automatically to this repo.
+This project was built with [Lovable](https://lovable.dev).
 
-**Use your preferred IDE**
+**Live app**: https://kri8it.lovable.app
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Build with Lovable
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/3e2eeb80-1f87-4d77-8690-6bf7eec0326f).
 
-Follow these steps:
+- **Ship faster**: describe what you want to build and Lovable handles the code.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+
+## Development
+
+Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
+git clone <this-repository-url>
+cd <repository-name>
 npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
