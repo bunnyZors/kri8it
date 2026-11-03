@@ -152,7 +152,7 @@ export default function AutomAi8FitsSection() {
             style={{ background: "radial-gradient(circle at 70% 54%, hsl(var(--accent) / 0.16), transparent 62%)" }}
             aria-hidden="true"
           />
-          <div className="relative rounded-[32px] border border-muted-foreground/12 bg-[hsl(240,50%,9%)]/60 p-6 md:p-10 backdrop-blur-sm transition-colors duration-700 group-hover:border-accent/30">
+          <div className="relative rounded-[32px] border border-muted-foreground/12 bg-[hsl(240,50%,9%)]/60 p-6 md:p-10 backdrop-blur-xs transition-colors duration-700 group-hover:border-accent/30">
             <FitsDiagram reduce={reduce} />
           </div>
         </motion.div>

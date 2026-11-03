@@ -33,7 +33,7 @@ export default function Footer() {
                 <input
                   type="text"
                   required
-                  className="w-full bg-transparent border-b border-[hsl(230,10%,85%)] pb-2 text-[hsl(230,40%,15%)] focus:border-[#049AD9] outline-none transition-colors"
+                  className="w-full bg-transparent border-b border-[hsl(230,10%,85%)] pb-2 text-[hsl(230,40%,15%)] focus:border-[#049AD9] outline-hidden transition-colors"
                 />
               </div>
               <div>
@@ -42,7 +42,7 @@ export default function Footer() {
                 </label>
                 <input
                   type="text"
-                  className="w-full bg-transparent border-b border-[hsl(230,10%,85%)] pb-2 text-[hsl(230,40%,15%)] focus:border-[#049AD9] outline-none transition-colors"
+                  className="w-full bg-transparent border-b border-[hsl(230,10%,85%)] pb-2 text-[hsl(230,40%,15%)] focus:border-[#049AD9] outline-hidden transition-colors"
                 />
               </div>
             </div>
@@ -54,7 +54,7 @@ export default function Footer() {
                 <input
                   type="email"
                   required
-                  className="w-full bg-transparent border-b border-[hsl(230,10%,85%)] pb-2 text-[hsl(230,40%,15%)] focus:border-[#049AD9] outline-none transition-colors"
+                  className="w-full bg-transparent border-b border-[hsl(230,10%,85%)] pb-2 text-[hsl(230,40%,15%)] focus:border-[#049AD9] outline-hidden transition-colors"
                 />
               </div>
               <div>
@@ -63,7 +63,7 @@ export default function Footer() {
                 </label>
                 <input
                   type="tel"
-                  className="w-full bg-transparent border-b border-[hsl(230,10%,85%)] pb-2 text-[hsl(230,40%,15%)] focus:border-[#049AD9] outline-none transition-colors"
+                  className="w-full bg-transparent border-b border-[hsl(230,10%,85%)] pb-2 text-[hsl(230,40%,15%)] focus:border-[#049AD9] outline-hidden transition-colors"
                 />
               </div>
             </div>
@@ -74,7 +74,7 @@ export default function Footer() {
                 <textarea
                   required
                   rows={3}
-                  className="w-full bg-transparent border-b border-[hsl(230,10%,85%)] pb-2 text-[hsl(230,40%,15%)] focus:border-[#049AD9] outline-none transition-colors resize-y"
+                  className="w-full bg-transparent border-b border-[hsl(230,10%,85%)] pb-2 text-[hsl(230,40%,15%)] focus:border-[#049AD9] outline-hidden transition-colors resize-y"
                 />
             </div>
             <button
