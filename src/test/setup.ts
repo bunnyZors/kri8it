@@ -1,4 +1,9 @@
-import "@testing-library/jest-dom";
+import "@testing-library/jest-dom/vitest";
+
+Object.defineProperty(window, "scrollTo", {
+  writable: true,
+  value: () => {},
+});
 
 Object.defineProperty(window, "matchMedia", {
   writable: true,
@@ -12,24 +17,4 @@ Object.defineProperty(window, "matchMedia", {
     removeEventListener: () => {},
     dispatchEvent: () => {},
   }),
-});
-
-class IntersectionObserverMock implements IntersectionObserver {
-  readonly root = null;
-  readonly rootMargin = "0px";
-  readonly scrollMargin = "0px";
-  readonly thresholds = [0];
-  disconnect() {}
-  observe() {}
-  takeRecords(): IntersectionObserverEntry[] { return []; }
-  unobserve() {}
-}
-
-Object.defineProperty(window, "IntersectionObserver", {
-  writable: true,
-  value: IntersectionObserverMock,
-});
-Object.defineProperty(globalThis, "IntersectionObserver", {
-  writable: true,
-  value: IntersectionObserverMock,
 });
