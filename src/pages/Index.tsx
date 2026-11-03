@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowLink, EditorialHero, InvitationSection, darkBody, darkSectionHeading, lightBody, lightSectionHeading } from "@/components/EditorialPage";

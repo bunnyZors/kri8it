@@ -86,7 +86,7 @@ function BentoCard({ project, index }: { project: Project; index: number }) {
       transition={{ delay: index * 0.06, duration: 0.4 }}
       className={`${sizeClasses[project.size]} group`}
     >
-      <div className="relative h-full rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer">
+      <div className="relative h-full rounded-2xl overflow-hidden bg-white shadow-xs hover:shadow-2xl transition-all duration-500 cursor-pointer">
         <div className={`relative w-full h-full ${!hasImage ? aspectClasses[project.size] : ""} overflow-hidden`}>
           {hasImage ? (
             <>

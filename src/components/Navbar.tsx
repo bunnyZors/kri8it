@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import kri8itLogo from "@/assets/logos/kri8it-primary-logo-white.svg";
 
 const navLinks = [
@@ -17,7 +17,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/30">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xs border-b border-border/30">
       <div className="max-w-[1440px] mx-auto flex items-center justify-between h-20 px-6 lg:px-10">
         {/* Logo */}
         <Link to="/" className="flex items-center shrink-0">
