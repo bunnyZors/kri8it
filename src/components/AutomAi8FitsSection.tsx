@@ -40,7 +40,7 @@ function FitsDiagram({ reduce }: { reduce: boolean }) {
       <motion.rect
         x="24" y="24" width="512" height="432" rx="36"
         fill="none" stroke="hsl(var(--accent))" strokeOpacity="0.30" strokeWidth="1"
-        initial={reduce ? false : { pathLength: 0 }} whileInView={reduce ? undefined : { pathLength: 1 }}
+        initial={reduce ? false : { pathLength: 0 }} whileInView={{ pathLength: 1 }}
         viewport={{ once: true }} transition={{ duration: 1.6, ease: "easeInOut" }}
       />
       <rect x="44" y="44" width="472" height="392" rx="26" fill="none" stroke="hsl(var(--foreground))" strokeOpacity="0.07" />
@@ -67,7 +67,7 @@ function FitsDiagram({ reduce }: { reduce: boolean }) {
         <g key={line.id}>
           <motion.path
             id={line.id} d={line.d} fill="none" stroke="hsl(var(--accent))" strokeOpacity="0.22" strokeWidth="1"
-            initial={reduce ? false : { pathLength: 0 }} whileInView={reduce ? undefined : { pathLength: 1 }}
+            initial={reduce ? false : { pathLength: 0 }} whileInView={{ pathLength: 1 }}
             viewport={{ once: true }} transition={{ duration: 1.1, delay: 0.5 + i * 0.15, ease: "easeOut" }}
           />
           <path d={line.d} fill="none" stroke="hsl(var(--accent))" strokeOpacity="0.75" strokeWidth="1.25" className="flow-dash" />
@@ -85,7 +85,7 @@ function FitsDiagram({ reduce }: { reduce: boolean }) {
       {/* AutomAi8 module */}
       <ellipse cx="388" cy="260" rx="150" ry="110" fill="url(#af-glow)" />
       <motion.g
-        initial={reduce ? false : { opacity: 0, scale: 0.94 }} whileInView={reduce ? undefined : { opacity: 1, scale: 1 }}
+        initial={reduce ? false : { opacity: 0, scale: 0.94 }} whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }} transition={{ duration: 0.9, delay: 1.1, ease: "easeOut" }}
         style={{ transformBox: "view-box", transformOrigin: "388px 260px" }}
       >

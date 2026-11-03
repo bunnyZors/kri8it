@@ -68,6 +68,7 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   const [selectedTestimonial, setSelectedTestimonial] = useState<number | null>(null);
+  const selected = selectedTestimonial !== null ? testimonials[selectedTestimonial] : undefined;
 
   return (
     <section className="section-padding" style={{ background: "#ffffff" }}>
@@ -118,7 +119,7 @@ export default function TestimonialsSection() {
 
       {/* Modal */}
       <AnimatePresence>
-        {selectedTestimonial !== null && (
+        {selected && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -136,10 +137,10 @@ export default function TestimonialsSection() {
               <div className="flex items-start justify-between mb-2">
                 <div>
                   <h3 className="text-2xl md:text-3xl font-extrabold text-foreground">
-                    {testimonials[selectedTestimonial].name}
+                    {selected.name}
                   </h3>
                   <p className="text-accent text-sm italic">
-                    {testimonials[selectedTestimonial].role}
+                    {selected.role}
                   </p>
                 </div>
                 <button
@@ -150,7 +151,7 @@ export default function TestimonialsSection() {
                 </button>
               </div>
               <div className="border-t border-border mt-4 pt-8 space-y-5">
-                {testimonials[selectedTestimonial].full.map((p, i) => (
+                {selected.full.map((p, i) => (
                   <p key={i} className="text-[#F2F2F2]/70 text-base md:text-lg leading-relaxed">
                     {p}
                   </p>
