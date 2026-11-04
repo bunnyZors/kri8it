@@ -569,6 +569,7 @@
   .editorial-site h2, .site-footer h2 { font-size: 38px; line-height: 1.12; }
   .kinetic-heading { font-size: 43px !important; }
   .premise-bottom { grid-template-columns: 1fr; gap: 26px; margin-top: 34px; }
+  .response-grid { grid-template-columns: 1fr; gap: 30px; }
   .site-prose { font-size: 16px; }
   .section-title-row { flex-direction: column; align-items: start; gap: 28px; margin-bottom: 36px; }
   .section-intro { font-size: 17px; }
