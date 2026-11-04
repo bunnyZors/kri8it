@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 import logoNaturalSelection from "@/assets/logos/natural-selection.png";
 import logoSpringbok from "@/assets/logos/springbok-atlas.png";
 import logoPembroke from "@/assets/logos/pembroke.png";
@@ -44,10 +42,8 @@ const clientLogos = [
 
 export default function ClientMarquee({ delay = 1.2 }: { delay?: number }) {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay, duration: 0.8 }}
+    <div
+      style={{ animationDelay: `${delay}s` }}
       className="relative z-10 mt-20 md:mt-28"
     >
       <div className="relative mb-6 overflow-visible">
@@ -81,6 +77,6 @@ export default function ClientMarquee({ delay = 1.2 }: { delay?: number }) {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
