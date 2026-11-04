@@ -14,15 +14,15 @@ export const hero = {
 };
 export const clients = ["Natural Selection", "Springbok Atlas", "Pembroke Privacy", "Safari Online", "Art of Safari", "Exclusive Books", "Wildlife Safari", "Mahindra", "Volkswagen"];
 export const capabilities = [
-  { title: "Strategy", text: "Define purpose, opportunity and the decisions that matter.", detail: "A considered direction before committing to the work.", kind: "strategy" },
-  { title: "Brand", text: "Create a clear position and usable visual language.", detail: "A consistent expression of what your business stands for.", kind: "brand" },
-  { title: "Websites", text: "Plan and deliver useful digital experiences around real needs.", detail: "The customer’s purpose, and the people managing the platform, come first.", kind: "web" },
-  { title: "Marketing", text: "Connect objectives, audiences, channels and measurement.", detail: "Give every part of the activity a clear job to do.", kind: "marketing" },
-  { title: "AI and automation", text: "Define where automation belongs, where human judgement remains and what happens when systems cannot complete a task.", detail: "Practical technology with clear boundaries.", kind: "automation" },
+  { title: "Strategy", text: "Define purpose, opportunity and the decisions that matter.", detail: "A considered direction before committing to the work.", tag: "Clarity before activity", kind: "strategy" },
+  { title: "Brand", text: "Create a clear position and usable visual language.", detail: "A consistent expression of what your business stands for.", tag: "Meaning made visible", kind: "brand" },
+  { title: "Websites", text: "Plan and deliver useful digital experiences around real needs.", detail: "The customer’s purpose, and the people managing the platform, come first.", tag: "Built around real needs", kind: "web" },
+  { title: "Marketing", text: "Connect objectives, audiences, channels and measurement.", detail: "Give every part of the activity a clear job to do.", tag: "Every part has a job", kind: "marketing" },
+  { title: "AI and automation", text: "Define where automation belongs, where human judgement remains and what happens when systems cannot complete a task.", detail: "Practical technology with clear boundaries.", tag: "Boundaries by design", kind: "automation" },
 ];
 export const sectors = [
-  { title: "Automotive", text: "Complex journeys, dealer networks, changing technologies and measurable performance.", to: "/automotive", placeholder: "Automotive image placeholder", category: "Customer journeys & performance" },
-  { title: "Travel & tourism", text: "Brand, content and digital experiences that turn inspiration into an informed next step.", to: "/travel-tourism", placeholder: "Travel image placeholder", category: "Inspiration & experience" },
+  { title: "Automotive", text: "Strategic, digital and marketing experience shaped around complex journeys, dealer networks, changing technologies and measurable performance.", to: "/automotive", placeholder: "Automotive image placeholder", category: "Deep sector experience", cta: "Discuss an automotive challenge" },
+  { title: "Travel & tourism", text: "Brand, content and digital experiences that help remarkable places and travel businesses turn inspiration into an informed next step.", to: "/travel-tourism", placeholder: "Travel image placeholder", category: "Destination to decision", cta: "Discuss a travel challenge" },
 ];
 export const process = [
   { title: "Understand", text: "Context, goals, evidence and previous attempts." },
