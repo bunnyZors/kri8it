@@ -471,15 +471,15 @@
 .quote-grid figcaption { margin-top: 34px; display: grid; gap: 7px; font-size: 14px; }
 .quote-grid figcaption span { color: var(--site-muted-dark); }
 .conversation-section h2.conversation-heading { font-size: 72px; line-height: 1.08; max-width: 1150px; }
-.conversation-heading span { color: var(--site-primary-deep); }
+.conversation-heading span { color: var(--site-blue); }
 .conversation-row { display: grid; grid-template-columns: 1fr 1.15fr; gap: 80px; margin-top: 100px; padding-top: 64px; border-top: 1px solid var(--site-line-light); }
 .conversation-cta { display: inline-flex; align-items: baseline; gap: 14px; max-width: 500px; font-family: var(--font-display); font-size: 40px; font-weight: 700; line-height: 1.25; color: var(--site-ink); text-decoration: none; transition: color var(--site-fast); }
-.conversation-cta svg { flex: none; align-self: center; color: var(--site-primary-deep); }
-.conversation-cta:hover { color: var(--site-primary-deep); }
+.conversation-cta svg { flex: none; align-self: center; color: var(--site-blue); }
+.conversation-cta:hover { color: var(--site-blue); }
 .conversation-offices { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-content: start; }
 .conversation-offices h3 { font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--section-muted); margin-bottom: 22px; }
 .conversation-offices a { display: block; width: fit-content; font-size: 20px; line-height: 1.5; color: var(--site-ink); text-decoration: none; margin-bottom: 12px; transition: color var(--site-fast); }
-.conversation-offices a:hover { color: var(--site-primary-deep); }
+.conversation-offices a:hover { color: var(--site-blue); }
 .site-footer { padding-top: 100px; border-top: 1px solid var(--site-line-dark); scroll-margin-top: 80px; }
 .contact-intro h2 { font-size: 68px; font-weight: 700; }
 .contact-intro h2 span { color: var(--site-primary); }
