@@ -407,7 +407,7 @@
 .original-trust-bar { overflow: hidden; padding-block: 24px 64px; }
 .original-trust-bar .relative.z-10 { margin-top: 0; }
 .original-trust-bar .animate-marquee { font-family: var(--font-sans); }
-.kinetic-heading { max-width: 1120px; font-size: 78px !important; line-height: 1.12 !important; }
+.kinetic-heading { max-width: 1120px; }
 .kinetic-word { position: relative; display: inline-block; }
 .kinetic-fill { position: absolute; inset: 0; color: var(--site-primary); clip-path: inset(0 100% 0 0); }
 .premise-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 62px; padding-top: 32px; border-top: 1px solid var(--site-line-light); }
@@ -474,7 +474,7 @@
 .proof-rings svg { flex: none; width: 1250px; height: 1250px; stroke: var(--site-blue); stroke-width: 1; opacity: .16; }
 .proof-inner { position: relative; }
 .proof-section .site-eyebrow { justify-content: center; }
-.proof-section h2.proof-statement { font-size: 74px; line-height: 1.1; max-width: 1180px; margin-inline: auto; }
+.proof-section h2.proof-statement { max-width: 1180px; margin-inline: auto; }
 .proof-statement span { color: var(--site-primary); }
 .proof-sub { margin: 36px auto 0; max-width: 660px; font-size: 19px; line-height: 1.6; color: var(--section-muted); }
 .quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; margin-top: 96px; text-align: left; }
@@ -483,7 +483,7 @@
 .quote-grid blockquote { font-family: var(--font-display); font-size: 29px; line-height: 1.4; font-weight: 500; }
 .quote-grid figcaption { margin-top: 34px; display: grid; gap: 7px; font-size: 14px; }
 .quote-grid figcaption span { color: var(--site-muted-dark); }
-.conversation-section h2.conversation-heading { font-size: 72px; line-height: 1.08; max-width: 1150px; }
+.conversation-section h2.conversation-heading { max-width: 1150px; }
 .conversation-heading span { color: var(--site-primary); }
 .conversation-row { display: grid; grid-template-columns: 1fr 1.15fr; gap: 80px; margin-top: 100px; padding-top: 64px; border-top: 1px solid var(--site-line-light); }
 .conversation-cta { display: inline-flex; align-items: baseline; gap: 14px; max-width: 500px; font-family: var(--font-display); font-size: 40px; font-weight: 700; line-height: 1.25; color: var(--site-ink); text-decoration: none; transition: color var(--site-fast); }
@@ -525,7 +525,6 @@
   .hero-description { max-width: 610px; }
   .hero-bottom { padding-top: 48px; }
   .editorial-site h2, .site-footer h2 { font-size: 48px; }
-  .kinetic-heading { font-size: 60px !important; }
   .capability-track { width: auto; display: grid; grid-template-columns: 1fr 1fr; padding-inline: 32px; gap: 24px; }
   .capability-panel { width: auto; min-height: 480px; padding: 32px 28px; }
   .section-title-row { gap: 30px; }
@@ -539,7 +538,6 @@
   .process-columns p { font-size: 16px; max-width: 520px; }
   .automation-grid { grid-template-columns: 1fr; gap: 48px; }
   .system-panel { max-width: 560px; width: 100%; }
-  .conversation-section h2.conversation-heading { font-size: 50px; }
   .conversation-row { grid-template-columns: 1fr; gap: 56px; margin-top: 72px; }
   .conversation-cta { font-size: 32px; }
   .proof-section h2.proof-statement { font-size: 50px; }
