@@ -581,7 +581,10 @@
   .system-boundary-label { font-size: 23px; }
   .system-boundary-label span { font-size: 10px; }
   .system-diagram > p { font-size: 10px; }
-  .quote-grid { margin-top: 36px; }
+  .proof-section h2.proof-statement { font-size: 34px; }
+  .proof-sub { font-size: 16px; margin-top: 26px; }
+  .proof-rings svg { width: 620px; height: 620px; }
+  .quote-grid { margin-top: 52px; }
   .quote-grid blockquote { font-size: 25px; }
   .site-footer { padding-top: 66px; }
   .footer-details { grid-template-columns: 1fr; gap: 36px; margin-top: 48px; padding-block: 36px; }
