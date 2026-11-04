@@ -547,17 +547,25 @@
   .site-prose { font-size: 16px; }
   .section-title-row { flex-direction: column; align-items: start; gap: 28px; margin-bottom: 36px; }
   .section-intro { font-size: 17px; }
-  .capability-track { grid-template-columns: 1fr; padding-inline: 20px; gap: 36px; }
-  .capability-panel { padding: 20px 0 30px; border-left: 0; border-top: 1px solid var(--site-line-dark); }
-  .capability-art { height: 180px; }
+  .capability-track { grid-template-columns: 1fr; padding-inline: 20px; gap: 24px; }
+  .capability-panel { min-height: 430px; padding: 28px 24px 30px; }
   .capability-panel h3 { font-size: 31px; }
   .capability-panel p { font-size: 17px; }
-  .sector-grid, .process-layout, .quote-grid, .engagement-grid { grid-template-columns: 1fr; gap: 44px; }
-  .sector-grid h3 { font-size: 30px; }
-  .sector-placeholder { aspect-ratio: 1.45; }
-  .process-heading { position: static; }
-  .process-list h3 { font-size: 29px; }
-  .process-list p { font-size: 17px; }
+  .sector-list { gap: 56px; }
+  .sector-card, .quote-grid, .engagement-grid { grid-template-columns: 1fr; gap: 28px; }
+  .sector-card:nth-child(even) .sector-media { order: 0; }
+  .sector-card:nth-child(even) .sector-copy { order: 1; }
+  .sector-copy h3 { font-size: 38px; margin-bottom: 18px; }
+  .sector-media { aspect-ratio: 1; padding: 22px; }
+  .sector-media > span { font-size: 10px; }
+  .sector-action { margin-top: 30px; }
+  .sector-link { font-size: 11px; letter-spacing: 0.18em; }
+  .process-heading-row { margin-bottom: 44px; }
+  .process-heading-row .section-intro { padding-top: 0; }
+  .process-columns { grid-template-columns: 1fr; }
+  .process-columns li { border-left: 0; border-top: 1px solid var(--site-line-dark); padding: 26px 0 22px; }
+  .process-columns h3 { font-size: 26px; margin-top: 24px; }
+  .process-columns p { font-size: 16px; }
   .system-diagram { padding: 22px 12px 20px; }
   .system-boundary-label { font-size: 23px; }
   .system-boundary-label span { font-size: 10px; }
