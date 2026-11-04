@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import { capabilities, clients, engagement, hero, primaryContact, process, sectors, testimonials } from "@/data/site-content";
+import { capabilities, engagement, hero, primaryContact, process, sectors, testimonials } from "@/data/site-content";
+import ClientMarquee from "@/components/ClientMarquee";
 import { Action, CapabilityArt, Eyebrow, OrbitalGraphic } from "./EditorialElements";
 
 export function HomeHero() {
@@ -9,7 +10,7 @@ export function HomeHero() {
     <div className="hero-actions" data-hero-reveal><Action to={primaryContact} primary>Talk through your business challenge</Action><Action to="/services">Let's shape your next step</Action></div>
     </div><OrbitalGraphic />
     <div className="hero-bottom"><p>{hero.experience}</p><ArrowDown aria-hidden="true" size={20} /></div>
-  </div></section><section className="credibility site-dark" aria-label="Client references"><div className="site-wrap"><div className="credibility-label"><span>Selected client relationships</span><span>Client logo placeholders</span></div><ul>{clients.map(client=><li key={client}>{client}</li>)}</ul></div></section></>;
+  </div></section><section className="original-trust-bar site-dark" aria-label="Trusted by"><div className="site-wrap"><ClientMarquee delay={0} /></div></section></>;
 }
 export function StrategicPremise() {
   return <section className="site-section site-light premise" data-theme="light"><div className="site-wrap"><Eyebrow number="01">Start with the right question</Eyebrow>
