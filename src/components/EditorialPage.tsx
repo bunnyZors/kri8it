@@ -32,13 +32,13 @@ export function ArrowLink({
   compact?: boolean;
   light?: boolean;
 }) {
-  const className = "inline-flex items-center gap-4 w-fit h-auto min-h-12 px-5 py-4 uppercase whitespace-normal text-left";
+  const className = compact ? "editorial-action-compact" : "";
   const content = (
     <>
-      <span className="flex items-center justify-center">
-        <ArrowRight size={compact ? 18 : 20} />
+      <span className="editorial-action-icon" aria-hidden="true">
+        <ArrowRight />
       </span>
-      <span className="text-sm font-bold uppercase">
+      <span className="editorial-action-label">
         {children}
       </span>
     </>
@@ -104,7 +104,7 @@ export function EditorialHero({
           <div className="text-[#F2F2F2]/70 text-base md:text-lg leading-relaxed space-y-4">{children}</div>
           <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8 mt-9">
             <ArrowLink href="mailto:clint@kri8it.com">Talk through your business challenge</ArrowLink>
-            <Button asChild variant="editorialLink" className="h-auto min-h-12 px-5 py-4 whitespace-normal text-left"><Link to={secondaryTo}>{secondaryLabel}<ArrowRight aria-hidden="true" /></Link></Button>
+            <Button asChild variant="editorialLink"><Link to={secondaryTo}><span className="editorial-action-label">{secondaryLabel}</span></Link></Button>
           </div>
           {supportingLine && <p className="mt-10 pt-6 border-t border-muted-foreground/20 text-sm text-[#F2F2F2]/60 max-w-2xl">{supportingLine}</p>}
         </motion.div>
