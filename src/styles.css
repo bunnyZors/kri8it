@@ -488,8 +488,8 @@
 .footer-bottom nav { display: flex; gap: 24px; flex-wrap: wrap; }
 #main-content { scroll-margin-top: 80px; outline: none; }
 @media (min-width: 1100px) {
-  .capability-section:not(.capabilities-pinned) .capability-track { width: auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 40px 0; }
-  .capability-section:not(.capabilities-pinned) .capability-panel { width: auto; }
+  .capability-section:not(.capabilities-pinned) .capability-track { width: auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  .capability-section:not(.capabilities-pinned) .capability-panel { width: auto; min-height: 480px; }
 }
 @media (max-width: 1099px) {
   :root { --site-section-space: 82px; }
@@ -504,12 +504,16 @@
   .hero-bottom { padding-top: 48px; }
   .editorial-site h2, .site-footer h2 { font-size: 48px; }
   .kinetic-heading { font-size: 60px !important; }
-  .capability-track { width: auto; display: grid; grid-template-columns: 1fr 1fr; padding-inline: 32px; gap: 48px 0; }
-  .capability-panel { width: auto; padding-inline: 28px; }
-  .capability-panel:last-child { border-right: 0; }
+  .capability-track { width: auto; display: grid; grid-template-columns: 1fr 1fr; padding-inline: 32px; gap: 24px; }
+  .capability-panel { width: auto; min-height: 480px; padding: 32px 28px; }
   .section-title-row { gap: 30px; }
-  .sector-grid { gap: 30px; }
-  .process-layout { gap: 48px; }
+  .sector-list { gap: 72px; }
+  .sector-card { gap: 40px; }
+  .sector-copy h3 { font-size: 46px; }
+  .process-heading-row { margin-bottom: 64px; }
+  .process-columns li { padding: 32px 18px 6px; min-height: 0; }
+  .process-columns h3 { font-size: 22px; margin-top: 36px; }
+  .process-columns p { font-size: 15px; }
   .automation-grid { grid-template-columns: 1fr; gap: 48px; }
   .system-diagram { max-width: 640px; width: 100%; }
   .engagement-grid { gap: 48px; }
