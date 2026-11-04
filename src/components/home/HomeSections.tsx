@@ -1,5 +1,5 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import { capabilities, engagement, hero, primaryContact, process, sectors, testimonials } from "@/data/site-content";
+import { capabilities, hero, offices, primaryContact, process, sectors, testimonials } from "@/data/site-content";
 import ClientMarquee from "@/components/ClientMarquee";
 import { Link } from "@/lib/router-compat";
 import { Action, Eyebrow, OrbitalGraphic } from "./EditorialElements";
@@ -37,5 +37,5 @@ export function ProofSection() {
   return <section id="proof" className="site-section site-dark proof-section" data-theme="dark"><div className="proof-rings" aria-hidden="true"><svg viewBox="0 0 1200 1200" fill="none"><circle cx="600" cy="600" r="420" /><circle cx="600" cy="600" r="585" /></svg></div><div className="site-wrap proof-inner"><Eyebrow number="06">In good company</Eyebrow><h2 className="proof-statement">“A great partnership produces <span>great results.”</span></h2><p className="proof-sub">Long-term, practical collaboration — built around the client’s business, not a preset package.</p><div className="quote-grid">{testimonials.map(item=><figure key={item.name}><span className="quote-mark" aria-hidden="true">“</span><blockquote>{item.quote}</blockquote><figcaption><strong>{item.name}</strong><span>{item.role}</span></figcaption></figure>)}</div></div></section>;
 }
 export function EngagementSection() {
-  return <section className="site-section site-dark" data-theme="dark"><div className="site-wrap engagement-grid"><div><Eyebrow number="07">A useful next step</Eyebrow><h2>Start with the question.<br /><span className="site-subtle">Shape what follows.</span></h2><Action to={primaryContact}>Talk through your business challenge</Action></div><ol className="engagement-list">{engagement.map((step,i)=><li key={step.title}><span>0{i+1}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></li>)}</ol></div></section>;
+  return <section className="site-section site-light conversation-section" data-theme="light"><div className="site-wrap"><Eyebrow number="07">Start a conversation</Eyebrow><h2 className="conversation-heading">Tell us what you want the work to <span>achieve.</span></h2><div className="conversation-row"><a href={primaryContact} className="conversation-cta">Talk through your business challenge <ArrowUpRight size={34} aria-hidden="true" /></a><div className="conversation-offices">{offices.map(office=><div key={office.city}><h3>{office.city}</h3><a href={office.telephone}>{office.phone}</a>{office.emails.map(email=><a key={email} href={`mailto:${email}`}>{email}</a>)}</div>)}</div></div></div></section>;
 }
