@@ -333,7 +333,7 @@
 .editorial-site, .site-header, .site-footer { font-family: var(--font-sans); letter-spacing: 0; }
 .site-wrap { width: min(100% - 112px, 1328px); margin-inline: auto; }
 .site-dark { background: var(--site-ink); color: var(--site-paper); --section-muted: var(--site-muted-dark); --section-line: var(--site-line-dark); --section-accent: var(--site-primary); }
-.site-light { background: var(--site-paper); color: var(--site-ink); --section-muted: var(--site-muted-light); --section-line: var(--site-line-light); --section-accent: var(--site-primary-deep); }
+.site-light { background: var(--site-paper); color: var(--site-ink); --section-muted: var(--site-muted-light); --section-line: var(--site-line-light); --section-accent: var(--site-blue); }
 .site-section { padding-block: var(--site-section-space); scroll-margin-top: 80px; }
 .editorial-site h1, .editorial-site h2, .editorial-site h3, .site-footer h2, .site-footer h3 { letter-spacing: 0; }
 .editorial-site h2, .site-footer h2 { font-size: 58px; font-weight: 700; line-height: 1.1; }
@@ -400,7 +400,7 @@
 .original-trust-bar .animate-marquee { font-family: var(--font-sans); }
 .kinetic-heading { max-width: 1120px; font-size: 78px !important; line-height: 1.12 !important; }
 .kinetic-word { position: relative; display: inline-block; }
-.kinetic-fill { position: absolute; inset: 0; color: var(--site-primary); clip-path: inset(0 100% 0 0); }
+.kinetic-fill { position: absolute; inset: 0; color: var(--site-blue); clip-path: inset(0 100% 0 0); }
 .premise-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 62px; padding-top: 32px; border-top: 1px solid var(--site-line-light); }
 .section-note { font-size: 15px; line-height: 1.6; color: var(--section-muted); }
 .section-title-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 50px; margin-bottom: 58px; }
@@ -429,12 +429,12 @@
 .sector-geometry svg { width: 100%; height: 100%; stroke: var(--site-blue); stroke-width: 1; opacity: .65; }
 .sector-geometry .sector-ring-outer { opacity: .35; }
 .sector-1 .sector-geometry svg { stroke: var(--site-violet); }
-.sector-category { font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--site-primary-deep); margin-block: 0 18px; }
+.sector-category { font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--site-blue); margin-block: 0 18px; }
 .sector-copy h3 { font-size: 64px; font-weight: 700; line-height: 1.05; margin-bottom: 26px; }
 .sector-copy .site-prose { max-width: 470px; }
 .sector-action { margin-top: 44px; padding-bottom: 18px; border-bottom: 1px solid var(--site-line-light); }
 .sector-link { display: inline-flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--site-ink); text-decoration: none; transition: color var(--site-fast); }
-.sector-link:hover { color: var(--site-primary-deep); }
+.sector-link:hover { color: var(--site-blue); }
 .process-section { border-top: 1px solid var(--site-line-dark); }
 .process-heading-row { align-items: start; margin-bottom: 90px; }
 .process-heading-row .section-intro { max-width: 400px; padding-top: 8px; }
@@ -454,7 +454,7 @@
 .system-lines { position: absolute; inset: 0; width: 100%; height: 100%; }
 .system-lines path { stroke: var(--site-violet); stroke-width: 1.4; opacity: .8; }
 .system-module { position: relative; z-index: 2; display: grid; gap: 14px; text-align: center; padding: 46px 58px; border: 1.5px solid var(--site-blue); border-radius: 26px; background: color-mix(in oklab, var(--site-blue) 7%, #ffffff); }
-.system-module strong { font-size: 34px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--site-primary-deep); }
+.system-module strong { font-size: 34px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--site-blue); }
 .system-module span { font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--site-ink); }
 .proof-section { position: relative; overflow: hidden; text-align: center; border-top: 1px solid var(--site-line-dark); }
 .proof-rings { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
