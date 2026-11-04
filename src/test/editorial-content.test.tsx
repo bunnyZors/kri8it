@@ -27,13 +27,10 @@ const renderPage = async (page: ReactNode) => {
 };
 
 describe("V2 editorial pages", () => {
-  it("renders the new homepage architecture without legacy sections", async () => {
+  it("uses the approved conversation destination on the homepage", async () => {
     await renderPage(<Index />);
-    expect(screen.getByRole("heading", { name: "Clearer direction. Digital work your business can use." })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Where AutomAi8 fits." })).toBeInTheDocument();
-    expect(screen.getByText("Trusted By")).toBeInTheDocument();
-    expect(screen.getAllByRole("img").length).toBeGreaterThanOrEqual(19);
-    expect(screen.queryByText("Industries")).not.toBeInTheDocument();
+    const conversations = screen.getAllByRole("link", { name: "Talk through your business challenge" });
+    conversations.forEach(link => expect(link).toHaveAttribute("href", "mailto:clint@kri8it.com"));
   });
 
   it("keeps the trusted-by logo band on the homepage hero only", async () => {

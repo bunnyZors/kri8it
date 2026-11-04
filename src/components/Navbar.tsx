@@ -20,7 +20,7 @@ export default function Navbar() {
       header.current?.style.setProperty("--page-progress", String(height > 0 ? window.scrollY / height : 0));
       const sections = document.querySelectorAll<HTMLElement>("[data-theme]");
       let theme = "dark";
-      sections.forEach(section => { const box = section.getBoundingClientRect(); if (box.top <= 45 && box.bottom > 45) theme = section.dataset.theme ?? "dark"; });
+      sections.forEach(section => { const box = section.getBoundingClientRect(); if (box.top <= 45 && box.bottom > 45) theme = section.dataset['theme'] ?? "dark"; });
       header.current?.setAttribute("data-header-theme", theme);
     };
     const queue = () => { if (!frame) frame = requestAnimationFrame(update); };
