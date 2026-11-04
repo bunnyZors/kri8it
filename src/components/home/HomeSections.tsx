@@ -16,7 +16,7 @@ export function HomeHero() {
 export function StrategicPremise() {
   return <section className="site-section site-light premise" data-theme="light"><div className="site-wrap"><Eyebrow number="01">Start with the right question</Eyebrow>
     <h2 className="kinetic-heading">Start with a question your business needs to <span className="kinetic-word"><span>answer.</span><span aria-hidden="true" className="kinetic-fill">answer.</span></span></h2>
-    <div className="premise-bottom"><span className="section-note">Business first.<br />People at the centre.</span><div className="site-prose"><p>We work with leaders and teams who want considered advice and are willing to contribute their knowledge to the work.</p><p>Fit depends on the question, the people involved and the help required. We begin by understanding the purpose of the work, the people it needs to serve and what is already in place.</p><p>That gives us a reason for the next step, whether it is strategic advice, creative work, a website improvement, a campaign or a systems change.</p></div></div>
+    <div className="premise-bottom"><span className="section-note">Start with the question your business needs to answer.&nbsp;</span><div className="site-prose"><p>We work with leaders and teams who want considered advice and are willing to contribute their knowledge to the work.</p><p>Fit depends on the question, the people involved and the help required. We begin by understanding the purpose of the work, the people it needs to serve and what is already in place.</p><p>That gives us a reason for the next step, whether it is strategic advice, creative work, a website improvement, a campaign or a systems change.</p></div></div>
   </div></section>;
 }
 export function CapabilityJourney() {
