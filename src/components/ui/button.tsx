@@ -15,9 +15,9 @@ const buttonVariants = cva(
         secondary: "border border-primary text-primary bg-transparent hover:bg-primary/10",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        editorial: "bg-primary text-primary-foreground hover:bg-primary/90 border border-primary font-display font-bold whitespace-normal text-left justify-between",
-        editorialLink: "bg-transparent text-primary hover:bg-primary/10 border border-primary font-display font-bold whitespace-normal text-left justify-between",
-        editorialLinkLight: "bg-transparent text-[var(--site-primary-deep)] hover:bg-[var(--site-primary-deep)]/10 border border-[var(--site-primary-deep)] font-display font-bold whitespace-normal text-left justify-between",
+        editorial: "bg-[#049AD9] text-white hover:bg-[#049AD9]/90 border border-[#049AD9] rounded-full font-display font-bold uppercase tracking-[0.3em] shimmer-btn whitespace-normal text-left justify-between",
+        editorialLink: "bg-transparent text-[#049AD9] hover:bg-[#049AD9]/10 border border-[#049AD9] rounded-full font-display font-bold uppercase tracking-[0.3em] whitespace-normal text-left justify-between",
+        editorialLinkLight: "bg-transparent text-[#049AD9] hover:bg-[#049AD9]/10 border border-[#049AD9] rounded-full font-display font-bold uppercase tracking-[0.3em] whitespace-normal text-left justify-between",
       },
       size: {
         default: "h-10 px-4 py-2",
