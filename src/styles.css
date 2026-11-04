@@ -347,6 +347,14 @@
 /* Buttons stay in the primary family on light and dark — never inverted. */
 .site-light .site-action.bg-primary { background: var(--site-primary-deep); border-color: var(--site-primary-deep); color: var(--site-paper); }
 .site-light .site-action:not(.bg-primary) { color: var(--site-primary-deep); border-color: var(--site-primary-deep); }
+.editorial-site :focus-visible, .site-header :focus-visible, .site-footer :focus-visible { outline: 2px solid var(--site-blue); outline-offset: 5px; }
+.site-header { position: fixed; inset: 0 0 auto; z-index: 60; height: 80px; background: var(--site-ink); color: var(--site-paper); border-bottom: 1px solid var(--site-line-dark); transition: background var(--site-fast), color var(--site-fast); }
+.site-header[data-header-theme=light]:not([data-open=true]) { background: var(--site-paper); color: var(--site-ink); border-color: var(--site-line-light); }
+.header-inner { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+.site-brand img { width: 118px; height: auto; }
+.site-header[data-header-theme=light]:not([data-open=true]) .site-brand img { filter: brightness(0); }
+.desktop-nav { display: flex; gap: 18px; align-items: center; }
+.site-nav-link { color: inherit; font-size: 13px; border-radius: 0; padding-inline: 10px; }
 .site-nav-link:hover { background: transparent; color: var(--site-primary); }
 .site-header[data-header-theme=light]:not([data-open=true]) .site-nav-link:hover { color: var(--site-primary-deep); }
 .site-progress { position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--site-blue); transform: scaleX(var(--page-progress,0)); transform-origin: left; }
