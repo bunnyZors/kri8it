@@ -342,12 +342,12 @@
 .site-eyebrow { display: flex; align-items: center; gap: 16px; font-size: 12px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.3em; margin-bottom: 32px; color: var(--section-muted, var(--site-muted-dark)); }
 .site-eyebrow span:not(:empty) { font-variant-numeric: tabular-nums; }
 .site-eyebrow span:not(:empty)::after { content: "/"; margin-left: 16px; opacity: .55; }
-.site-action { gap: 26px; font-size: 14px; min-width: 0; border-radius: 4px; text-transform: uppercase; transition: color var(--site-fast), background var(--site-fast); }
-.site-action[data-slot] { border-radius: 4px; }
-.site-action.bg-primary { padding-inline: 22px; }
-/* Buttons stay in the primary family on light and dark — never inverted. */
-.site-light .site-action.bg-primary { background: var(--site-primary-deep); border-color: var(--site-primary-deep); color: var(--site-paper); }
-.site-light .site-action:not(.bg-primary) { color: var(--site-primary-deep); border-color: var(--site-primary-deep); }
+.site-action { gap: 26px; font-size: 14px; min-width: 0; text-transform: uppercase; letter-spacing: 0.3em; transition: color var(--site-fast), background var(--site-fast); }
+.site-action[data-slot] { border-radius: 9999px; }
+/* Original published-site buttons: pill shape, blue fill, shimmer sweep on hover. */
+.shimmer-btn { position: relative; overflow: hidden; }
+.shimmer-btn::after { content: ""; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.15), transparent); transition: left .5s; }
+.shimmer-btn:hover::after { left: 100%; }
 .editorial-site :focus-visible, .site-header :focus-visible, .site-footer :focus-visible { outline: 2px solid var(--site-blue); outline-offset: 5px; }
 .site-header { position: fixed; inset: 0 0 auto; z-index: 60; height: 80px; background: var(--site-ink); color: var(--site-paper); border-bottom: 1px solid var(--site-line-dark); transition: background var(--site-fast), color var(--site-fast); }
 .site-header[data-header-theme=light]:not([data-open=true]) { background: var(--site-paper); color: var(--site-ink); border-color: var(--site-line-light); }
