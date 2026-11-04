@@ -18,6 +18,7 @@ export function useHomeMotion(root: RefObject<HTMLDivElement | null>) {
           gsap.fromTo(".kinetic-fill", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", ease: "none", scrollTrigger: { trigger: ".premise", start: "top 75%", end: "center 40%", scrub: true } });
           gsap.fromTo(".process-progress-fill", { scaleX: 0 }, { scaleX: 1, ease: "none", scrollTrigger: { trigger: ".process-track", start: "top 80%", end: "bottom 45%", scrub: true } });
           gsap.utils.toArray<HTMLElement>(".sector-geometry").forEach(el => gsap.fromTo(el, { y: -20 }, { y: 20, ease: "none", scrollTrigger: { trigger: el.parentElement, start: "top bottom", end: "bottom top", scrub: 1 } }));
+          gsap.fromTo(".proof-rings svg", { y: -50 }, { y: 50, ease: "none", scrollTrigger: { trigger: ".proof-section", start: "top bottom", end: "bottom top", scrub: 1 } });
           gsap.to(".system-outer", { rotation: 90, transformOrigin: "50% 50%", ease: "none", scrollTrigger: { trigger: ".system-diagram", start: "top bottom", end: "bottom top", scrub: 1 } });
           gsap.fromTo(".system-flow", { strokeDasharray: 1, strokeDashoffset: 0.8 }, { strokeDashoffset: 0, scrollTrigger: { trigger: ".system-diagram", start: "top 80%", end: "bottom 50%", scrub: true } });
         });
