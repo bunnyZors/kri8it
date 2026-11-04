@@ -13,8 +13,8 @@ export function useHomeMotion(root: RefObject<HTMLDivElement | null>) {
       const ctx = gsap.context(() => {
         media.add("(prefers-reduced-motion: no-preference)", () => {
           gsap.fromTo("[data-hero-reveal]", { y: 18, opacity: 0.2 }, { y: 0, opacity: 1, duration: 0.75, stagger: 0.12, clearProps: "all" });
-          gsap.to(".orbit-scroll", { rotation: 32, y: 70, transformOrigin: "50% 50%", ease: "none", scrollTrigger: { trigger: ".site-hero", start: "top top", end: "bottom top", scrub: 1 } });
-          gsap.fromTo(".orbit-path", { strokeDasharray: 1, strokeDashoffset: 0.7 }, { strokeDashoffset: 0, ease: "none", scrollTrigger: { trigger: ".site-hero", start: "top top", end: "bottom top", scrub: 1 } });
+          gsap.to(".eight-scroll", { rotation: 6, y: -65, transformOrigin: "50% 50%", ease: "none", scrollTrigger: { trigger: ".site-hero", start: "top top", end: "bottom top", scrub: 1 } });
+          gsap.fromTo(".eight-path", { strokeDasharray: 1, strokeDashoffset: 0.3 }, { strokeDashoffset: 0, ease: "none", scrollTrigger: { trigger: ".site-hero", start: "top top", end: "bottom top", scrub: 1 } });
           gsap.fromTo(".kinetic-fill", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", ease: "none", scrollTrigger: { trigger: ".premise", start: "top 75%", end: "center 40%", scrub: true } });
           gsap.fromTo(".process-draw", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, ease: "none", scrollTrigger: { trigger: ".process-list", start: "top 65%", end: "bottom 65%", scrub: true } });
           gsap.utils.toArray<HTMLElement>(".sector-geometry").forEach(el => gsap.fromTo(el, { y: -20 }, { y: 20, ease: "none", scrollTrigger: { trigger: el.parentElement, start: "top bottom", end: "bottom top", scrub: 1 } }));
