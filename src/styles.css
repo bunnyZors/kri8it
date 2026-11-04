@@ -373,6 +373,9 @@
 .hero-orbit { position: absolute; width: 780px; height: 780px; top: 45px; right: -185px; opacity: .8; pointer-events: none; }
 .hero-eight { position: absolute; width: 760px; height: auto; bottom: 0; right: -80px; opacity: .4; pointer-events: none; }
 .eight-path { stroke: var(--site-primary); stroke-width: 1.5; }
+.eight-path:nth-child(1) { stroke-dasharray: 1178; stroke-dashoffset: 1178; animation: svgDraw 4s ease-out forwards; }
+.eight-path:nth-child(2) { stroke-dasharray: 1307; stroke-dashoffset: 1307; animation: svgDraw 4s ease-out .5s forwards; }
+.eight-path:nth-child(3) { stroke-dasharray: 4265; stroke-dashoffset: 4265; animation: svgDraw 4s ease-out 1s forwards; }
 .orbit-guide { stroke: var(--site-line-dark); stroke-width: 1; }
 .orbit-path { stroke: var(--site-blue); stroke-width: 1.4; }
 .orbit-violet { stroke: var(--site-violet); }
@@ -553,5 +556,6 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .editorial-site *, .site-header *, .site-footer * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .eight-path:nth-child(n) { stroke-dashoffset: 0; }
   .kinetic-fill { clip-path: none; }
 }
