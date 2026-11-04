@@ -19,12 +19,3 @@ export function OrbitalGraphic() {
     </g>
   </svg>;
 }
-export function CapabilityArt({ kind }: { kind: string }) {
-  return <svg className={`capability-art art-${kind}`} viewBox="0 0 400 240" fill="none" aria-hidden="true">
-    {kind === "strategy" && <><path d="M30 190L110 130L180 150L260 65L360 45" /><path d="M30 210H370M30 25V210" className="art-muted" />{[[110,130],[180,150],[260,65]].map(([x,y])=><circle key={x} cx={x} cy={y} r="8" />)}</>}
-    {kind === "brand" && <><circle cx="160" cy="120" r="78" /><rect x="180" y="42" width="156" height="156" /><path d="M82 120H338M258 42V198" className="art-muted" /></>}
-    {kind === "web" && <><rect x="45" y="35" width="310" height="175" rx="4" /><path d="M45 65H355M180 65V210" /><path d="M70 93H152M70 115H135M70 137H145" className="art-muted" /><rect x="205" y="92" width="122" height="88" /></>}
-    {kind === "marketing" && <>{[35,70,105].map(r=><circle key={r} cx="200" cy="120" r={r} />)}<path d="M200 120L340 40M320 40H340V60" /></>}
-    {kind === "automation" && <><rect x="154" y="77" width="92" height="86" rx="4" /><path d="M45 120H154M246 120H355M200 25V77M200 163V215" />{[[45,120],[355,120],[200,25],[200,215]].map(([x,y])=><circle key={`${x}${y}`} cx={x} cy={y} r="10" />)}</>}
-  </svg>;
-}
