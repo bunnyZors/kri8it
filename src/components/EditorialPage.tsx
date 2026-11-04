@@ -5,6 +5,7 @@ import { Link } from "@/lib/router-compat";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ClientMarquee from "@/components/ClientMarquee";
+import { Button } from "@/components/ui/button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,20 +32,20 @@ export function ArrowLink({
   compact?: boolean;
   light?: boolean;
 }) {
-  const className = "inline-flex items-center gap-4 group w-fit";
+  const className = "inline-flex items-center gap-4 w-fit h-auto min-h-12 px-5 py-4 uppercase whitespace-normal text-left";
   const content = (
     <>
-      <span className={`flex items-center justify-center ${compact ? "w-10 h-10" : "w-12 h-12"} rounded-full bg-accent text-accent-foreground group-hover:scale-110 transition-transform`}>
+      <span className="flex items-center justify-center">
         <ArrowRight size={compact ? 18 : 20} />
       </span>
-      <span className={`text-sm font-bold uppercase tracking-[0.15em] ${light ? "text-[hsl(230,40%,15%)]" : "text-foreground"}`}>
+      <span className="text-sm font-bold uppercase">
         {children}
       </span>
     </>
   );
 
-  if (to) return <Link to={to} className={className}>{content}</Link>;
-  return <a href={href} className={className}>{content}</a>;
+  if (to) return <Button asChild variant={light ? "editorialLink" : "editorial"} className={className}><Link to={to}>{content}</Link></Button>;
+  return <Button asChild variant={light ? "editorialLink" : "editorial"} className={className}><a href={href}>{content}</a></Button>;
 }
 
 export function EditorialHero({
@@ -103,9 +104,7 @@ export function EditorialHero({
           <div className="text-[#F2F2F2]/70 text-base md:text-lg leading-relaxed space-y-4">{children}</div>
           <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8 mt-9">
             <ArrowLink href="mailto:clint@kri8it.com">Talk through your business challenge</ArrowLink>
-            <Link to={secondaryTo} className="text-sm font-bold uppercase tracking-[0.15em] text-foreground/75 hover:text-accent transition-colors underline underline-offset-8 decoration-border">
-              {secondaryLabel}
-            </Link>
+            <Button asChild variant="editorialLink" className="h-auto min-h-12 px-5 py-4 whitespace-normal text-left"><Link to={secondaryTo}>{secondaryLabel}<ArrowRight aria-hidden="true" /></Link></Button>
           </div>
           {supportingLine && <p className="mt-10 pt-6 border-t border-muted-foreground/20 text-sm text-[#F2F2F2]/60 max-w-2xl">{supportingLine}</p>}
         </motion.div>
