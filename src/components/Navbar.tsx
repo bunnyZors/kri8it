@@ -1,88 +1,59 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "@/lib/router-compat";
+import { useEffect, useRef, useState } from "react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Link, useLocation } from "@/lib/router-compat";
+import { Button } from "@/components/ui/button";
+import { navigation } from "@/data/site-content";
 import kri8itLogo from "@/assets/logos/kri8it-primary-logo-white.svg";
 
-const navLinks = [
-  { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
-  { label: "Travel", href: "/travel-tourism" },
-  { label: "Automotive", href: "/automotive" },
-  { label: "Portfolio", href: "/#projects" },
-  { label: "Blog", href: "/#blog" },
-];
-
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xs border-b border-border/30">
-      <div className="max-w-[1440px] mx-auto flex items-center justify-between h-20 px-6 lg:px-10">
-        {/* Logo */}
-        <Link to="/" className="flex items-center shrink-0">
-          <img src={kri8itLogo} alt="Kri8it Digital" className="h-10 w-auto" />
-        </Link>
-
-        {/* Desktop Links */}
-        <div className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              to={link.href}
-              className="text-[11px] font-medium text-[#F2F2F2] hover:text-foreground transition-colors tracking-[0.18em] uppercase"
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link
-            to="/about#contact"
-            className="ml-2 bg-accent text-accent-foreground px-6 py-2 rounded-full text-[11px] font-bold tracking-[0.18em] uppercase hover:opacity-90 transition-opacity"
-          >
-            Contact
-          </Link>
-        </div>
-
-        {/* Mobile Toggle */}
-        <button
-          className="lg:hidden text-foreground"
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden overflow-hidden bg-card border-t border-border"
-          >
-            <div className="px-6 py-4 space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  to={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="block text-sm font-bold text-foreground uppercase tracking-wider"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Link
-                to="/about#contact"
-                onClick={() => setMobileOpen(false)}
-                className="block text-center bg-accent text-accent-foreground px-5 py-2.5 rounded-full text-sm font-bold tracking-wider uppercase"
-              >
-                Contact
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
-  );
+  const [open, setOpen] = useState(false);
+  const header = useRef<HTMLElement>(null);
+  const menu = useRef<HTMLDivElement>(null);
+  const toggle = useRef<HTMLButtonElement>(null);
+  const location = useLocation();
+  useEffect(() => { setOpen(false); }, [location.pathname, location.hash]);
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      header.current?.style.setProperty("--page-progress", String(height > 0 ? window.scrollY / height : 0));
+      const sections = document.querySelectorAll<HTMLElement>("[data-theme]");
+      let theme = "dark";
+      sections.forEach(section => { const box = section.getBoundingClientRect(); if (box.top <= 45 && box.bottom > 45) theme = section.dataset['theme'] ?? "dark"; });
+      header.current?.setAttribute("data-header-theme", theme);
+    };
+    const queue = () => { if (!frame) frame = requestAnimationFrame(update); };
+    update();
+    window.addEventListener("scroll", queue, { passive: true });
+    window.addEventListener("resize", queue);
+    return () => { window.removeEventListener("scroll", queue); window.removeEventListener("resize", queue); cancelAnimationFrame(frame); };
+  }, [location.pathname]);
+  useEffect(() => {
+    if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    menu.current?.querySelector<HTMLAnchorElement>("a")?.focus();
+    const keydown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") { setOpen(false); toggle.current?.focus(); }
+      if (event.key !== "Tab") return;
+      const links = menu.current?.querySelectorAll<HTMLAnchorElement>("a");
+      const first = links?.[0];
+      const last = links?.[links.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); toggle.current?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); toggle.current?.focus(); }
+      else if (document.activeElement === toggle.current) { event.preventDefault(); (event.shiftKey ? last : first)?.focus(); }
+    };
+    document.addEventListener("keydown", keydown);
+    return () => { document.body.style.overflow = previousOverflow; document.removeEventListener("keydown", keydown); };
+  }, [open]);
+  const close = () => { setOpen(false); toggle.current?.focus(); };
+  return <header ref={header} className="site-header" data-open={open} data-header-theme="dark">
+    <a className="skip-link" href="#main-content" onClick={(event) => { const target = document.getElementById("main-content") ?? document.querySelector<HTMLElement>("h1"); if (target) { event.preventDefault(); target.setAttribute("tabindex", "-1"); target.focus(); target.scrollIntoView(); } }}>Skip to content</a>
+    <div className="site-progress" aria-hidden="true" />
+    <nav className="site-wrap header-inner" aria-label="Main navigation"><Link to="/" aria-label="Kri8it home" className="site-brand"><img src={kri8itLogo} alt="Kri8it" width="125" height="40" /></Link>
+    <div className="desktop-nav">{navigation.map(link=><Button key={link.id} variant="ghost" asChild className="site-nav-link"><Link to={`/#${link.id}`}>{link.label}{link.id==="contact" && <ArrowUpRight aria-hidden="true" />}</Link></Button>)}</div>
+    <Button ref={toggle} variant="ghost" size="icon" className="mobile-menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-menu" onClick={()=>setOpen(!open)}>{open ? <X /> : <Menu />}</Button></nav>
+    {open && <div id="mobile-menu" ref={menu} className="mobile-menu"><nav aria-label="Mobile navigation">{navigation.map((link,i)=><Link key={link.id} to={`/#${link.id}`} onClick={close}><span>0{i+1}</span>{link.label}<ArrowUpRight aria-hidden="true" /></Link>)}</nav></div>}
+  </header>;
 }

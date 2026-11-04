@@ -71,7 +71,7 @@ function ScrollToTop() {
     if (hash) {
       const target = document.getElementById(hash.replace(/^#/, ""));
       if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        target.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" });
         return;
       }
     }
