@@ -380,7 +380,7 @@
 .hero-copy h1 { font-size: 82px; line-height: .98; font-weight: 700; margin-bottom: 30px; }
 .hero-copy h1 span { color: var(--site-primary); }
 .hero-description { max-width: 650px; font-size: 18px; line-height: 1.625; color: var(--site-muted-dark); }
-.hero-actions { display: flex; gap: 28px; margin-top: 32px; flex-wrap: wrap; align-items: center; }
+.hero-actions { display: flex; gap: 36px; margin-top: 32px; flex-wrap: nowrap; align-items: center; width: max-content; }
 .hero-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 52px; font-size: 13px; color: var(--site-muted-dark); position: relative; z-index: 2; }
 .hero-bottom p { max-width: 620px; }
 .hero-orbit { position: absolute; width: 780px; height: 780px; top: 45px; right: -185px; opacity: .8; pointer-events: none; }
