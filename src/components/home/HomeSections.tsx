@@ -1,5 +1,5 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import { capabilities, hero, offices, primaryContact, process, sectors, testimonials } from "@/data/site-content";
+import { capabilities, hero, offices, primaryContact, process, response, sectors, testimonials } from "@/data/site-content";
 import ClientMarquee from "@/components/ClientMarquee";
 import { Link } from "@/lib/router-compat";
 import { Action, Eyebrow, OrbitalGraphic } from "./EditorialElements";
@@ -17,6 +17,12 @@ export function StrategicPremise() {
   return <section className="site-section site-light premise" data-theme="light"><div className="site-wrap"><Eyebrow number="01">Start with the right question</Eyebrow>
     <h2 className="kinetic-heading">What does the work <span className="kinetic-word"><span>need to do?</span><span aria-hidden="true" className="kinetic-fill">need to do?</span></span></h2>
     <div className="premise-bottom"><span className="section-note">Start with the question your business needs to answer.&nbsp;</span><div className="site-prose"><p>Your brand may need to explain a business that has changed. Your website may need to make the offer easier to understand. Your marketing may need a clearer audience, message or path to enquiry. A repeated task may be worth automating.</p><p>These are different questions. We begin by understanding the purpose of the work, the people it needs to serve and what is already in place.&nbsp;</p><p>This context gives us a reason for the next step, whether it is strategic advice, creative work, a website improvement, a campaign or a systems change.&nbsp;</p></div></div>
+  </div></section>;
+}
+export function ResponseSection() {
+  return <section className="site-section site-dark response-section" data-theme="dark"><div className="site-wrap response-grid">
+    <div><Eyebrow>{response.eyebrow}</Eyebrow><h2>{response.title}</h2></div>
+    <div className="site-prose">{response.paragraphs.map(paragraph => <p key={paragraph.slice(0, 24)}>{paragraph}</p>)}</div>
   </div></section>;
 }
 export function CapabilityJourney() {
