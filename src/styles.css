@@ -194,6 +194,8 @@
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 4px;
   }
 }
 
