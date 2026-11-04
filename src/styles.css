@@ -349,9 +349,7 @@
 .editorial-action .editorial-action-icon svg { width: 26px; height: 26px; }
 .editorial-action-label { min-width: 0; overflow-wrap: anywhere; }
 .editorial-action-primary:hover .editorial-action-icon { transform: translateX(4px); }
-.editorial-action-secondary { color: var(--section-muted, var(--site-muted-dark)); }
-.editorial-action-secondary .editorial-action-label { padding-block: 8px; border-bottom: 1px solid var(--section-line, var(--site-line-dark)); }
-.editorial-action-secondary:hover { color: var(--section-accent, var(--site-primary)); }
+.editorial-action-secondary { color: var(--section-accent, var(--site-primary)); }
 .editorial-action-compact .editorial-action-icon { flex-basis: 56px; width: 56px; height: 56px; }
 .site-action { min-width: 0; }
 .editorial-site :focus-visible, .site-header :focus-visible, .site-footer :focus-visible { outline: 2px solid var(--site-blue); outline-offset: 5px; }
