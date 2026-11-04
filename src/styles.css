@@ -440,7 +440,7 @@
 .process-progress { height: 2px; background: var(--site-line-dark); }
 .process-progress-fill { display: block; height: 100%; background: var(--site-blue); transform-origin: left center; }
 .process-columns { display: grid; grid-template-columns: repeat(5, 1fr); }
-.process-columns li { border-left: 1px solid var(--site-line-dark); padding: 42px 26px 8px; min-height: 320px; }
+.process-columns li { border-left: 1px solid var(--site-line-dark); padding: 42px 26px 8px; min-height: 270px; }
 .process-columns li:first-child { border-left: 0; padding-left: 0; }
 .process-number { color: var(--site-primary); font-size: 14px; font-weight: 700; letter-spacing: 0.1em; font-variant-numeric: tabular-nums; }
 .process-columns h3 { font-size: 28px; font-weight: 700; margin: 58px 0 14px; }
