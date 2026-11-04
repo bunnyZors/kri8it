@@ -400,7 +400,7 @@
 .original-trust-bar .animate-marquee { font-family: var(--font-sans); }
 .kinetic-heading { max-width: 1120px; font-size: 78px !important; line-height: 1.12 !important; }
 .kinetic-word { position: relative; display: inline-block; }
-.kinetic-fill { position: absolute; inset: 0; color: var(--site-primary-deep); clip-path: inset(0 100% 0 0); }
+.kinetic-fill { position: absolute; inset: 0; color: var(--site-primary); clip-path: inset(0 100% 0 0); }
 .premise-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 62px; padding-top: 32px; border-top: 1px solid var(--site-line-light); }
 .section-note { font-size: 15px; line-height: 1.6; color: var(--section-muted); }
 .section-title-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 50px; margin-bottom: 58px; }
