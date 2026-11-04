@@ -39,7 +39,7 @@ export default function Index() {
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
           <div>
-            <p className="text-accent text-xs font-medium uppercase tracking-[0.3em] mb-6">Understanding the work</p>
+            <p className="text-accent text-xs font-medium uppercase tracking-[0.3em] mb-6">START WITH THE RIGHT QUESTION</p>
             <motion.h2 initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className={lightSectionHeading}>What does the work need to do?</motion.h2>
           </div>
           <motion.div initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className={`${lightBody} space-y-6`}>
@@ -52,7 +52,7 @@ export default function Index() {
 
       <section className="section-padding">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-          <div className="lg:sticky lg:top-32"><p className="text-accent text-xs font-medium uppercase tracking-[0.3em] mb-6">Advice before delivery</p><h2 className={darkSectionHeading}>Make the important decisions before committing to the work.</h2></div>
+          <div className="lg:sticky lg:top-32"><p className="text-accent text-xs font-medium uppercase tracking-[0.3em] mb-6">CHOOSE THE RIGHT RESPONSE</p><h2 className={darkSectionHeading}>Make the important decisions before committing to the work.</h2></div>
           <div className={`${darkBody} space-y-6`}>
             <p>We help you look beyond the immediate request. Before a rebrand, what has changed in the business? Before a website build, what do customers need to understand or do? Before a campaign, who are you trying to reach, and what should happen when they respond?</p>
             <p>Your team brings the knowledge of the business. We bring a consulting perspective and digital experience to help assess the options, challenge assumptions and agree priorities.</p>
