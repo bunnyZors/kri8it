@@ -511,9 +511,10 @@
   .sector-card { gap: 40px; }
   .sector-copy h3 { font-size: 46px; }
   .process-heading-row { margin-bottom: 64px; }
-  .process-columns li { padding: 32px 18px 6px; min-height: 0; }
-  .process-columns h3 { font-size: 22px; margin-top: 36px; }
-  .process-columns p { font-size: 15px; }
+  .process-columns { grid-template-columns: 1fr; }
+  .process-columns li { border-left: 0; border-top: 1px solid var(--site-line-dark); padding: 30px 0 24px; min-height: 0; }
+  .process-columns h3 { font-size: 26px; margin-top: 24px; }
+  .process-columns p { font-size: 16px; max-width: 520px; }
   .automation-grid { grid-template-columns: 1fr; gap: 48px; }
   .system-diagram { max-width: 640px; width: 100%; }
   .engagement-grid { gap: 48px; }
