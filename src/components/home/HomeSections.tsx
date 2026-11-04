@@ -1,7 +1,8 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { capabilities, engagement, hero, primaryContact, process, sectors, testimonials } from "@/data/site-content";
 import ClientMarquee from "@/components/ClientMarquee";
-import { Action, CapabilityArt, Eyebrow, OrbitalGraphic } from "./EditorialElements";
+import { Link } from "@/lib/router-compat";
+import { Action, Eyebrow, OrbitalGraphic } from "./EditorialElements";
 
 export function HomeHero() {
   return <><section className="site-hero" data-theme="dark" aria-labelledby="hero-heading"><div className="site-wrap hero-layout">
