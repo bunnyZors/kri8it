@@ -310,14 +310,12 @@
   --color-site-ink: var(--site-ink);
   --color-site-paper: var(--site-paper);
   --color-site-blue: var(--site-blue);
-  --color-site-violet: var(--site-violet);
 }
 :root {
   --site-ink: #090716;
   --site-paper: #F2F0EA;
   --site-blue: #049AD9;
   --site-blue-readable: #005E98;
-  --site-violet: #9F63FF;
   --site-secondary-deep: #122658;
   --site-primary: #00E5E3;
   --site-primary-deep: #007E7C;
@@ -357,11 +355,11 @@
 .desktop-nav { display: flex; gap: 18px; align-items: center; }
 .site-nav-link { color: inherit; font-size: 13px; border-radius: 0; padding-inline: 10px; }
 .site-nav-link:hover { background: transparent; color: var(--site-primary); }
-.site-header[data-header-theme=light]:not([data-open=true]) .site-nav-link:hover { color: var(--site-violet); }
+.site-header[data-header-theme=light]:not([data-open=true]) .site-nav-link:hover { color: var(--site-blue); }
 .site-progress { position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--site-blue); transform: scaleX(var(--page-progress,0)); transform-origin: left; }
 .mobile-menu-toggle { display: none; }
 .mobile-menu-toggle:hover { color: var(--site-primary); background: transparent; }
-.site-header[data-header-theme=light]:not([data-open=true]) .mobile-menu-toggle:hover { color: var(--site-violet); }
+.site-header[data-header-theme=light]:not([data-open=true]) .mobile-menu-toggle:hover { color: var(--site-blue); }
 .skip-link { position: absolute; left: 16px; top: -80px; padding: 14px; background: var(--site-paper); color: var(--site-ink); z-index: 80; }
 .skip-link:focus { top: 10px; }
 .mobile-menu { background: var(--site-ink); color: var(--site-paper); height: calc(100dvh - 80px); padding: 28px; overflow-y: auto; }
@@ -385,7 +383,8 @@
 .eight-path:nth-child(3) { stroke-dasharray: 4265; stroke-dashoffset: 4265; animation: svgDraw 4s ease-out 1s forwards; }
 .orbit-guide { stroke: var(--site-line-dark); stroke-width: 1; }
 .orbit-path { stroke: var(--site-blue); stroke-width: 1.4; }
-.orbit-violet { stroke: var(--site-violet); }
+.orbit-violet { stroke: var(--site-blue); }
+
 .orbit-core { stroke: var(--site-paper); stroke-width: 1; }
 .orbit-node { fill: var(--site-blue); }
 .orbit-node.orbit-violet { fill: var(--site-violet); }
