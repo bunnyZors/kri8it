@@ -32,8 +32,8 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <EditorialHero showClients eyebrow="Digital consultancy and delivery" title="Clearer direction. Digital work your business can use." secondaryLabel="Explore how we can help" secondaryTo="/services" supportingLine="Over 25 years of digital experience, with the business and its people at the centre of the work.">
-        <p>Kri8it helps established businesses make informed decisions about brand, websites, marketing, AI and automation. We work with you to understand what needs to change, then bring the strategy and practical skills to put the agreed direction into use.</p>
+      <EditorialHero showClients eyebrow="Digital consultancy and delivery" title="Clearer direction that moves business forward." secondaryLabel="LET'S SHAPE YOUR NEXT STEP" secondaryTo="/services" supportingLine="Over 25 years of digital experience, with the business and its people at the centre of the work.">
+        <p>Kri8it is a strategic growth partner that helps established businesses make informed decisions about brand, websites, marketing, AI and automation. We work with you to understand opportunities for measurable change, then bring the strategy and practical skills to put the agreed direction into use.</p>
       </EditorialHero>
 
       <section className="section-padding bg-white">
