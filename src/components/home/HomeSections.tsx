@@ -20,7 +20,7 @@ export function StrategicPremise() {
   </div></section>;
 }
 export function CapabilityJourney() {
-  return <section id="services" className="site-section site-dark capability-section" data-theme="dark"><div className="site-wrap capability-intro"><Eyebrow number="02">Consultancy & delivery</Eyebrow><div className="section-title-row"><h2>One direction.<br /><span className="site-subtle">The right capabilities.</span></h2><Action to="/services">Explore our services</Action></div></div>
+  return <section id="services" className="site-section site-dark capability-section" data-theme="dark"><div className="site-wrap capability-intro"><Eyebrow number="02">Consultancy & delivery</Eyebrow><div className="section-title-row"><h2>One direction.<br /><span className="site-callout">The right capabilities.</span></h2><Action to="/services">Explore our services</Action></div></div>
   <div className="capability-viewport"><ol className="capability-track">{capabilities.map((item,i)=><li className="capability-panel" key={item.title}><span className="capability-number">0{i+1}</span><svg className="capability-arcs" viewBox="0 0 300 300" fill="none" aria-hidden="true"><circle cx="200" cy="100" r="170" /><circle cx="200" cy="100" r="120" /><circle cx="200" cy="100" r="70" /></svg><h3>{item.title}</h3><p>{item.text}</p><p className="capability-tag">{item.tag}</p></li>)}</ol></div>
   </section>;
 }
