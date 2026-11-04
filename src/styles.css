@@ -526,7 +526,9 @@
   .automation-grid { grid-template-columns: 1fr; gap: 48px; }
   .system-diagram { max-width: 640px; width: 100%; }
   .engagement-grid { gap: 48px; }
-  .quote-grid { gap: 40px; }
+  .proof-section h2.proof-statement { font-size: 50px; }
+  .proof-rings svg { width: 900px; height: 900px; }
+  .quote-grid { gap: 40px; margin-top: 72px; }
   .quote-grid blockquote { font-size: 25px; }
   .contact-message { flex-direction: column; gap: 30px; }
 }
