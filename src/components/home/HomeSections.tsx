@@ -21,7 +21,7 @@ export function StrategicPremise() {
 }
 export function ResponseSection() {
   return <section className="site-section site-light response-section" data-theme="light"><div className="site-wrap response-grid">
-    <div><Eyebrow number="02">{response.eyebrow}</Eyebrow><h2>{response.title}</h2></div>
+    <div><Eyebrow number="02">{response.eyebrow}</Eyebrow><h2 className="kinetic-heading">{response.title}</h2></div>
     <div className="site-prose">{response.paragraphs.map(paragraph => <p key={paragraph.slice(0, 24)}>{paragraph}</p>)}</div>
   </div></section>;
 }
