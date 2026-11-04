@@ -4,6 +4,7 @@ import { Link, useLocation } from "@/lib/router-compat";
 import { Button } from "@/components/ui/button";
 import { navigation } from "@/data/site-content";
 import kri8itLogo from "@/assets/logos/kri8it-primary-logo-white.svg";
+import kri8itLogoDark from "@/assets/logos/kri8it-primary-logo-dark.svg";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -51,7 +52,7 @@ export default function Navbar() {
   return <header ref={header} className="site-header" data-open={open} data-header-theme="dark">
     <a className="skip-link" href="#main-content" onClick={(event) => { const target = document.getElementById("main-content") ?? document.querySelector<HTMLElement>("h1"); if (target) { event.preventDefault(); target.setAttribute("tabindex", "-1"); target.focus(); target.scrollIntoView(); } }}>Skip to content</a>
     <div className="site-progress" aria-hidden="true" />
-    <nav className="site-wrap header-inner" aria-label="Main navigation"><Link to="/" aria-label="Kri8it home" className="site-brand"><img src={kri8itLogo} alt="Kri8it" width="125" height="40" /></Link>
+    <nav className="site-wrap header-inner" aria-label="Main navigation"><Link to="/" aria-label="Kri8it home" className="site-brand"><img src={kri8itLogo} alt="Kri8it" width="125" height="40" className="brand-logo brand-logo-on-dark" /><img src={kri8itLogoDark} alt="" aria-hidden="true" width="125" height="40" className="brand-logo brand-logo-on-light" /></Link>
     <div className="desktop-nav">{navigation.map(link=><Button key={link.id} variant="ghost" asChild className="site-nav-link"><Link to={`/#${link.id}`}>{link.label}{link.id==="contact" && <ArrowUpRight aria-hidden="true" />}</Link></Button>)}</div>
     <Button ref={toggle} variant="ghost" size="icon" className="mobile-menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-menu" onClick={()=>setOpen(!open)}>{open ? <X /> : <Menu />}</Button></nav>
     {open && <div id="mobile-menu" ref={menu} className="mobile-menu"><nav aria-label="Mobile navigation">{navigation.map((link,i)=><Link key={link.id} to={`/#${link.id}`} onClick={close}><span>0{i+1}</span>{link.label}<ArrowUpRight aria-hidden="true" /></Link>)}</nav></div>}
