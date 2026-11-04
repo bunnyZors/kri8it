@@ -24,6 +24,15 @@ export const sectors = [
   { title: "Automotive", text: "Strategic, digital and marketing experience shaped around complex journeys, dealer networks, changing technologies and measurable performance.", to: "/automotive", placeholder: "Automotive image placeholder", category: "Deep sector experience", cta: "Discuss an automotive challenge" },
   { title: "Travel & tourism", text: "Brand, content and digital experiences that help remarkable places and travel businesses turn inspiration into an informed next step.", to: "/travel-tourism", placeholder: "Travel image placeholder", category: "Destination to decision", cta: "Discuss a travel challenge" },
 ];
+export const response = {
+  eyebrow: "Choose the right response",
+  title: "Make the important decisions before committing to the work.",
+  paragraphs: [
+    "We help you look beyond the immediate request. Before a rebrand, what has changed in the business? Before a website build, what do customers need to understand or do? Before a campaign, who are you trying to reach, and what should happen when they respond?",
+    "Your team brings the knowledge of the business. We bring a consulting perspective and digital experience to help assess the options, challenge assumptions and agree priorities.",
+    "The direction should be clear enough for the people doing the work to understand what they are aiming for and how it will be assessed.",
+  ],
+};
 export const process = [
   { title: "Understand", text: "Context, goals, evidence and previous attempts." },
   { title: "Define", text: "Question, intended outcome, boundaries and measures." },
