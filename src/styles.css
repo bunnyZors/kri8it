@@ -540,7 +540,6 @@
   .system-panel { max-width: 560px; width: 100%; }
   .conversation-row { grid-template-columns: 1fr; gap: 56px; margin-top: 72px; }
   .conversation-cta { font-size: 32px; }
-  .proof-section h2.proof-statement { font-size: 50px; }
   .proof-rings svg { width: 900px; height: 900px; }
   .quote-grid { gap: 40px; margin-top: 72px; }
   .quote-grid blockquote { font-size: 25px; }
@@ -568,7 +567,6 @@
   .credibility ul { justify-content: start; gap: 17px 22px; }
   .credibility li { font-size: 14px; }
   .editorial-site h2, .site-footer h2 { font-size: 38px; line-height: 1.12; }
-  .kinetic-heading { font-size: 43px !important; }
   .premise-bottom { grid-template-columns: 1fr; gap: 26px; margin-top: 34px; }
   .response-grid { grid-template-columns: 1fr; gap: 30px; }
   .site-prose { font-size: 16px; }
@@ -580,7 +578,6 @@
   .capability-panel p { font-size: 17px; }
   .sector-list { gap: 56px; }
   .sector-card, .quote-grid { grid-template-columns: 1fr; gap: 28px; }
-  .conversation-section h2.conversation-heading { font-size: 34px; }
   .conversation-row { gap: 44px; margin-top: 52px; padding-top: 44px; }
   .conversation-cta { font-size: 26px; }
   .conversation-offices { grid-template-columns: 1fr; gap: 36px; }
@@ -602,7 +599,6 @@
   .system-panel-label { top: 22px; left: 24px; font-size: 10px; }
   .system-module { padding: 30px 34px; }
   .system-module strong { font-size: 24px; }
-  .proof-section h2.proof-statement { font-size: 34px; }
   .proof-sub { font-size: 16px; margin-top: 26px; }
   .proof-rings svg { width: 620px; height: 620px; }
   .quote-grid { margin-top: 52px; }
