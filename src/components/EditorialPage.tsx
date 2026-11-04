@@ -44,8 +44,8 @@ export function ArrowLink({
     </>
   );
 
-  if (to) return <Button asChild variant={light ? "editorialLink" : "editorial"} className={className}><Link to={to}>{content}</Link></Button>;
-  return <Button asChild variant={light ? "editorialLink" : "editorial"} className={className}><a href={href}>{content}</a></Button>;
+  if (to) return <Button asChild variant={light ? "editorialLinkLight" : "editorial"} className={className}><Link to={to}>{content}</Link></Button>;
+  return <Button asChild variant={light ? "editorialLinkLight" : "editorial"} className={className}><a href={href}>{content}</a></Button>;
 }
 
 export function EditorialHero({
