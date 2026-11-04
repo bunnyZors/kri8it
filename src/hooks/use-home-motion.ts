@@ -27,7 +27,8 @@ export function useHomeMotion(root: RefObject<HTMLDivElement | null>) {
           const section = scope.querySelector<HTMLElement>(".capability-section");
           if (!track || !viewport || !section) return;
           const distance = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
-          const animation = gsap.to(track, { x: () => -distance(), ease: "none", scrollTrigger: { trigger: section, start: "top 80px", end: () => `+=${distance()}`, pin: true, scrub: 0.6, invalidateOnRefresh: true, anticipatePin: 1 } });
+          section.classList.add("capabilities-pinned");
+          const animation = gsap.to(track, { x: () => -distance(), ease: "none", scrollTrigger: { trigger: section, start: "top 80px", end: () => `+=${distance()}`, pin: true, scrub: 0.6, invalidateOnRefresh: true, anticipatePin: 1, refreshPriority: 1 } });
           const focusPanel = (event: FocusEvent) => {
             const target = event.target;
             if (!(target instanceof HTMLElement)) return;
@@ -36,11 +37,15 @@ export function useHomeMotion(root: RefObject<HTMLDivElement | null>) {
             if (panel && trigger) window.scrollTo({ top: trigger.start + Math.min(panel.offsetLeft, distance()), behavior: "instant" });
           };
           track.addEventListener("focusin", focusPanel);
-          return () => track.removeEventListener("focusin", focusPanel);
+          return () => { track.removeEventListener("focusin", focusPanel); section.classList.remove("capabilities-pinned"); };
         });
       }, scope);
       const refresh = () => { if (!disposed) ScrollTrigger.refresh(); };
-      void document.fonts.ready.then(refresh);
+      void document.fonts.ready.then(() => {
+        refresh();
+        // Pin spacing changes document geometry after the route's initial hash scroll.
+        if (!disposed && window.location.hash) document.getElementById(window.location.hash.slice(1))?.scrollIntoView({ behavior: "instant", block: "start" });
+      });
       const resize = new ResizeObserver(refresh);
       resize.observe(scope);
       cleanup = () => { resize.disconnect(); media.revert(); ctx.revert(); };

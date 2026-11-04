@@ -350,6 +350,7 @@
 .site-nav-link:hover { background: transparent; color: var(--site-blue); }
 .site-progress { position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--site-blue); transform: scaleX(var(--page-progress,0)); transform-origin: left; }
 .mobile-menu-toggle { display: none; }
+.mobile-menu-toggle:hover { color: var(--site-blue); background: transparent; }
 .skip-link { position: absolute; left: 16px; top: -80px; padding: 14px; background: var(--site-paper); color: var(--site-ink); z-index: 80; }
 .skip-link:focus { top: 10px; }
 .mobile-menu { background: var(--site-ink); color: var(--site-paper); height: calc(100dvh - 80px); padding: 28px; overflow-y: auto; }
@@ -463,9 +464,9 @@
 .footer-bottom { border-top: 1px solid var(--site-line-dark); padding-block: 24px; font-size: 12px; color: var(--site-muted-dark); display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .footer-bottom nav { display: flex; gap: 24px; flex-wrap: wrap; }
 #main-content { scroll-margin-top: 80px; outline: none; }
-@media (min-width: 1100px) and (prefers-reduced-motion: reduce) {
-  .capability-track { width: auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 40px 0; }
-  .capability-panel { width: auto; }
+@media (min-width: 1100px) {
+  .capability-section:not(.capabilities-pinned) .capability-track { width: auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 40px 0; }
+  .capability-section:not(.capabilities-pinned) .capability-panel { width: auto; }
 }
 @media (max-width: 1099px) {
   :root { --site-section-space: 82px; }
