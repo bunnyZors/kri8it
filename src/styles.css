@@ -564,7 +564,7 @@
   .conversation-row { grid-template-columns: 1fr; gap: 56px; margin-top: 72px; }
   .conversation-cta { font-size: 32px; }
   .proof-rings svg { width: 900px; height: 900px; }
-  .quote-viewport { gap: 40px; margin-top: 72px; }
+  .quote-viewport { margin-top: 72px; }
   .quote-card blockquote { font-size: 25px; }
   .contact-message { flex-direction: column; gap: 30px; }
 }
