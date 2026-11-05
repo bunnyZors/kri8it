@@ -592,7 +592,9 @@
   .response-grid { grid-template-columns: 1fr; gap: 30px; }
   .engagement-grid { grid-template-columns: 1fr; gap: 36px; }
   .engagement-intro { font-size: 16px; }
-  .timeline { margin-top: 4px; }
+  .timeline { grid-template-columns: 1fr; gap: 34px; margin-top: 44px; }
+  .timeline li:not(:last-child)::after { top: auto; left: 28px; bottom: -22px; width: 1px; height: 22px; }
+  .timeline-icon { width: 50px; height: 50px; }
   .timeline-body h3 { font-size: 18px; }
   .timeline-body p { font-size: 16px; }
   .site-prose { font-size: 16px; }
