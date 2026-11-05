@@ -325,7 +325,7 @@
   --site-line-dark: #34313f;
   --site-line-light: #cfcdc9;
   --site-surface: #141120;
-  --site-sector-gradient: linear-gradient(145deg, var(--site-ink), var(--site-secondary-deep) 54%, var(--site-blue-readable));
+  --site-sector-gradient: linear-gradient(160deg, #0F2436 0%, #081726 48%, #050C14 100%);
   --site-sector-stripe: color-mix(in oklab, var(--site-paper) 7%, transparent);
   --site-sector-disc: color-mix(in oklab, var(--site-blue) 20%, transparent);
   --site-fast: 220ms;
@@ -461,7 +461,7 @@
 .sector-card { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .sector-card-flip .sector-media { order: 2; }
 .sector-card-flip .sector-copy { order: 1; }
-.sector-media { position: relative; max-width: 440px; width: 100%; aspect-ratio: 0.82; border-radius: 32px; overflow: hidden; background: var(--site-sector-gradient); display: flex; align-items: flex-end; padding: 32px; }
+.sector-media { position: relative; max-width: 440px; width: 100%; aspect-ratio: 0.82; border-radius: 32px; overflow: hidden; background: radial-gradient(360px 360px at 82% 10%, color-mix(in oklab, var(--site-primary) 14%, transparent), transparent 68%), var(--site-sector-gradient); display: flex; align-items: flex-end; padding: 32px; border: 1px solid color-mix(in oklab, var(--site-primary) 18%, var(--site-line-dark)); }
 .sector-card .sector-media { justify-self: start; }
 .sector-card-flip .sector-media { justify-self: end; }
 .sector-media::before { content: ""; position: absolute; inset: 0; z-index: 1; background: repeating-linear-gradient(115deg, transparent 0 34px, var(--site-sector-stripe) 34px 36px); pointer-events: none; }
