@@ -63,7 +63,6 @@ export const invitation = {
 };
 export const response = {
   eyebrow: "Choose the right response",
-  title: "Make the important decisions before committing to the work.",
   paragraphs: [
     "We help you look beyond the immediate request. Before a rebrand, what has changed in the business? Before a website build, what do customers need to understand or do? Before a campaign, who are you trying to reach, and what should happen when they respond?",
     "Your team brings the knowledge of the business. We bring a consulting perspective and digital experience to help assess the options, challenge assumptions and agree priorities.",
