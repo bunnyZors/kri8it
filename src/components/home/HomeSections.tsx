@@ -45,7 +45,7 @@ export function FitSection() {
     { title: "Travel & tourism", eyebrow: "Destination to decision", to: "/travel-tourism", action: "Discuss a travel challenge", copy: "Brand, content and digital experiences that help remarkable places and travel businesses turn inspiration into an informed next step." },
   ];
   return <section id="focus"><div className="site-section site-light sector-intro" data-theme="light"><div className="site-wrap response-grid"><div><Eyebrow number="07">SECTOR FOCUS</Eyebrow><h2>Start with a question <span className="site-callout">your business</span> needs to answer.</h2></div><div className="site-prose">{fit.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div></div></div>
-    <div className="site-section site-light sector-band" data-theme="light"><div className="site-wrap sector-band-head"><hr className="sector-band-divider" aria-hidden="true" /></div><div className="site-wrap sector-list">{sectors.map((sector, index) => <Fragment key={sector.to}>
+    <div className="site-section site-light sector-band" data-theme="light"><div className="site-wrap sector-list">{sectors.map((sector, index) => <Fragment key={sector.to}>
       {index > 0 && <hr className="sector-divider" aria-hidden="true" />}
       <article className={index % 2 === 1 ? "sector-card sector-card-flip" : "sector-card"}>
       <div className="sector-media" aria-hidden="true"><div className="sector-geometry"><svg viewBox="0 0 600 760" fill="none"><circle className="sector-ring-outer" cx="300" cy="290" r="290" /><circle cx="300" cy="290" r="184" /></svg></div><span>{sector.title}</span></div>
