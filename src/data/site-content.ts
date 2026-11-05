@@ -1,5 +1,5 @@
-// Source: 2026-11-04-lovable-build-handover.md. Quotes verified against
-// https://kri8it-studio-link.vibepreview.app/ during the approved plan review.
+// Copy source: pre-animation-handover homepage (68cd144), corroborated by
+// 2026-10-07-website-architecture-and-copy-v02.md. Hero/01/02 retain owner edits.
 export const primaryContact = "mailto:clint@kri8it.com";
 export const navigation = [
   { label: "Services", id: "services" }, { label: "Focus", id: "focus" },
@@ -14,16 +14,40 @@ export const hero = {
 };
 export const clients = ["Natural Selection", "Springbok Atlas", "Pembroke Privacy", "Safari Online", "Art of Safari", "Exclusive Books", "Wildlife Safari", "Mahindra", "Volkswagen"];
 export const capabilities = [
-  { title: "Strategy", text: "Define purpose, opportunity and the decisions that matter.", detail: "A considered direction before committing to the work.", tag: "Clarity before activity", kind: "strategy" },
-  { title: "Brand", text: "Create a clear position and usable visual language.", detail: "A consistent expression of what your business stands for.", tag: "Meaning made visible", kind: "brand" },
-  { title: "Websites", text: "Plan and deliver useful digital experiences around real needs.", detail: "The customer’s purpose, and the people managing the platform, come first.", tag: "Built around real needs", kind: "web" },
-  { title: "Marketing", text: "Connect objectives, audiences, channels and measurement.", detail: "Give every part of the activity a clear job to do.", tag: "Every part has a job", kind: "marketing" },
-  { title: "AI and automation", text: "Define where automation belongs, where human judgement remains and what happens when systems cannot complete a task.", detail: "Practical technology with clear boundaries.", tag: "Boundaries by design", kind: "automation" },
+  { title: "Brand and positioning", text: "Clarify what your business stands for, who it serves and how to express that through messaging, identity and content your team can use consistently." },
+  { title: "Websites and digital platforms", text: "Plan and build around the customer's purpose: finding information, understanding an offer, making an enquiry or completing a purchase. Consider the people who will manage the website after launch." },
+  { title: "Marketing and performance", text: "Set the audience, message and purpose of the activity. Bring SEO, content, paid media, email and measurement into a plan that gives each a clear job." },
+  { title: "AI, automation and systems", text: "Assess where technology can take on defined work, how it fits existing tools and which decisions people must retain. Scope the technical requirements before committing to a solution." },
 ];
-export const sectors = [
-  { title: "Automotive", text: "Strategic, digital and marketing experience shaped around complex journeys, dealer networks, changing technologies and measurable performance.", to: "/automotive", placeholder: "Automotive image placeholder", category: "Deep sector experience", cta: "Discuss an automotive challenge" },
-  { title: "Travel & tourism", text: "Brand, content and digital experiences that help remarkable places and travel businesses turn inspiration into an informed next step.", to: "/travel-tourism", placeholder: "Travel image placeholder", category: "Destination to decision", cta: "Discuss a travel challenge" },
-];
+export const context = {
+  title: "A finished piece of work still has a job to do.",
+  paragraphs: [
+    "A brand identity needs to be usable in the places customers meet the business. A website needs to help someone find the right information and complete the next step. A campaign needs a relevant message, a destination and a way to understand the response.",
+    "We consider those uses while planning and delivering the work. Looking right is part of the job; how the work functions, who will use it and what happens next deserve attention too.",
+  ],
+};
+export const automation = {
+  title: "Where AutomAi8 fits.",
+  paragraphs: [
+    "Kri8it is the agency and consulting partner. AutomAi8 is Kri8it's automation and AI brand.",
+    "AutomAi8 can support a wider engagement or a specific need around lead management, retention, attribution or workflows. Where AI is involved, we define its role, the decisions that need human judgement and what should happen when it cannot complete the task as intended.",
+    "Specific connections, migrations, access requirements and third-party costs are assessed during scoping and testing.",
+  ],
+};
+export const fit = {
+  title: "Start with a question your business needs to answer.",
+  paragraphs: [
+    "We work with leaders and teams who want considered advice and are willing to contribute their knowledge to the work.",
+    "Automotive is a particular focus, building on our experience in the sector. Across other businesses, fit depends on the question, the people involved and the help required.",
+  ],
+};
+export const invitation = {
+  title: "Tell us what you want the work to achieve.",
+  paragraphs: [
+    "You may need a clearer position, a better website, a considered marketing plan or help deciding where AI belongs.",
+    "Bring us the context, what you have already tried and the question you need to answer. We can talk through what a useful next step would involve.",
+  ],
+};
 export const response = {
   eyebrow: "Choose the right response",
   title: "Make the important decisions before committing to the work.",
@@ -34,22 +58,15 @@ export const response = {
   ],
 };
 export const process = [
-  { title: "Understand", text: "Context, goals, evidence and previous attempts." },
-  { title: "Define", text: "Question, intended outcome, boundaries and measures." },
-  { title: "Shape", text: "A considered direction with explainable decisions." },
-  { title: "Deliver", text: "Practical work that brings the direction into use." },
-  { title: "Support", text: "Issues, adoption and refinement agreed per project." },
+  { title: "Map", text: "Understand the business, the audience, the purpose of the work and the context it needs to fit." },
+  { title: "Build", text: "Develop the agreed strategy, creative work, website, campaign or system around that purpose." },
+  { title: "Test", text: "Check the work against its intended use. That may include clarity of communication, a customer journey, website function or the behaviour of an automation." },
+  { title: "Hand over", text: "Show the relevant people how to use, manage or operate the work and what they need to do next." },
+  { title: "Support", text: "Help with issues, adoption and refinement of the agreed work. Ongoing support is agreed per project; additional work is scoped separately." },
 ];
 export const testimonials = [
   { quote: "We have partnered with Kri8it Digital for over 10 years, and they are, in my view, our most valued business partner.", name: "Bertus Floor", role: "Group Digital Officer, The SAFY Group" },
   { quote: "Working with Kri8it to develop and design our website is proof that a great partnership produces great results. We love our new website!", name: "Terri Cordin", role: "Marketing Manager, Wildlife Safari (Australia) Pty Ltd" },
-];
-export const engagement = [
-  { title: "Define the question", text: "Bring the business context and what you need to answer." },
-  { title: "Scope the useful work", text: "Agree what help is needed and where the work begins and ends." },
-  { title: "Agree delivery and responsibilities", text: "Make the direction and the people’s roles clear." },
-  { title: "Put the direction into use", text: "Bring the agreed strategy and practical skills to the work." },
-  { title: "Support and refine where required", text: "Agree support, adoption and further refinement per project." },
 ];
 export const offices = [
   { city: "Cape Town", country: "South Africa", phone: "+27 82 559 9903", telephone: "tel:+27825599903", emails: ["clint@kri8it.com", "francesca@kri8it.com"] },
