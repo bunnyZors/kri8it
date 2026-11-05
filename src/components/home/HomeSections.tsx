@@ -44,7 +44,7 @@ export function FitSection() {
 export function EngagementTimeline() {
   const stepIcons = [Compass, LayoutList, Handshake, Rocket, RefreshCw] as const;
   return <section id="engagement" className="site-section site-light engagement-section" data-theme="light"><div className="site-wrap">
-    <div className="engagement-head"><Eyebrow number="08">{engagement.eyebrow}</Eyebrow><h2>{engagement.title}</h2><p className="engagement-intro">{engagement.intro}</p></div>
+    <div className="engagement-head"><Eyebrow number="08">{engagement.eyebrow}</Eyebrow><h2><span className="site-callout">How</span> we work together.</h2><p className="engagement-intro">{engagement.intro}</p></div>
     <ol className="timeline">{engagement.steps.map((step, i) => {
       const Icon = stepIcons[i] ?? Compass;
       return <li key={step.title}><span className="timeline-icon" aria-hidden="true"><Icon /></span><span className="timeline-number" aria-hidden="true">0{i + 1}</span><div className="timeline-body"><h3>{step.title}</h3><p>{step.text}</p></div></li>;
