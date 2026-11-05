@@ -15,8 +15,7 @@ export function useHomeMotion(root: RefObject<HTMLDivElement | null>) {
           gsap.fromTo("[data-hero-reveal]", { y: 18, opacity: 0.2 }, { y: 0, opacity: 1, duration: 0.75, stagger: 0.12, clearProps: "all" });
           // Original EditorialHero artwork parallax; line drawing stays a load animation.
           gsap.to(".hero-eight", { yPercent: -15, ease: "none", scrollTrigger: { trigger: ".site-hero", start: "top top", end: "bottom top", scrub: true } });
-          gsap.fromTo(".premise .kinetic-fill", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", ease: "none", scrollTrigger: { trigger: ".premise", start: "top 75%", end: "center 40%", scrub: true } });
-          gsap.fromTo(".response-section .kinetic-fill", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", ease: "none", scrollTrigger: { trigger: ".response-section", start: "top 75%", end: "center 40%", scrub: true } });
+          gsap.fromTo(".kinetic-fill", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", ease: "none", scrollTrigger: { trigger: ".premise", start: "top 75%", end: "center 40%", scrub: true } });
           gsap.fromTo(".process-progress-fill", { scaleX: 0 }, { scaleX: 1, ease: "none", scrollTrigger: { trigger: ".process-track", start: "top 80%", end: "bottom 45%", scrub: true } });
           gsap.utils.toArray<HTMLElement>(".sector-geometry").forEach(el => gsap.fromTo(el, { y: -20 }, { y: 20, ease: "none", scrollTrigger: { trigger: el.parentElement, start: "top bottom", end: "bottom top", scrub: 1 } }));
           gsap.fromTo(".proof-rings svg", { y: -50 }, { y: 50, ease: "none", scrollTrigger: { trigger: ".proof-section", start: "top bottom", end: "bottom top", scrub: 1 } });
