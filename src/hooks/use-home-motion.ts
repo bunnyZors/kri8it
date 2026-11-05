@@ -19,6 +19,14 @@ export function useHomeMotion(root: RefObject<HTMLDivElement | null>) {
           gsap.fromTo(".process-progress-fill", { scaleX: 0 }, { scaleX: 1, ease: "none", scrollTrigger: { trigger: ".process-track", start: "top 80%", end: "bottom 45%", scrub: true } });
           gsap.utils.toArray<HTMLElement>(".sector-geometry").forEach(el => gsap.fromTo(el, { y: -20 }, { y: 20, ease: "none", scrollTrigger: { trigger: el.parentElement, start: "top bottom", end: "bottom top", scrub: 1 } }));
           gsap.fromTo(".proof-rings svg", { y: -50 }, { y: 50, ease: "none", scrollTrigger: { trigger: ".proof-section", start: "top bottom", end: "bottom top", scrub: 1 } });
+          const quoteViewport = scope.querySelector<HTMLElement>(".quote-viewport");
+          const quoteTrack = scope.querySelector<HTMLElement>(".quote-track");
+          const quoteSet = quoteTrack?.querySelector<HTMLElement>(".quote-set");
+          if (quoteViewport && quoteTrack && quoteSet) {
+            // Duplicate sets make the roll seamless: shift by one full set width.
+            const quoteRoll = () => quoteSet.offsetWidth + 70;
+            gsap.fromTo(quoteTrack, { x: () => -quoteRoll() }, { x: 0, ease: "none", scrollTrigger: { trigger: quoteViewport, start: "top 92%", end: "bottom 35%", scrub: 1, invalidateOnRefresh: true } });
+          }
           gsap.fromTo(".system-lines path", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, stagger: 0.2, ease: "none", scrollTrigger: { trigger: ".system-panel", start: "top 82%", end: "bottom 55%", scrub: true } });
         });
         media.add(`(min-width: ${capabilityDesktopWidth}px) and (prefers-reduced-motion: no-preference)`, () => {
