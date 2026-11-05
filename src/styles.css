@@ -419,6 +419,7 @@
 .kinetic-fill { position: absolute; inset: 0; color: var(--site-primary); clip-path: inset(0 100% 0 0); }
 .premise-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 62px; padding-top: 32px; border-top: 1px solid var(--site-line-light); }
 .response-section { background: #E8E5DC; }
+.engagement-section { background: #E8E5DC; }
 .response-grid { display: grid; grid-template-columns: 0.95fr 1fr; gap: 70px; align-items: start; }
 .response-grid h2 { max-width: 560px; }
 .response-grid .site-prose { max-width: 560px; margin-top: 10px; }
