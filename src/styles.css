@@ -428,7 +428,7 @@
 .capability-arcs { position: absolute; top: -95px; right: -105px; width: 300px; height: 300px; pointer-events: none; }
 .capability-arcs circle { stroke: var(--site-blue); stroke-width: 1; opacity: .45; }
 .capability-arcs circle:last-child { opacity: .75; }
-.capability-panel h3 { font-size: 34px; margin: auto 0 16px; font-weight: 700; }
+.capability-panel h3 { font-size: 34px; margin: 110px 0 16px; font-weight: 700; }
 .capability-panel p { font-size: 18px; line-height: 1.55; max-width: 340px; }
 .capability-panel .capability-tag { color: var(--site-primary); font-size: 11px; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; margin-top: 46px; }
 .sector-list { display: grid; gap: 110px; }
