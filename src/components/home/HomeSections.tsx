@@ -1,4 +1,4 @@
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Compass, Handshake, LayoutList, RefreshCw, Rocket } from "lucide-react";
 import { automation, capabilities, context, engagement, fit, hero, invitation, primaryContact, process, response, testimonials } from "@/data/site-content";
 import ClientMarquee from "@/components/ClientMarquee";
 import { Action, Eyebrow, OrbitalGraphic } from "./EditorialElements";
@@ -42,9 +42,13 @@ export function FitSection() {
   return <section id="focus" className="site-section site-dark" data-theme="dark"><div className="site-wrap response-grid"><div><Eyebrow number="07">SECTOR FOCUS</Eyebrow><h2>{fit.title}</h2></div><div className="site-prose">{fit.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<div className="fit-actions"><Action to="/automotive" trailing>Automotive sector focus</Action><Action to="/travel-tourism" trailing>Travel and tourism sector focus</Action></div></div></div></section>;
 }
 export function EngagementTimeline() {
-  return <section id="engagement" className="site-section site-light engagement-section" data-theme="light"><div className="site-wrap engagement-grid">
-    <div><Eyebrow number="08">{engagement.eyebrow}</Eyebrow><h2>{engagement.title}</h2><p className="engagement-intro">{engagement.intro}</p></div>
-    <ol className="timeline">{engagement.steps.map((step, i) => <li key={step.title}><span className="timeline-marker" aria-hidden="true"><span className="timeline-number">0{i + 1}</span><span className="timeline-rail" /></span><div className="timeline-body"><h3>{step.title}</h3><p>{step.text}</p></div></li>)}</ol>
+  const stepIcons = [Compass, LayoutList, Handshake, Rocket, RefreshCw] as const;
+  return <section id="engagement" className="site-section site-light engagement-section" data-theme="light"><div className="site-wrap">
+    <div className="engagement-head"><Eyebrow number="08">{engagement.eyebrow}</Eyebrow><h2>{engagement.title}</h2><p className="engagement-intro">{engagement.intro}</p></div>
+    <ol className="timeline">{engagement.steps.map((step, i) => {
+      const Icon = stepIcons[i] ?? Compass;
+      return <li key={step.title}><span className="timeline-icon" aria-hidden="true"><Icon /></span><span className="timeline-number" aria-hidden="true">0{i + 1}</span><div className="timeline-body"><h3>{step.title}</h3><p>{step.text}</p></div></li>;
+    })}</ol>
   </div></section>;
 }
 export function ProofSection() {
