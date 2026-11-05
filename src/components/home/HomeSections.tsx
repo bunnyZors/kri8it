@@ -1,5 +1,5 @@
 import { ArrowDown } from "lucide-react";
-import { automation, capabilities, context, fit, hero, invitation, primaryContact, process, response, testimonials } from "@/data/site-content";
+import { automation, capabilities, context, engagement, fit, hero, invitation, primaryContact, process, response, testimonials } from "@/data/site-content";
 import ClientMarquee from "@/components/ClientMarquee";
 import { Action, Eyebrow, OrbitalGraphic } from "./EditorialElements";
 

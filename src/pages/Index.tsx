@@ -11,7 +11,7 @@ export default function Index() {
   return <div className="editorial-site" ref={root}>
     <Navbar />
     <main id="main-content" tabIndex={-1}>
-      <HomeHero /><StrategicPremise /><ResponseSection /><CapabilityJourney /><UseInContext /><WorkingProcess /><Automai8Section /><FitSection /><ProofSection /><EngagementSection />
+      <HomeHero /><StrategicPremise /><ResponseSection /><CapabilityJourney /><UseInContext /><WorkingProcess /><Automai8Section /><FitSection /><EngagementTimeline /><ProofSection /><EngagementSection />
     </main>
     <Footer />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
