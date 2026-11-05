@@ -423,7 +423,7 @@
 .timeline li { display: grid; grid-template-columns: 58px 1fr; gap: 30px; }
 .timeline-marker { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
 .timeline-number { font-size: 15px; font-weight: 700; letter-spacing: 0.12em; color: var(--site-primary); line-height: 1.2; }
-.timeline-rail { flex: 1 1 auto; width: 1px; min-height: 46px; background: linear-gradient(to bottom, var(--site-primary) 0%, var(--section-border, #D8D5CB) 100%); }
+.timeline-rail { flex: 1 1 auto; width: 1px; min-height: 46px; background: linear-gradient(to bottom, var(--site-primary) 0%, var(--site-line-light) 100%); }
 .timeline li:last-child .timeline-rail { display: none; }
 .timeline-body { padding-bottom: 42px; }
 .timeline li:last-child .timeline-body { padding-bottom: 0; }
