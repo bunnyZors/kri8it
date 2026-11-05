@@ -14,7 +14,7 @@ export default function Footer() {
     window.location.assign(`${primaryContact}?subject=${encodeURIComponent("Website enquiry")}&body=${encodeURIComponent(body)}`);
   };
   return <footer className="site-footer site-dark" id="contact" data-theme="dark"><div className="site-wrap">
-    <div className="contact-intro"><Eyebrow number="10">Contact</Eyebrow><h2>Say <span>hello.</span></h2></div>
+    <div className="contact-intro"><Eyebrow number="11">Contact</Eyebrow><h2>Say <span>hello.</span></h2></div>
     <form className="footer-enquiry" onSubmit={composeMessage}>
       {[{name:"firstName",label:"First Name",type:"text",required:true},{name:"lastName",label:"Last Name",type:"text",required:false},{name:"email",label:"Email Address",type:"email",required:true},{name:"phone",label:"Contact Number",type:"tel",required:false}].map(field => <label key={field.name} htmlFor={`footer-${field.name}`}>{field.label}{field.required && " *"}<input id={`footer-${field.name}`} name={field.name} type={field.type} required={field.required} /></label>)}
       <label className="footer-enquiry-message" htmlFor="footer-message">How Can We Help? *<textarea id="footer-message" name="message" rows={3} required /></label>

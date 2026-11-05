@@ -42,6 +42,18 @@ export const fit = {
     "Automotive is a particular focus, building on our experience in the sector. Across other businesses, fit depends on the question, the people involved and the help required.",
   ],
 };
+export const engagement = {
+  eyebrow: "Engagement model",
+  title: "How we work together.",
+  intro: "Kri8it engages as a strategic growth and delivery partner through a clear, phased pathway tailored to your business goals.",
+  steps: [
+    { title: "Define the question", text: "Understand the context, audience, business objective and evidence before choosing solutions." },
+    { title: "Scope the useful work", text: "Agree clear boundaries, priorities and measures for success across brand, digital, marketing or automation." },
+    { title: "Agree delivery and responsibilities", text: "Establish who is doing what between Kri8it and your internal team for clear accountability." },
+    { title: "Put the direction into use", text: "Execute high-quality strategy, design, development or automation that functions as intended." },
+    { title: "Support and refine where required", text: "Provide agreed ongoing support, team enablement and refinement as your business grows." },
+  ],
+};
 export const invitation = {
   title: "Tell us what you want the work to achieve.",
   paragraphs: [
