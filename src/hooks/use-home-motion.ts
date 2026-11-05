@@ -23,7 +23,8 @@ export function useHomeMotion(root: RefObject<HTMLDivElement | null>) {
           const quoteTrack = scope.querySelector<HTMLElement>(".quote-track");
           const quoteSet = quoteTrack?.querySelector<HTMLElement>(".quote-set");
           if (quoteViewport && quoteTrack && quoteSet) {
-            const quoteRoll = () => Math.max(0, quoteSet.offsetWidth + 70 - quoteViewport.clientWidth);
+            // Duplicate sets make the roll seamless: shift by one full set width.
+            const quoteRoll = () => quoteSet.offsetWidth + 70;
             gsap.fromTo(quoteTrack, { x: () => -quoteRoll() }, { x: 0, ease: "none", scrollTrigger: { trigger: quoteViewport, start: "top 92%", end: "bottom 35%", scrub: 1, invalidateOnRefresh: true } });
           }
           gsap.fromTo(".system-lines path", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, stagger: 0.2, ease: "none", scrollTrigger: { trigger: ".system-panel", start: "top 82%", end: "bottom 55%", scrub: true } });
