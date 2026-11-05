@@ -567,7 +567,7 @@
   .sector-copy h3 { font-size: 46px; }
   .process-heading-row { margin-bottom: 64px; }
   .process-columns { grid-template-columns: 1fr; }
-  .process-columns li { border-left: 0; border-top: 1px solid var(--site-line-dark); padding: 30px 0 24px; min-height: 0; }
+  .process-columns li { border-left: 0; border-top: 1px solid var(--site-line-light); padding: 30px 0 24px; min-height: 0; }
   .process-columns h3 { font-size: 26px; margin-top: 24px; }
   .process-columns p { font-size: 16px; max-width: 520px; }
   .automation-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -632,7 +632,7 @@
   .process-heading-row { margin-bottom: 44px; }
   .process-heading-row .section-intro { padding-top: 0; }
   .process-columns { grid-template-columns: 1fr; }
-  .process-columns li { border-left: 0; border-top: 1px solid var(--site-line-dark); padding: 26px 0 22px; }
+  .process-columns li { border-left: 0; border-top: 1px solid var(--site-line-light); padding: 26px 0 22px; }
   .process-columns h3 { font-size: 26px; margin-top: 24px; }
   .process-columns p { font-size: 16px; }
   .system-panel { aspect-ratio: 0.85; }
