@@ -26,7 +26,7 @@ export function ResponseSection() {
   </div></section>;
 }
 export function CapabilityJourney() {
-  return <section id="services" className="site-section site-dark capability-section" data-theme="dark"><div className="site-wrap capability-intro"><Eyebrow number="03">Consultancy & delivery</Eyebrow><div className="section-title-row"><h2>Advice and delivery across <span className="site-callout">the work that matters.</span></h2><Action to="/services">See our consultancy and delivery capabilities</Action></div></div>
+  return <section id="services" className="site-section site-dark capability-section" data-theme="dark"><div className="site-wrap capability-intro"><Eyebrow number="03">CAPABILITY JOURNEY</Eyebrow><div className="section-title-row"><h2>Advice and delivery across <span className="site-callout">the work that matters.</span></h2><Action to="/services">See our consultancy and delivery capabilities</Action></div></div>
   <div className="capability-viewport"><ol className="capability-track">{capabilities.map((item,i)=><li className="capability-panel" key={item.title}><span className="capability-number">0{i+1}</span><svg className="capability-arcs" viewBox="0 0 300 300" fill="none" aria-hidden="true"><circle cx="200" cy="100" r="170" /><circle cx="200" cy="100" r="120" /><circle cx="200" cy="100" r="70" /></svg><h3>{item.title}</h3><p>{item.text}</p></li>)}</ol></div>
   </section>;
 }
