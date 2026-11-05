@@ -491,7 +491,7 @@
 .proof-section h2.proof-statement { max-width: 1180px; margin-inline: auto; }
 .proof-statement span { color: var(--site-primary); }
 .proof-sub { margin: 36px auto 0; max-width: 660px; font-size: 19px; line-height: 1.6; color: var(--section-muted); }
-.quote-viewport { overflow: hidden; margin-top: 96px; text-align: left; }
+.quote-viewport { overflow: hidden; margin-top: 96px; text-align: left; -webkit-mask-image: linear-gradient(to right, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%); mask-image: linear-gradient(to right, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%); }
 .quote-track { display: flex; gap: 70px; width: max-content; }
 .quote-set { display: flex; gap: 70px; flex: none; }
 .quote-card { flex: none; width: min(520px, 78vw); border-top: 1px solid var(--site-line-dark); padding-top: 22px; }
