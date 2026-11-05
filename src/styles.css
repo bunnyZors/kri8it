@@ -456,8 +456,8 @@
 .sector-list { display: grid; gap: 110px; }
 .sector-divider { border: none; border-top: 1px solid var(--site-line-light); grid-column: 1 / -1; width: 100%; margin: 0; }
 .sector-card { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.sector-card:nth-child(even) .sector-media { order: 2; }
-.sector-card:nth-child(even) .sector-copy { order: 1; }
+.sector-card-flip .sector-media { order: 2; }
+.sector-card-flip .sector-copy { order: 1; }
 .sector-media { position: relative; aspect-ratio: 0.73; border-radius: 38px; overflow: hidden; background: var(--site-sector-gradient); display: flex; align-items: flex-end; padding: 40px; }
 .sector-media::before { content: ""; position: absolute; inset: 0; z-index: 1; background: repeating-linear-gradient(115deg, transparent 0 34px, var(--site-sector-stripe) 34px 36px); pointer-events: none; }
 .sector-media > span { position: relative; z-index: 2; color: var(--site-paper); font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; opacity: .85; }
