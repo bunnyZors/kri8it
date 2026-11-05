@@ -502,9 +502,10 @@
 .conversation-section h2.conversation-heading { max-width: 1150px; }
 .conversation-heading span { color: var(--site-primary); }
 .conversation-row { display: grid; grid-template-columns: 1fr 1.15fr; gap: 80px; margin-top: 100px; padding-top: 64px; border-top: 1px solid var(--site-line-light); }
-.conversation-cta { display: inline-flex; align-items: baseline; gap: 14px; max-width: 500px; font-family: var(--font-display); font-size: 40px; font-weight: 700; line-height: 1.25; color: var(--site-ink); text-decoration: none; transition: color var(--site-fast); }
-.conversation-cta svg { flex: none; align-self: center; color: var(--site-blue); }
-.conversation-cta:hover { color: var(--site-blue); }
+.conversation-cta { display: inline-flex; align-items: flex-start; gap: 12px; max-width: 560px; font-family: var(--font-sans); font-size: 40px; font-weight: 600; line-height: 1.3; letter-spacing: 0; text-transform: none; color: var(--site-ink); text-decoration: none; transition: color var(--site-fast); }
+.conversation-cta svg { flex: none; width: 28px; height: 28px; margin-top: 14px; color: var(--site-violet, #9F63FF); transition: transform var(--site-fast), color var(--site-fast); }
+.conversation-cta:hover { color: var(--site-ink); }
+.conversation-cta:hover svg { transform: translate(3px, -3px); }
 .conversation-offices { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-content: start; }
 .conversation-offices h3 { font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--section-muted); margin-bottom: 22px; }
 .conversation-offices a { display: block; width: fit-content; font-size: 20px; line-height: 1.5; color: var(--site-ink); text-decoration: none; margin-bottom: 12px; transition: color var(--site-fast); }
