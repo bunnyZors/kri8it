@@ -438,7 +438,7 @@
 .capability-intro .section-title-row { margin-bottom: 44px; }
 .capability-viewport { width: 100%; overflow: hidden; }
 .capability-track { display: flex; gap: 24px; width: max-content; padding-inline: max(56px, calc((100vw - 1328px) / 2)); }
-.capability-panel { position: relative; overflow: hidden; flex: 0 0 430px; width: 430px; min-height: 540px; display: flex; flex-direction: column; border: 1px solid color-mix(in oklab, var(--site-violet) 20%, var(--site-line-dark)); border-radius: 28px; padding: 38px 36px 34px; background: radial-gradient(480px 480px at 82% 10%, color-mix(in oklab, var(--site-violet) 17%, transparent), transparent 68%), linear-gradient(160deg, #16122B 0%, #0B0919 48%, #05040B 100%); }
+.capability-panel { position: relative; overflow: hidden; flex: 0 0 430px; width: 430px; min-height: 540px; display: flex; flex-direction: column; border: 1px solid color-mix(in oklab, var(--site-primary) 18%, var(--site-line-dark)); border-radius: 28px; padding: 38px 36px 34px; background: radial-gradient(480px 480px at 82% 10%, color-mix(in oklab, var(--site-primary) 14%, transparent), transparent 68%), linear-gradient(160deg, #0F2436 0%, #081726 48%, #050C14 100%); }
 .capability-number { color: var(--site-primary); font-size: 14px; font-weight: 700; letter-spacing: 0.12em; font-variant-numeric: tabular-nums; }
 .capability-arcs { position: absolute; top: -95px; right: -105px; width: 300px; height: 300px; pointer-events: none; }
 .capability-arcs circle { stroke: var(--site-blue); stroke-width: 1; opacity: .45; }
