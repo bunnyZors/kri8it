@@ -6,9 +6,9 @@ import { Link } from "@/lib/router-compat";
 export function Eyebrow({ children, number }: { children: ReactNode; number?: string }) {
   return <p className="site-eyebrow"><span>{number}</span>{children}</p>;
 }
-export function Action({ children, to, primary = false }: { children: ReactNode; to: string; primary?: boolean }) {
+export function Action({ children, to, primary = false, light = false }: { children: ReactNode; to: string; primary?: boolean; light?: boolean }) {
   const contents = <>{primary && <span className="editorial-action-icon" aria-hidden="true"><ArrowRight /></span>}<span className="editorial-action-label">{children}</span></>;
-  return <Button asChild variant={primary ? "editorial" : "editorialLink"} className="site-action">{to.startsWith("mailto:") || to.startsWith("tel:") ? <a href={to}>{contents}</a> : <Link to={to}>{contents}</Link>}</Button>;
+  return <Button asChild variant={primary ? (light ? "editorialLinkLight" : "editorial") : "editorialLink"} className="site-action">{to.startsWith("mailto:") || to.startsWith("tel:") ? <a href={to}>{contents}</a> : <Link to={to}>{contents}</Link>}</Button>;
 }
 export function OrbitalGraphic() {
   return <svg className="hero-eight" viewBox="0 0 1474 1119" fill="none" aria-hidden="true">
