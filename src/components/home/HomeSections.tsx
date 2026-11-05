@@ -40,8 +40,8 @@ export function Automai8Section() {
 }
 export function FitSection() {
   const sectors = [
-    { title: "Automotive", to: "/automotive", action: "Automotive sector focus" },
-    { title: "Travel & tourism", to: "/travel-tourism", action: "Travel and tourism sector focus" },
+    { title: "Automotive", eyebrow: "Deep sector experience", to: "/automotive", action: "Discuss an automotive challenge", copy: "Strategic, digital and marketing experience shaped around complex journeys, dealer networks, changing technologies and measurable performance." },
+    { title: "Travel & tourism", eyebrow: "Destination to decision", to: "/travel-tourism", action: "Discuss a travel challenge", copy: "Brand, content and digital experiences that help remarkable places and travel businesses turn inspiration into an informed next step." },
   ];
   return <section id="focus"><div className="site-section site-dark" data-theme="dark"><div className="site-wrap response-grid"><div><Eyebrow number="07">SECTOR FOCUS</Eyebrow><h2>Start with a question <span className="site-callout">your business</span> needs to answer.</h2></div><div className="site-prose">{fit.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div></div></div>
     <div className="site-section site-light sector-band" data-theme="light"><div className="site-wrap sector-list">{sectors.map(sector => <article className="sector-card" key={sector.to}>
