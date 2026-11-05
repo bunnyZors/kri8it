@@ -607,7 +607,7 @@
   .capability-panel h3 { font-size: 31px; }
   .capability-panel p { font-size: 17px; }
   .sector-list { gap: 56px; }
-  .sector-card, .quote-grid { grid-template-columns: 1fr; gap: 28px; }  .conversation-row { gap: 44px; margin-top: 52px; padding-top: 44px; }
+  .sector-card { grid-template-columns: 1fr; gap: 28px; }  .conversation-row { gap: 44px; margin-top: 52px; padding-top: 44px; }
   .conversation-cta { font-size: 26px; }
   .conversation-offices { grid-template-columns: 1fr; gap: 36px; }
   .conversation-offices a { font-size: 18px; }
