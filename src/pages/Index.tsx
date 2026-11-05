@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { HomeHero, StrategicPremise, ResponseSection, CapabilityJourney, UseInContext, WorkingProcess, Automai8Section, FitSection, ProofSection, EngagementSection } from "@/components/home/HomeSections";
+import { HomeHero, StrategicPremise, ResponseSection, CapabilityJourney, UseInContext, WorkingProcess, Automai8Section, FitSection, EngagementTimeline, ProofSection, EngagementSection } from "@/components/home/HomeSections";
 import { useHomeMotion } from "@/hooks/use-home-motion";
 import { structuredData } from "@/data/site-content";
 
