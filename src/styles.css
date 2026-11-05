@@ -471,7 +471,7 @@
 .sector-category { font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--section-muted); margin-block: 0 18px; }
 .sector-copy h3 { font-size: 58px; font-weight: 700; line-height: 1.1; margin-bottom: 26px; }
 .sector-copy .site-prose { max-width: 470px; }
-.sector-action { margin-top: 44px; padding-bottom: 18px; border-bottom: 1px solid var(--site-line-light); }
+.sector-action { margin-top: 44px; }
 .sector-link { display: inline-flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--site-ink); text-decoration: none; transition: color var(--site-fast); }
 .sector-link:hover { color: var(--site-blue); }
 .process-section { background: #EDEBE4; border-top: 1px solid var(--site-line-light); }
