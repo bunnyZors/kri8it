@@ -39,7 +39,16 @@ export function Automai8Section() {
   return <section id="automai8" className="site-section site-light automation-section" data-theme="light"><div className="site-wrap automation-grid"><div><Eyebrow number="06">Kri8it · AutomAi8</Eyebrow><h2>Where <span className="site-callout">AutomAi8</span> fits.</h2><div className="site-prose">{automation.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div></div><div className="system-panel" role="img" aria-label="AutomAi8 sits within the Kri8it system, supporting lead management, retention, attribution and workflows."><span className="system-panel-label">Kri8it</span><svg className="system-lines" viewBox="0 0 600 760" fill="none" aria-hidden="true"><path d="M-20 430C150 424 230 425 262 427" pathLength="1" /><path d="M620 505C470 496 400 492 338 490" pathLength="1" /><path d="M472 -20L472 288" pathLength="1" /></svg><div className="system-module"><strong>AutomAi8</strong><span>Automation and AI</span></div></div></div></section>;
 }
 export function FitSection() {
-  return <section id="focus" className="site-section site-dark" data-theme="dark"><div className="site-wrap response-grid"><div><Eyebrow number="07">SECTOR FOCUS</Eyebrow><h2>Start with a question <span className="site-callout">your business</span> needs to answer.</h2></div><div className="site-prose">{fit.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<div className="fit-actions"><Action to="/automotive" trailing>Automotive sector focus</Action><Action to="/travel-tourism" trailing>Travel and tourism sector focus</Action></div></div></div></section>;
+  const sectors = [
+    { title: "Automotive", to: "/automotive", action: "Automotive sector focus" },
+    { title: "Travel & tourism", to: "/travel-tourism", action: "Travel and tourism sector focus" },
+  ];
+  return <section id="focus"><div className="site-section site-dark" data-theme="dark"><div className="site-wrap response-grid"><div><Eyebrow number="07">SECTOR FOCUS</Eyebrow><h2>Start with a question <span className="site-callout">your business</span> needs to answer.</h2></div><div className="site-prose">{fit.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div></div></div>
+    <div className="site-section site-light sector-band" data-theme="light"><div className="site-wrap sector-list">{sectors.map(sector => <article className="sector-card" key={sector.to}>
+      <div className="sector-media" aria-hidden="true"><div className="sector-geometry"><svg viewBox="0 0 600 760" fill="none"><circle className="sector-ring-outer" cx="300" cy="290" r="290" /><circle cx="300" cy="290" r="184" /></svg></div><span>{sector.title}</span></div>
+      <div className="sector-copy"><h3>{sector.title}</h3><div className="sector-action"><Action to={sector.to} trailing>{sector.action}</Action></div></div>
+    </article>)}</div></div>
+  </section>;
 }
 export function EngagementTimeline() {
   const stepIcons = [Compass, LayoutList, Handshake, Rocket, RefreshCw] as const;

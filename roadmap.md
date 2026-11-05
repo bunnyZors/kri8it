@@ -1,4 +1,5 @@
 # Homepage implementation
+- [x] Restore alternating Automotive and Travel & tourism visual cards; preserve copy and verify links/layout.
 - [x] Recover the exact pre-animation-upload copy and compare it with the revised site.
 - [x] Restore original copy while retaining manual hero/01/02 edits and the revised design/motion.
 - [x] Verify restored content and layout on desktop and mobile.

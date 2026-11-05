@@ -325,6 +325,9 @@
   --site-line-dark: #34313f;
   --site-line-light: #cfcdc9;
   --site-surface: #141120;
+  --site-sector-gradient: linear-gradient(145deg, var(--site-ink), var(--site-secondary-deep) 54%, var(--site-blue-readable));
+  --site-sector-stripe: color-mix(in oklab, var(--site-paper) 7%, transparent);
+  --site-sector-disc: color-mix(in oklab, var(--site-blue) 20%, transparent);
   --site-fast: 220ms;
   --site-section-space: 112px;
 }
@@ -450,15 +453,15 @@
 .sector-card { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .sector-card:nth-child(even) .sector-media { order: 2; }
 .sector-card:nth-child(even) .sector-copy { order: 1; }
-.sector-media { position: relative; aspect-ratio: 0.92; border-radius: 28px; overflow: hidden; background: var(--site-ink); display: flex; align-items: flex-end; padding: 30px; }
-.sector-media::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(115deg, transparent 0 34px, rgba(255,255,255,.05) 34px 35px); }
+.sector-media { position: relative; aspect-ratio: 0.73; border-radius: 38px; overflow: hidden; background: var(--site-sector-gradient); display: flex; align-items: flex-end; padding: 40px; }
+.sector-media::before { content: ""; position: absolute; inset: 0; z-index: 1; background: repeating-linear-gradient(115deg, transparent 0 34px, var(--site-sector-stripe) 34px 36px); pointer-events: none; }
 .sector-media > span { position: relative; z-index: 2; color: var(--site-paper); font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; opacity: .85; }
 .sector-geometry { position: absolute; inset: 0; }
-.sector-geometry svg { width: 100%; height: 100%; stroke: var(--site-blue); stroke-width: 1; opacity: .65; }
-.sector-geometry .sector-ring-outer { opacity: .35; }
+.sector-geometry svg { width: 100%; height: 100%; stroke: var(--site-blue); stroke-width: 1.5; opacity: .65; }
+.sector-geometry .sector-ring-outer { fill: var(--site-sector-disc); stroke: none; }
 .sector-1 .sector-geometry svg { stroke: var(--site-blue); }
 .sector-category { font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--section-muted); margin-block: 0 18px; }
-.sector-copy h3 { font-size: 64px; font-weight: 700; line-height: 1.05; margin-bottom: 26px; }
+.sector-copy h3 { font-size: 58px; font-weight: 700; line-height: 1.1; margin-bottom: 26px; }
 .sector-copy .site-prose { max-width: 470px; }
 .sector-action { margin-top: 44px; padding-bottom: 18px; border-bottom: 1px solid var(--site-line-light); }
 .sector-link { display: inline-flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--site-ink); text-decoration: none; transition: color var(--site-fast); }
