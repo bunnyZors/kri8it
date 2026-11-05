@@ -564,8 +564,8 @@
   .conversation-row { grid-template-columns: 1fr; gap: 56px; margin-top: 72px; }
   .conversation-cta { font-size: 32px; }
   .proof-rings svg { width: 900px; height: 900px; }
-  .quote-grid { gap: 40px; margin-top: 72px; }
-  .quote-grid blockquote { font-size: 25px; }
+  .quote-viewport { gap: 40px; margin-top: 72px; }
+  .quote-card blockquote { font-size: 25px; }
   .contact-message { flex-direction: column; gap: 30px; }
 }
 @media (max-width: 599px) {
@@ -607,8 +607,7 @@
   .capability-panel h3 { font-size: 31px; }
   .capability-panel p { font-size: 17px; }
   .sector-list { gap: 56px; }
-  .sector-card, .quote-grid { grid-template-columns: 1fr; gap: 28px; }
-  .conversation-row { gap: 44px; margin-top: 52px; padding-top: 44px; }
+  .sector-card, .quote-grid { grid-template-columns: 1fr; gap: 28px; }  .conversation-row { gap: 44px; margin-top: 52px; padding-top: 44px; }
   .conversation-cta { font-size: 26px; }
   .conversation-offices { grid-template-columns: 1fr; gap: 36px; }
   .conversation-offices a { font-size: 18px; }
