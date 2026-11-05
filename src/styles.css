@@ -352,6 +352,9 @@
 .editorial-action-secondary { color: var(--section-accent, var(--site-primary)); }
 .editorial-action-secondary .editorial-action-label { padding-block: 8px; border-bottom: 1px solid var(--section-line, var(--site-line-dark)); }
 .editorial-action-secondary:hover { color: var(--section-accent, var(--site-primary)); opacity: .8; }
+.editorial-action-badge { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 40px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--site-blue); color: var(--site-blue); transition: background var(--site-fast), color var(--site-fast); }
+.editorial-action .editorial-action-badge svg { width: 18px; height: 18px; }
+.editorial-action-secondary:hover .editorial-action-badge { background: var(--site-blue); color: var(--site-paper); }
 .editorial-action-compact .editorial-action-icon { flex-basis: 56px; width: 56px; height: 56px; }
 .site-action { min-width: 0; }
 .editorial-site :focus-visible, .site-header :focus-visible, .site-footer :focus-visible { outline: 2px solid var(--site-blue); outline-offset: 5px; }
@@ -415,7 +418,7 @@
 .response-grid { display: grid; grid-template-columns: 0.95fr 1fr; gap: 70px; align-items: start; }
 .response-grid h2 { max-width: 560px; }
 .response-grid .site-prose { max-width: 560px; margin-top: 10px; }
-.fit-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; margin-top: 34px; }
+.fit-actions { display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 18px 48px; margin-top: 34px; }
 .engagement-grid { display: grid; grid-template-columns: 0.95fr 1fr; gap: 70px; align-items: start; }
 .engagement-grid h2 { max-width: 560px; }
 .engagement-intro { max-width: 520px; margin-top: 26px; font-size: 18px; line-height: 1.625; color: var(--site-muted-light); }
@@ -581,6 +584,9 @@
   .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; margin-top: 25px; width: auto; }
   .editorial-action { gap: 18px; font-size: 12px; }
   .editorial-action-icon { flex-basis: 52px; width: 52px; height: 52px; }
+  .editorial-action-badge { flex-basis: 34px; width: 34px; height: 34px; }
+  .editorial-action .editorial-action-badge svg { width: 15px; height: 15px; }
+  .fit-actions { flex-direction: column; align-items: flex-start; gap: 18px; }
   .hero-bottom { padding-top: 32px; font-size: 12px; gap: 20px; }
   .hero-bottom svg { flex-shrink: 0; }
   .credibility { padding-block: 24px 30px; }
