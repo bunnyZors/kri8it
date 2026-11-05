@@ -483,6 +483,7 @@
 .process-number { color: var(--site-primary); font-size: 14px; font-weight: 700; letter-spacing: 0.1em; font-variant-numeric: tabular-nums; }
 .process-columns h3 { font-size: 28px; font-weight: 700; margin: 58px 0 14px; }
 .process-columns p { color: var(--section-muted); font-size: 16px; line-height: 1.65; }
+.automation-section { background: linear-gradient(160deg, #0F2436 0%, #081726 48%, #050C14 100%); border-top: 1px solid var(--site-line-dark); }
 .automation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .automation-grid .site-prose { margin-block: 32px; max-width: 540px; }
 .site-callout { color: var(--section-accent, var(--site-primary)); }
