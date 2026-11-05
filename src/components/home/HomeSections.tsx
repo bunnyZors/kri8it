@@ -1,4 +1,4 @@
-import { ArrowDown, Compass, Handshake, LayoutList, RefreshCw, Rocket } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Compass, Handshake, LayoutList, RefreshCw, Rocket } from "lucide-react";
 import { automation, capabilities, context, engagement, fit, hero, invitation, primaryContact, process, response, testimonials } from "@/data/site-content";
 import ClientMarquee from "@/components/ClientMarquee";
 import { Action, Eyebrow, OrbitalGraphic } from "./EditorialElements";
@@ -55,5 +55,5 @@ export function ProofSection() {
   return <section id="proof" className="site-section site-dark proof-section" data-theme="dark"><div className="proof-rings" aria-hidden="true"><svg viewBox="0 0 1200 1200" fill="none"><circle cx="600" cy="600" r="420" /><circle cx="600" cy="600" r="585" /></svg></div><div className="site-wrap proof-inner"><Eyebrow number="09">Partnership proof</Eyebrow><h2 className="proof-statement">Partnership, <span>in our clients' words.</span></h2><div className="quote-viewport"><div className="quote-track">{[false, true].map(duplicate => <div key={String(duplicate)} className="quote-set" aria-hidden={duplicate || undefined}>{testimonials.map(item=><figure key={item.name} className="quote-card"><span className="quote-mark" aria-hidden="true">“</span><blockquote>{item.quote}</blockquote><figcaption><strong>{item.name}</strong><span>{item.role}</span></figcaption></figure>)}</div>)}</div></div></div></section>;
 }
 export function EngagementSection() {
-  return <section className="site-section site-light conversation-section" data-theme="light"><div className="site-wrap"><Eyebrow number="10">Let's talk</Eyebrow><h2 className="conversation-heading">Tell us what you want the work to <span>achieve.</span></h2><div className="conversation-row"><Action to={primaryContact} primary light>Talk through your business challenge</Action><div className="site-prose">{invitation.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div></div></div></section>;
+  return <section className="site-section site-light conversation-section" data-theme="light"><div className="site-wrap"><Eyebrow number="10">Let's talk</Eyebrow><h2 className="conversation-heading">Tell us what you want the work to <span>achieve.</span></h2><div className="conversation-row"><a href={primaryContact} className="conversation-cta">Talk through your business challenge<ArrowUpRight aria-hidden="true" /></a><div className="site-prose">{invitation.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div></div></div></section>;
 }
