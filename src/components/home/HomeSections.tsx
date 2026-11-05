@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { ArrowDown, ArrowUpRight, Compass, Handshake, LayoutList, RefreshCw, Rocket } from "lucide-react";
 import { automation, capabilities, context, engagement, fit, hero, invitation, primaryContact, process, response, testimonials } from "@/data/site-content";
 import ClientMarquee from "@/components/ClientMarquee";
@@ -49,7 +50,7 @@ export function FitSection() {
       <article className="sector-card">
       <div className="sector-media" aria-hidden="true"><div className="sector-geometry"><svg viewBox="0 0 600 760" fill="none"><circle className="sector-ring-outer" cx="300" cy="290" r="290" /><circle cx="300" cy="290" r="184" /></svg></div><span>{sector.title}</span></div>
       <div className="sector-copy"><Eyebrow>{sector.eyebrow}</Eyebrow><h3>{sector.title}</h3><div className="site-prose"><p>{sector.copy}</p></div><div className="sector-action"><Action to={sector.to} trailing>{sector.action}</Action></div></div>
-    </article>)}</div></div>
+    </article></Fragment>)}</div></div>
   </section>;
 }
 export function EngagementTimeline() {
