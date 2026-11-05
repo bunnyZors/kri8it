@@ -31,7 +31,7 @@ export function CapabilityJourney() {
   </section>;
 }
 export function UseInContext() {
-  return <section className="site-section site-light" data-theme="light"><div className="site-wrap response-grid"><div><Eyebrow number="04">Use in context</Eyebrow><h2>A finished piece of work still <span className="site-callout">has a job to do.o</span>.</h2></div><div className="site-prose">{context.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div></div></section>;
+  return <section className="site-section site-light" data-theme="light"><div className="site-wrap response-grid"><div><Eyebrow number="04">Use in context</Eyebrow><h2>A finished piece of work still <span className="site-callout">has a job to do.</span></h2></div><div className="site-prose">{context.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div></div></section>;
 }
 export function WorkingProcess() {
   return <section id="process" className="site-section site-light process-section" data-theme="light"><div className="site-wrap"><Eyebrow number="05">How we work</Eyebrow><div className="section-title-row process-heading-row"><h2><span className="site-callout">We will</span> map, build, test, hand over and support.</h2></div><div className="process-track"><div className="process-progress" aria-hidden="true"><span className="process-progress-fill" /></div><ol className="process-columns">{process.map((step,i)=><li key={step.title}><span className="process-number">0{i+1}</span><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol></div></div></section>;
