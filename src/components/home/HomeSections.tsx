@@ -47,7 +47,7 @@ export function FitSection() {
   return <section id="focus"><div className="site-section site-dark" data-theme="dark"><div className="site-wrap response-grid"><div><Eyebrow number="07">SECTOR FOCUS</Eyebrow><h2>Start with a question <span className="site-callout">your business</span> needs to answer.</h2></div><div className="site-prose">{fit.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div></div></div>
     <div className="site-section site-light sector-band" data-theme="light"><div className="site-wrap sector-list">{sectors.map((sector, index) => <Fragment key={sector.to}>
       {index > 0 && <hr className="sector-divider" aria-hidden="true" />}
-      <article className="sector-card">
+      <article className={index % 2 === 1 ? "sector-card sector-card-flip" : "sector-card"}>
       <div className="sector-media" aria-hidden="true"><div className="sector-geometry"><svg viewBox="0 0 600 760" fill="none"><circle className="sector-ring-outer" cx="300" cy="290" r="290" /><circle cx="300" cy="290" r="184" /></svg></div><span>{sector.title}</span></div>
       <div className="sector-copy"><Eyebrow>{sector.eyebrow}</Eyebrow><h3>{sector.title}</h3><div className="site-prose"><p>{sector.copy}</p></div><div className="sector-action"><Action to={sector.to} trailing>{sector.action}</Action></div></div>
     </article></Fragment>)}</div></div>
