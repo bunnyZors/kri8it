@@ -356,7 +356,10 @@
 .editorial-action-secondary { color: var(--section-accent, var(--site-primary)); }
 .editorial-action-secondary .editorial-action-label { padding-block: 8px; border-bottom: 1px solid var(--section-line, var(--site-line-dark)); }
 .editorial-action-secondary:hover { color: var(--section-accent, var(--site-primary)); opacity: .8; }
+.site-light .editorial-action-secondary { color: var(--site-ink); }
+.site-light .editorial-action-secondary:hover { color: var(--site-ink); }
 .editorial-action-trailing { display: inline-flex; align-items: center; flex: 0 0 auto; color: var(--section-accent, var(--site-primary)); transition: transform var(--site-fast); }
+.site-light .editorial-action-trailing { color: var(--site-ink); }
 .editorial-action-trailing svg { width: 16px; height: 16px; }
 .editorial-action:hover .editorial-action-trailing { transform: translateX(4px); }
 .editorial-action-compact .editorial-action-icon { flex-basis: 56px; width: 56px; height: 56px; }
