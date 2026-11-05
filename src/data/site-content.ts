@@ -2,9 +2,10 @@
 // 2026-10-07-website-architecture-and-copy-v02.md. Hero/01/02 retain owner edits.
 export const primaryContact = "mailto:clint@kri8it.com";
 export const navigation = [
-  { label: "Services", id: "services" }, { label: "Focus", id: "focus" },
-  { label: "Process", id: "process" }, { label: "AutomAi8", id: "automai8" },
-  { label: "Proof", id: "proof" }, { label: "Contact", id: "contact" },
+  { label: "Services", to: "/services" }, { label: "About", to: "/about" },
+  { label: "Travel", to: "/travel-tourism" }, { label: "Automotive", to: "/automotive" },
+  { label: "Portfolio", to: null }, { label: "Blog", to: null },
+  { label: "Contact", to: "/#contact" },
 ];
 export const hero = {
   eyebrow: "Digital consultancy and delivery",
