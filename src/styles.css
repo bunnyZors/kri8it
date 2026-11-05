@@ -621,8 +621,8 @@
   .conversation-cta { font-size: 26px; }
   .conversation-offices { grid-template-columns: 1fr; gap: 36px; }
   .conversation-offices a { font-size: 18px; }
-  .sector-card:nth-child(even) .sector-media { order: 0; }
-  .sector-card:nth-child(even) .sector-copy { order: 1; }
+  .sector-card-flip .sector-media { order: 0; }
+  .sector-card-flip .sector-copy { order: 1; }
   .sector-copy h3 { font-size: 38px; margin-bottom: 18px; }
   .sector-media { aspect-ratio: 1; padding: 22px; }
   .sector-media > span { font-size: 10px; }
