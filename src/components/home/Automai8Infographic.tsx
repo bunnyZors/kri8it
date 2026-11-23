@@ -14,7 +14,7 @@ const whatsappFeatures = [
 export default function Automai8Infographic() {
   const [paused, setPaused] = useState(false);
   return (
-    <figure className="automai8-infographic" aria-label="AutomAi8 interface with WhatsApp, AI Front Desk, Smarter Marketing, Reputation management and Social Planner features">
+    <figure className="automai8-infographic" aria-label="AutomAi8 interface with Coversational AI, AI Front Desk, Smarter Marketing, Reputation management and Social Planner features">
       <figcaption className="automai8-graphic-caption"><Network aria-hidden="true" /><span>Connected marketing + sales</span><span className="automai8-preview">A look ahead / 2027</span><Button variant="ghost" size="icon" className="automai8-motion-toggle" aria-label={paused ? "Play infographic animation" : "Pause infographic animation"} title={paused ? "Play animation" : "Pause animation"} aria-pressed={paused} onClick={event => {
         const next = !paused;
         setPaused(next);
@@ -27,7 +27,7 @@ export default function Automai8Infographic() {
         <path d="M300 610H455V680" pathLength="1" />
       </svg>
       <div className="automai8-popout automai8-whatsapp">
-        <div className="automai8-feature-title"><span className="automai8-feature-icon"><MessageCircle aria-hidden="true" /></span><h3>WhatsApp journeys</h3></div>
+        <div className="automai8-feature-title"><span className="automai8-feature-icon"><MessageCircle aria-hidden="true" /></span><h3>Coversational AI</h3></div>
         <ul>{whatsappFeatures.map(feature => <li key={feature}><Check aria-hidden="true" /><span>{feature}</span></li>)}</ul>
       </div>
       <div className="automai8-device-stage">
