@@ -539,8 +539,7 @@
 .automai8-feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .automai8-popout p { color: var(--site-muted-dark); font-size: 13px; line-height: 1.65; }
 .automai8-phone-canvas { position: relative; height: 1050px; width: 100%; overflow: hidden; container-type: inline-size; --phone-stage-height: 1050px; }
-.automai8-phone-keyline { position: absolute; width: 65%; max-width: 430px; height: 84%; top: 8%; left: 50%; transform: translateX(-50%) rotate(-12deg); stroke: var(--site-blue); stroke-width: 1.5; opacity: .48; pointer-events: none; }
-.automai8-phone-keyline rect, .automai8-phone-keyline path, .automai8-phone-keyline circle { vector-effect: non-scaling-stroke; }
+.automai8-hand-phone { position: absolute; width: 100%; height: auto; top: 50%; left: 0; transform: translateY(-50%); pointer-events: none; mask-image: linear-gradient(to bottom, transparent, var(--site-ink) 12%, var(--site-ink) 78%, transparent); }
 .phone-callout-overlay { position: absolute; inset: 0; pointer-events: none; --phone-unit: min(calc(100cqw / 7.8), calc(var(--phone-stage-height) / 11.5)); }
 .phone-callout-overlay .phone-orbit-callout { position: absolute; pointer-events: auto; left: calc(50% + 2.45 * var(--phone-unit)); top: calc(50% - 3.82 * var(--phone-unit)); }
 .phone-callout-overlay .phone-orbit-callout:nth-child(1), .phone-callout-overlay .phone-orbit-callout:nth-child(4) { left: calc(50% - 2.45 * var(--phone-unit)); }
