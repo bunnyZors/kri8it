@@ -1,4 +1,5 @@
 # Homepage implementation
+- [x] Animate the AutomAi8 infographic using the supplied Pinterest reference; preserve copy and verify motion/reduced-motion layouts.
 - [x] Redesign the right-hand AutomAi8 infographic with a central interface and feature callouts from the supplied newsletter; preserve left-hand copy and verify desktop/mobile layouts.
 - [x] Restore alternating Automotive and Travel & tourism visual cards; preserve copy and verify links/layout.
 - [x] Recover the exact pre-animation-upload copy and compare it with the revised site.

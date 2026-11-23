@@ -331,6 +331,8 @@
   --site-infographic-panel: color-mix(in oklab, var(--site-blue) 9%, var(--site-ink));
   --site-infographic-line: color-mix(in oklab, var(--site-blue) 40%, var(--site-line-dark));
   --site-infographic-shadow: 0 20px 50px color-mix(in oklab, var(--site-ink) 45%, transparent);
+  --site-device-edge: color-mix(in oklab, var(--site-paper) 75%, var(--site-blue));
+  --site-device-shadow: 12px 24px 36px color-mix(in oklab, var(--site-ink) 60%, transparent);
   --site-fast: 220ms;
   --site-section-space: 112px;
 }
@@ -502,6 +504,18 @@
 .system-module strong { font-size: 34px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--site-ink); }
 .system-module span { font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--site-ink); }
 .automai8-infographic { position: relative; isolation: isolate; min-width: 0; margin: 0; display: grid; gap: 30px; }
+.automai8-scene { position: relative; isolation: isolate; display: grid; gap: 28px; perspective: 1200px; }
+.automai8-motion-toggle { flex: 0 0 30px; width: 30px; height: 30px; min-height: 30px; border-radius: 50%; color: var(--site-muted-dark); background: transparent; }
+.automai8-motion-toggle:hover { background: var(--site-infographic-panel); color: var(--site-paper); }
+.automai8-motion-toggle svg { width: 13px; height: 13px; }
+.automai8-device-stage { position: relative; padding-block: 28px 38px; perspective: 1200px; }
+.automai8-device { position: relative; padding: 5px; border-radius: 14px; border: 1px solid var(--site-device-edge); background: var(--site-device-edge); box-shadow: var(--site-device-shadow); transform: rotateY(-8deg) rotateX(5deg); transform-style: preserve-3d; }
+.automai8-device-shadow { position: absolute; bottom: 24px; left: 20%; width: 60%; height: 12px; border-radius: 50%; background: var(--site-ink); filter: blur(10px); opacity: .5; }
+.automai8-floating-icon { position: absolute; z-index: 3; display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 8px; border: 1px solid var(--site-infographic-line); color: var(--site-blue); background: var(--site-infographic-panel); box-shadow: var(--site-infographic-shadow); pointer-events: none; }
+.automai8-floating-icon svg { width: 24px; height: 24px; }
+.automai8-floating-message { top: 20%; left: 0; }
+.automai8-floating-voice { top: 48%; right: 0; }
+.automai8-floating-calendar { bottom: 12%; left: 3%; }
 .automai8-graphic-caption { display: flex; align-items: center; gap: 10px; color: var(--site-muted-dark); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
 .automai8-graphic-caption > svg { width: 18px; height: 18px; color: var(--site-blue); flex-shrink: 0; }
 .automai8-preview { margin-left: auto; text-align: right; }
@@ -515,7 +529,7 @@
 .automai8-whatsapp ul { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; }
 .automai8-whatsapp li { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; line-height: 1.5; color: var(--site-muted-dark); }
 .automai8-whatsapp li > svg { width: 13px; height: 13px; flex: 0 0 13px; margin-top: 3px; color: var(--site-blue); }
-.automai8-interface { width: 92%; justify-self: center; position: relative; }
+.automai8-interface { width: 84%; margin-inline: auto; position: relative; }
 .automai8-interface img { display: block; width: 100%; height: auto; border-radius: 8px; box-shadow: var(--site-infographic-shadow); }
 .automai8-interface-caption { display: block; text-align: center; margin-top: 12px; color: var(--site-muted-dark); font-size: 10px; text-transform: uppercase; letter-spacing: .15em; }
 .automai8-feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -670,6 +684,9 @@
   .automai8-feature-row { grid-template-columns: 1fr; gap: 16px; }
   .automai8-popout { padding: 18px; }
   .automai8-interface { width: 100%; }
+  .automai8-device-stage { padding-inline: 12px; }
+  .automai8-floating-icon { width: 34px; height: 34px; }
+  .automai8-floating-icon svg { width: 18px; height: 18px; }
   .automai8-connectors { display: none; }
   .system-panel-label { top: 22px; left: 24px; font-size: 10px; }
   .system-module { padding: 30px 34px; }
@@ -684,6 +701,8 @@
   .footer-bottom nav { gap: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .automai8-motion-toggle { display: none; }
+  .automai8-device { transform: none; }
   .editorial-site *, .site-header *, .site-footer * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .eight-path:nth-child(n) { stroke-dashoffset: 0; }
   .kinetic-fill { clip-path: none; }
