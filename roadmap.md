@@ -1,4 +1,5 @@
 # Homepage implementation
+- [x] Ground the AutomAi8 hand at the section bottom, repair its left crop, widen the feature layout and add matching blue keylines; verify desktop/mobile.
 - [x] Pair AutomAi8 descriptions with their 3D icons in a refined display and verify desktop/mobile layouts.
 - [x] Replace AutomAi8 panels with a 3D phone and orbiting feature icons/descriptions; preserve left copy and verify screen sizes.
 - [x] Replace the illustrative login preview with the owner-requested iPhone mockup displaying the real AutomAi8 mobile conversations section.
