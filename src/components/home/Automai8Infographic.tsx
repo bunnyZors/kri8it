@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CalendarCheck, Check, MessageCircle, Mic, Network, Pause, Play } from "lucide-react";
+import { CalendarCheck, Check, MessageCircle, Mic, Network, Pause, Play, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import interfaceAsset from "@/assets/automai8/social-planner.png.asset.json";
 
@@ -14,7 +14,7 @@ const whatsappFeatures = [
 export default function Automai8Infographic() {
   const [paused, setPaused] = useState(false);
   return (
-    <figure className="automai8-infographic" aria-label="AutomAi8 interface with upcoming WhatsApp, AI Front Desk and social marketing capabilities">
+    <figure className="automai8-infographic" aria-label="AutomAi8 interface with WhatsApp, AI Front Desk, Smarter Marketing, Reputation management and Social Planner features">
       <figcaption className="automai8-graphic-caption"><Network aria-hidden="true" /><span>Connected marketing + sales</span><span className="automai8-preview">A look ahead / 2027</span><Button variant="ghost" size="icon" className="automai8-motion-toggle" aria-label={paused ? "Play infographic animation" : "Pause infographic animation"} title={paused ? "Play animation" : "Pause animation"} aria-pressed={paused} onClick={event => {
         const next = !paused;
         setPaused(next);
@@ -40,6 +40,8 @@ export default function Automai8Infographic() {
       <div className="automai8-feature-row">
         <div className="automai8-popout"><div className="automai8-feature-title"><span className="automai8-feature-icon"><Mic aria-hidden="true" /></span><h3>AI Front Desk</h3></div><p>An intelligent voice assistant that can answer calls, manage enquiries and help book appointments, even when your team is busy.</p></div>
         <div className="automai8-popout"><div className="automai8-feature-title"><span className="automai8-feature-icon"><CalendarCheck aria-hidden="true" /></span><h3>Smarter Marketing</h3></div><p>Plan, schedule and approve social content in one place. Less back-and-forth, with more time for your team to focus on the work that matters.</p></div>
+        <div className="automai8-popout"><div className="automai8-feature-title"><span className="automai8-feature-icon"><Star aria-hidden="true" /></span><h3>Reputation management</h3></div><p>Helps businesses request, monitor and respond to customer reviews.</p></div>
+        <div className="automai8-popout"><div className="automai8-feature-title"><span className="automai8-feature-icon"><CalendarCheck aria-hidden="true" /></span><h3>Social Planner</h3></div><p>A space within the CRM to plan, approve and schedule social content.</p></div>
       </div>
       </div>
     </figure>
