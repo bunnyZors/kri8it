@@ -328,6 +328,9 @@
   --site-sector-gradient: linear-gradient(160deg, #0F2436 0%, #081726 48%, #050C14 100%);
   --site-sector-stripe: color-mix(in oklab, var(--site-paper) 7%, transparent);
   --site-sector-disc: color-mix(in oklab, var(--site-blue) 20%, transparent);
+  --site-infographic-panel: color-mix(in oklab, var(--site-blue) 9%, var(--site-ink));
+  --site-infographic-line: color-mix(in oklab, var(--site-blue) 40%, var(--site-line-dark));
+  --site-infographic-shadow: 0 20px 50px color-mix(in oklab, var(--site-ink) 45%, transparent);
   --site-fast: 220ms;
   --site-section-space: 112px;
 }
@@ -488,7 +491,7 @@
 .process-columns h3 { font-size: 28px; font-weight: 700; margin: 58px 0 14px; }
 .process-columns p { color: var(--section-muted); font-size: 16px; line-height: 1.65; }
 .automation-section { background: linear-gradient(160deg, #0F2436 0%, #081726 48%, #050C14 100%); border-top: 1px solid var(--site-line-dark); }
-.automation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.automation-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 56px; align-items: center; }
 .automation-grid .site-prose { margin-block: 32px; max-width: 540px; }
 .site-callout { color: var(--section-accent, var(--site-primary)); }
 .system-panel { position: relative; overflow: hidden; aspect-ratio: 0.78; border-radius: 28px; border: 1px solid var(--site-line-light); background: color-mix(in oklab, var(--site-paper) 55%, #ffffff); background-image: linear-gradient(rgba(9,7,22,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(9,7,22,.055) 1px, transparent 1px); background-size: 74px 74px; display: flex; align-items: center; justify-content: center; }
@@ -498,6 +501,25 @@
 .system-module { position: relative; z-index: 2; display: grid; gap: 14px; text-align: center; padding: 46px 58px; border: 1.5px solid var(--site-blue); border-radius: 26px; background: color-mix(in oklab, var(--site-blue) 7%, #ffffff); }
 .system-module strong { font-size: 34px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--site-ink); }
 .system-module span { font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--site-ink); }
+.automai8-infographic { position: relative; isolation: isolate; min-width: 0; margin: 0; display: grid; gap: 30px; }
+.automai8-graphic-caption { display: flex; align-items: center; gap: 10px; color: var(--site-muted-dark); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
+.automai8-graphic-caption > svg { width: 18px; height: 18px; color: var(--site-blue); flex-shrink: 0; }
+.automai8-preview { margin-left: auto; text-align: right; }
+.automai8-connectors { z-index: -1; top: 28px; height: calc(100% - 28px); pointer-events: none; }
+.automai8-connectors path { stroke: var(--site-blue); stroke-width: 2; }
+.automai8-popout { padding: 20px; border: 1px solid var(--site-infographic-line); border-radius: 8px; background: var(--site-infographic-panel); box-shadow: var(--site-infographic-shadow); }
+.automai8-feature-title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.automai8-feature-icon { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 32px; width: 32px; height: 32px; background: color-mix(in oklab, var(--site-blue) 18%, transparent); color: var(--site-blue); border-radius: 8px; }
+.automai8-feature-icon svg { width: 18px; height: 18px; }
+.editorial-site .automai8-feature-title h3 { font-size: 18px; line-height: 1.2; font-weight: 700; color: var(--site-paper); }
+.automai8-whatsapp ul { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; }
+.automai8-whatsapp li { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; line-height: 1.5; color: var(--site-muted-dark); }
+.automai8-whatsapp li > svg { width: 13px; height: 13px; flex: 0 0 13px; margin-top: 3px; color: var(--site-blue); }
+.automai8-interface { width: 92%; justify-self: center; position: relative; }
+.automai8-interface img { display: block; width: 100%; height: auto; border-radius: 8px; box-shadow: var(--site-infographic-shadow); }
+.automai8-interface-caption { display: block; text-align: center; margin-top: 12px; color: var(--site-muted-dark); font-size: 10px; text-transform: uppercase; letter-spacing: .15em; }
+.automai8-feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.automai8-popout p { color: var(--site-muted-dark); font-size: 13px; line-height: 1.65; }
 .proof-section { position: relative; overflow: hidden; text-align: center; border-top: 1px solid var(--site-line-dark); }
 .proof-rings { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
 .proof-rings svg { flex: none; width: 1250px; height: 1250px; stroke: var(--site-blue); stroke-width: 1; opacity: .16; }
@@ -576,6 +598,7 @@
   .process-columns h3 { font-size: 26px; margin-top: 24px; }
   .process-columns p { font-size: 16px; max-width: 520px; }
   .automation-grid { grid-template-columns: 1fr; gap: 48px; }
+  .automai8-infographic { width: 100%; max-width: 700px; justify-self: center; }
   .system-panel { max-width: 560px; width: 100%; }
   .conversation-row { grid-template-columns: 1fr; gap: 56px; margin-top: 72px; }
   .conversation-cta { font-size: 32px; }
@@ -641,6 +664,13 @@
   .process-columns h3 { font-size: 26px; margin-top: 24px; }
   .process-columns p { font-size: 16px; }
   .system-panel { aspect-ratio: 0.85; }
+  .automai8-infographic { gap: 24px; }
+  .automai8-graphic-caption { font-size: 9px; letter-spacing: .06em; }
+  .automai8-whatsapp ul { grid-template-columns: 1fr; }
+  .automai8-feature-row { grid-template-columns: 1fr; gap: 16px; }
+  .automai8-popout { padding: 18px; }
+  .automai8-interface { width: 100%; }
+  .automai8-connectors { display: none; }
   .system-panel-label { top: 22px; left: 24px; font-size: 10px; }
   .system-module { padding: 30px 34px; }
   .system-module strong { font-size: 24px; }

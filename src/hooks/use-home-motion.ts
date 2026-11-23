@@ -27,7 +27,7 @@ export function useHomeMotion(root: RefObject<HTMLDivElement | null>) {
             const quoteRoll = () => quoteSet.offsetWidth + 70;
             gsap.fromTo(quoteTrack, { x: () => -quoteRoll() }, { x: 0, ease: "none", scrollTrigger: { trigger: quoteViewport, start: "top 92%", end: "bottom 35%", scrub: 1, invalidateOnRefresh: true } });
           }
-          gsap.fromTo(".system-lines path", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, stagger: 0.2, ease: "none", scrollTrigger: { trigger: ".system-panel", start: "top 82%", end: "bottom 55%", scrub: true } });
+          gsap.fromTo(".system-lines path", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, stagger: 0.2, ease: "none", scrollTrigger: { trigger: ".automai8-infographic", start: "top 82%", end: "bottom 55%", scrub: true } });
         });
         media.add(`(min-width: ${capabilityDesktopWidth}px) and (prefers-reduced-motion: no-preference)`, () => {
           const track = scope.querySelector<HTMLElement>(".capability-track");
