@@ -1,4 +1,5 @@
 # Homepage implementation
+- [x] Pair AutomAi8 descriptions with their 3D icons in a refined display and verify desktop/mobile layouts.
 - [x] Replace AutomAi8 panels with a 3D phone and orbiting feature icons/descriptions; preserve left copy and verify screen sizes.
 - [ ] Replace the labelled illustrative login preview with the real AutomAi8 login screen. Blocked: owner URL/screenshot required.
 - [x] Animate the AutomAi8 infographic using the supplied Pinterest reference; preserve copy and verify motion/reduced-motion layouts.

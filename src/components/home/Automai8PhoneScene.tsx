@@ -40,41 +40,34 @@ function screenTexture(palette: Palette) {
   const texture=new CanvasTexture(canvas);texture.colorSpace=SRGBColorSpace;return texture;
 }
 
-function labelTexture(title:string,color:string){
-  const canvas=document.createElement("canvas");canvas.width=512;canvas.height=128;const ctx=canvas.getContext("2d");
-  if(ctx){ctx.fillStyle=color;ctx.font="600 38px Arial";ctx.textAlign="center";ctx.fillText(title,256,70,490);}
-  const texture=new CanvasTexture(canvas);texture.colorSpace=SRGBColorSpace;return texture;
-}
-
 function OrbitIcon({ index, paused, active, onSelect, palette }: { index: number; paused: boolean; active: number; onSelect: (i:number)=>void; palette: Palette }) {
   const group = useRef<Group>(null);
   const time = useRef(0);
   const texture = useMemo(()=>iconTexture(index,palette.blue),[index,palette.blue]);
-  const label=useMemo(()=>labelTexture(automai8Features[index]?.title??"",palette.paper),[index,palette.paper]);
   useEffect(()=>()=>texture.dispose(),[texture]);
-  useEffect(()=>()=>label.dispose(),[label]);
   const feature = automai8Features[index];
   useFrame((_, delta)=>{
     if(!group.current) return;
-    if(!paused) time.current += Math.min(delta,.05)*.12;
-    const angle = Math.PI/2-index*Math.PI*2/5+time.current;
-    group.current.position.set(Math.cos(angle)*2.55,Math.sin(angle)*2.15,Math.cos(angle)*.6+.8);
+    if(!paused) time.current += Math.min(delta,.05);
+    const positions = [[-2.45,2.6], [2.45,2.6], [2.45,-.05], [-2.45,-1.35], [2.45,-2.7]];
+    const position = positions[index];
+    if(position) group.current.position.set(position[0] ?? 0,(position[1] ?? 0)+Math.sin(time.current*.65+index)*.035,.4);
   });
   if(!feature) return null;
   return <group ref={group}>
-    <mesh rotation={[Math.PI/2,0,0]} onClick={()=>onSelect(index)}>
-      <cylinderGeometry args={[.37,.37,.16,40]} />
+    <mesh position={[0,.62,0]} rotation={[Math.PI/2,.12,0]} onClick={()=>onSelect(index)}>
+      <cylinderGeometry args={[.3,.3,.14,40]} />
       <meshStandardMaterial color={active===index?palette.blue:palette.metal} metalness={.65} roughness={.26} />
     </mesh>
-    <mesh position={[0,0,.11]}><planeGeometry args={[.52,.52]} /><meshBasicMaterial map={texture} transparent depthWrite={false} /></mesh>
-    <sprite position={[0,index===0?.58:-.59,.12]} scale={[1.7,.42,1]} onClick={()=>onSelect(index)}><spriteMaterial map={label} transparent depthTest={false} /></sprite>
+    <mesh position={[0,.62,.11]}><planeGeometry args={[.4,.4]} /><meshBasicMaterial map={texture} transparent depthWrite={false} /></mesh>
   </group>;
 }
 
 function World({paused,active,onSelect,onReady,palette}: SceneProps & {palette:Palette}) {
   const phone=useRef<Group>(null); const time=useRef(0); const ready=useRef(false);
   const {camera,size}=useThree();
-  useEffect(()=>{camera.position.z=size.width/size.height<1?12:10;camera.updateProjectionMatrix();},[camera,size.width,size.height]);
+  const compact = size.height < 500;
+  useEffect(()=>{if("zoom" in camera) camera.zoom=compact?Math.min(size.width/3.7,size.height/5):Math.min(size.width/7.8,size.height/9);camera.updateProjectionMatrix();},[camera,size.width,size.height,compact]);
   const screen=useMemo(()=>screenTexture(palette),[palette]);
   useEffect(()=>()=>screen.dispose(),[screen]);
   useFrame((_,delta)=>{
@@ -90,11 +83,11 @@ function World({paused,active,onSelect,onReady,palette}: SceneProps & {palette:P
       <RoundedBox args={[1.6,3.36,.05]} radius={.16} position={[0,0,.12]} smoothness={4}><meshStandardMaterial color={palette.ink} roughness={.25} /></RoundedBox>
       <mesh position={[0,0,.151]}><planeGeometry args={[1.45,3.05]} /><meshBasicMaterial map={screen} toneMapped={false} /></mesh>
     </group>
-    {automai8Features.map((f,i)=><OrbitIcon key={f.title} index={i} paused={paused} active={active} onSelect={onSelect} palette={palette} />)}
+    {!compact&&automai8Features.map((f,i)=><OrbitIcon key={f.title} index={i} paused={paused} active={active} onSelect={onSelect} palette={palette} />)}
   </>;
 }
 
 export default function Automai8PhoneScene(props: SceneProps) {
   const [palette] = useState<Palette>(()=>{ const css=getComputedStyle(document.documentElement);return {ink:css.getPropertyValue("--site-ink").trim(),paper:css.getPropertyValue("--site-paper").trim(),blue:css.getPropertyValue("--site-blue").trim(),metal:css.getPropertyValue("--site-line-light").trim()}; });
-  return <Canvas camera={{position:[0,0,10],fov:40}} dpr={[1,1.5]} gl={{alpha:true,antialias:true}}><Suspense fallback={null}><World {...props} palette={palette} /></Suspense></Canvas>;
+  return <Canvas orthographic camera={{position:[0,0,10],zoom:80}} dpr={[1,1.5]} gl={{alpha:true,antialias:true}}><Suspense fallback={null}><World {...props} palette={palette} /></Suspense></Canvas>;
 }

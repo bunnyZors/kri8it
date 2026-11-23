@@ -1,9 +1,10 @@
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
-import { Network, Pause, Play } from "lucide-react";
+import { CalendarCheck, Megaphone, MessageCircle, Mic, Network, Pause, Play, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { automai8Features } from "./automai8-features";
 
 const PhoneScene = lazy(()=>import("./Automai8PhoneScene"));
+const featureIcons = [MessageCircle, Mic, Megaphone, Star, CalendarCheck];
 
 export default function Automai8Infographic() {
   const root=useRef<HTMLElement>(null);
@@ -21,13 +22,12 @@ export default function Automai8Infographic() {
     if(root.current)observer.observe(root.current);
     return ()=>{observer.disconnect();media.removeEventListener("change",sync);};
   },[]);
-  const feature=automai8Features[active] ?? automai8Features[0];
   return <figure ref={root} className="automai8-infographic automai8-phone-infographic">
     <figcaption className="automai8-graphic-caption"><Network aria-hidden="true" /><span>Connected marketing + sales</span><span className="automai8-preview">Login screen preview</span>{!reduced&&<Button variant="ghost" size="icon" className="automai8-motion-toggle" aria-label={paused?"Play infographic animation":"Pause infographic animation"} title={paused?"Play animation":"Pause animation"} onClick={()=>setPaused(!paused)}>{paused?<Play />:<Pause />}</Button>}</figcaption>
     <div className="automai8-phone-canvas" data-scene-ready={ready?"true":undefined}>
       {mounted&&<Suspense fallback={<span className="phone-loading">AutomAi8</span>}><PhoneScene paused={paused||reduced||!visible} active={active} onSelect={index=>{setActive(index);setPaused(true);}} onReady={()=>setReady(true)} /></Suspense>}
+      <div className="phone-callout-overlay">{automai8Features.map((f,i)=><Button key={f.title} variant="ghost" className="phone-orbit-callout" aria-pressed={active===i} onClick={()=>{setActive(i);setPaused(true);}}><span className="phone-callout-title">{f.title}</span><span className="phone-callout-copy">{f.description}</span></Button>)}</div>
     </div>
-    <div className="phone-feature-tabs" role="group" aria-label="AutomAi8 features">{automai8Features.map((f,i)=><Button key={f.title} variant="ghost" className="phone-feature-tab" aria-pressed={active===i} onClick={()=>{setActive(i);setPaused(true);}}>{f.title}</Button>)}</div>
-    <div className="phone-feature-description" aria-live="polite"><h3>{feature.title}</h3><p>{feature.description}</p></div>
+    <div className={`phone-feature-list${mounted?"":" phone-feature-fallback"}`} aria-label="AutomAi8 features">{automai8Features.map((f,i)=>{const Icon=featureIcons[i]??MessageCircle;return <Button key={f.title} variant="ghost" className="phone-mobile-callout" aria-pressed={active===i} onClick={()=>{setActive(i);setPaused(true);}}><span className="phone-mobile-icon"><Icon aria-hidden="true" /></span><span><span className="phone-callout-title">{f.title}</span><span className="phone-callout-copy">{f.description}</span></span></Button>;})}</div>
   </figure>;
 }
