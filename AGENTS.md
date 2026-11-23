@@ -1,5 +1,7 @@
 # Project architecture rules
 
+- Read `HANDOVER.md` first: it is the full engineering handover (stack, design system, content governance, motion rules, gotchas) and governs how this repo is changed.
+
 - Use the shared editorial page primitives for consultancy-led page heroes, CTA links and invitation bands so the core pages retain one visual and interaction language.
 - Keep route-specific copy and section order in each page module so editorial reviews can verify each page against its source document.
 - Keep the homepage’s source-verified structured content in a dedicated data module and compose focused sections from its page module, so the long-form journey stays reviewable without an oversized component.
