@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CalendarDays, ChartNoAxesCombined, MessagesSquare, Headset, Network, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { automai8Features } from "./automai8-features";
-import handPhoneAsset from "@/assets/automai8-phone-visible-logo.webp.asset.json";
+import handPhoneAsset from "@/assets/automai8-hand-crisp.webp.asset.json";
 
 const featureIcons = [MessagesSquare, Headset, ChartNoAxesCombined, BadgeCheck, CalendarDays];
 
