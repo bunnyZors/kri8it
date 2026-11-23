@@ -1,4 +1,6 @@
 # Homepage implementation
+- [x] Replace AutomAi8 panels with a 3D phone and orbiting feature icons/descriptions; preserve left copy and verify screen sizes.
+- [ ] Replace the labelled illustrative login preview with the real AutomAi8 login screen. Blocked: owner URL/screenshot required.
 - [x] Animate the AutomAi8 infographic using the supplied Pinterest reference; preserve copy and verify motion/reduced-motion layouts.
 - [x] Redesign the right-hand AutomAi8 infographic with a central interface and feature callouts from the supplied newsletter; preserve left-hand copy and verify desktop/mobile layouts.
 - [x] Restore alternating Automotive and Travel & tourism visual cards; preserve copy and verify links/layout.

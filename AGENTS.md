@@ -4,7 +4,7 @@
 - Keep route-specific copy and section order in each page module so editorial reviews can verify each page against its source document.
 - Keep the homepage’s source-verified structured content in a dedicated data module and compose focused sections from its page module, so the long-form journey stays reviewable without an oversized component.
 - Treat animation specifications as presentation-only; homepage copy comes from the pre-handover editorial source with explicit owner edits, so motion work cannot silently replace business content.
-- Keep the AutomAi8 infographic in a focused presentation component using approved media and source-backed callouts; drive its pausable, viewport-gated floating motion through the shared GSAP hook so editorial copy and reduced-motion access remain independent.
+- Keep AutomAi8 feature data separate from its client-only, lazily loaded R3F phone scene; pause orbital motion offscreen, on selection and for reduced motion so SSR copy and readable descriptions remain independent.
 - The footer enquiry composes a mailto draft in the visitor's email app rather than claiming server delivery; no delivery service is configured.
 - Isolate homepage scroll effects in a hydrated, dynamically imported GSAP hook with matchMedia cleanup; native scrolling and SSR-readable content must not depend on motion loading.
 - Use homepage-scoped semantic theme roles for the new editorial journey and shared header/footer, so retained detail-page tokens and content are not silently redesigned.

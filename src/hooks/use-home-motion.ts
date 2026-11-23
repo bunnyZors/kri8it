@@ -27,29 +27,6 @@ export function useHomeMotion(root: RefObject<HTMLDivElement | null>) {
             const quoteRoll = () => quoteSet.offsetWidth + 70;
             gsap.fromTo(quoteTrack, { x: () => -quoteRoll() }, { x: 0, ease: "none", scrollTrigger: { trigger: quoteViewport, start: "top 92%", end: "bottom 35%", scrub: 1, invalidateOnRefresh: true } });
           }
-          gsap.fromTo(".system-lines path", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, stagger: 0.2, ease: "none", scrollTrigger: { trigger: ".automai8-infographic", start: "top 82%", end: "bottom 55%", scrub: true } });
-          const infographic = scope.querySelector<HTMLElement>(".automai8-infographic");
-          if (infographic) {
-            const float = gsap.timeline({ paused: true, repeat: -1, yoyo: true, defaults: { duration: 3.5, ease: "sine.inOut" } })
-              .fromTo(".automai8-interface", { y: 7, rotation: -1 }, { y: -9, rotation: 1 }, 0)
-              .fromTo(".automai8-device", { rotationY: -12, rotationX: 7 }, { rotationY: -4, rotationX: 3 }, 0)
-              .fromTo(".automai8-whatsapp", { y: 4, rotation: -.5 }, { y: -4, rotation: .5 }, 0)
-              .fromTo(".automai8-feature-row > :first-child", { y: 0 }, { y: -6 }, .2)
-              .fromTo(".automai8-feature-row > :last-child", { y: -5 }, { y: 2 }, .4)
-              .fromTo(".automai8-floating-icon", { y: 6, rotation: -6 }, { y: -10, rotation: 5, stagger: .25 }, 0)
-              .fromTo(".automai8-device-shadow", { scaleX: 1, opacity: .5 }, { scaleX: .85, opacity: .3 }, 0);
-            let manuallyPaused = false;
-            const visibility = ScrollTrigger.create({ trigger: infographic, start: "top bottom", end: "bottom top", onToggle: self => { if (self.isActive && !manuallyPaused) float.resume(); else float.pause(); } });
-            if (visibility.isActive) float.resume();
-            const toggle = (event: Event) => {
-              if (!(event instanceof CustomEvent)) return;
-              manuallyPaused = event.detail === true;
-              if (manuallyPaused || !visibility.isActive) float.pause(); else float.resume();
-            };
-            infographic.addEventListener("automai8-motion-toggle", toggle);
-            return () => { infographic.removeEventListener("automai8-motion-toggle", toggle); };
-          }
-          return undefined;
         });
         media.add(`(min-width: ${capabilityDesktopWidth}px) and (prefers-reduced-motion: no-preference)`, () => {
           const track = scope.querySelector<HTMLElement>(".capability-track");
