@@ -545,8 +545,8 @@
 .automai8-phone-canvas { position: relative; height: 920px; width: 100%; overflow: visible; }
 .automai8-hand-phone { position: absolute; width: auto; max-width: none; height: 100%; bottom: 0; left: 50%; transform: translateX(-57.3%); pointer-events: none; }
 .phone-callout-overlay { position: absolute; inset: 0; pointer-events: none; }
-.phone-callout-overlay .phone-orbit-callout { position: absolute; pointer-events: auto; left: 86%; top: 10%; }
-.phone-callout-overlay .phone-orbit-callout:nth-child(1), .phone-callout-overlay .phone-orbit-callout:nth-child(4) { left: 14%; }
+.phone-callout-overlay .phone-orbit-callout { position: absolute; pointer-events: auto; left: calc(86% - 32px); top: 10%; }
+.phone-callout-overlay .phone-orbit-callout:nth-child(1), .phone-callout-overlay .phone-orbit-callout:nth-child(4) { left: calc(14% + 32px); }
 .phone-callout-overlay .phone-orbit-callout:nth-child(1) { top: 14%; }
 .phone-callout-overlay .phone-orbit-callout:nth-child(3) { top: 41%; }
 .phone-callout-overlay .phone-orbit-callout:nth-child(4) { top: 59%; }
